@@ -3,7 +3,7 @@ import {
   Shield, Clock, Truck, FileText, Trees, Shovel, Ruler, Droplets, Building2, Cable,
   ChevronRight, Phone, CheckCircle, Star, MapPin, Award, HardHat, Users, ArrowRight,
 } from "lucide-react";
-import heroImg from "@/assets/hero-jobsite.webp";
+const heroImg = "/hero-jobsite.webp";
 import kameronHardhat from "@/assets/kameron-hardhat.webp";
 import kameronSite from "@/assets/kameron-site.webp";
 import kameronTruck from "@/assets/kameron-truck.webp";
@@ -159,7 +159,7 @@ export function HomePage() {
                 className="group bg-card rounded-xl overflow-hidden shadow-sm border border-border hover:shadow-xl hover:border-[#C4956A]/30 hover:-translate-y-1 transition-all duration-300"
               >
                 <div className="h-48 overflow-hidden relative">
-                  <ImageWithFallback src={s.img} alt={s.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
+                  <ImageWithFallback src={s.img} alt={s.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" width={400} height={192} />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
                 </div>
                 <div className="p-6">
@@ -230,6 +230,7 @@ export function HomePage() {
                   src={kameronSite}
                   alt="Kameron Lethermon owner of Lethermon Grade Excavations on active jobsite in Bradenton FL"
                   className="w-full h-[420px] md:h-[500px] object-cover"
+                  width={800} height={500} loading="lazy"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-[#1a1008]/60 via-transparent to-transparent" />
               </div>
@@ -239,6 +240,7 @@ export function HomePage() {
                   src={kameronHardhat}
                   alt="Kameron Lethermon in hardhat and safety vest ready for excavation work"
                   className="w-full h-full object-cover"
+                  width={176} height={176} loading="lazy"
                 />
               </div>
               {/* Experience badge */}
@@ -306,6 +308,7 @@ export function HomePage() {
             src={kameronTruck}
             alt="Lethermon Grade Excavations branded work truck and trailer with excavator on active Florida jobsite"
             className="w-full h-full object-cover"
+            width={1200} height={384} loading="lazy"
           />
           <div className="absolute inset-0 bg-gradient-to-r from-[#3D2B1F]/80 via-[#3D2B1F]/40 to-transparent" />
           <div className="absolute inset-0 flex items-center">
@@ -396,7 +399,7 @@ export function HomePage() {
               { img: imgPoolBackfill, label: "Pool Excavation", alt: "Completed pool shell with graded backfill ready for deck work in Sarasota FL" },
             ].map((p) => (
               <Link key={p.label} to="/projects" className="group rounded-xl overflow-hidden relative h-44 md:h-56">
-                <ImageWithFallback src={p.img} alt={p.alt || p.label} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
+                <ImageWithFallback src={p.img} alt={p.alt || p.label} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" width={300} height={224} />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent" />
                 <span className="absolute bottom-3 left-3 md:bottom-4 md:left-4 text-white text-xs md:text-sm">{p.label}</span>
               </Link>
@@ -481,7 +484,7 @@ export function HomePage() {
             ].map((post) => (
               <Link key={post.slug} to={`/blog/${post.slug}`} className="group bg-card rounded-xl overflow-hidden border border-border hover:shadow-lg hover:-translate-y-0.5 transition-all duration-300">
                 <div className="h-40 overflow-hidden">
-                  <ImageWithFallback src={post.img} alt={post.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
+                  <ImageWithFallback src={post.img} alt={post.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" width={400} height={160} />
                 </div>
                 <div className="p-5">
                   <h3 className="text-[#3D2B1F] text-sm">{post.title}</h3>

@@ -67,7 +67,7 @@ export function VideoPlaceholder({
           />
         )}
         {!isVisible && thumbnail && (
-          <img src={thumbnail} alt={title} className="w-full h-full object-cover" />
+          <img src={thumbnail} alt={title} className="w-full h-full object-cover" loading="lazy" />
         )}
       </div>
     );
@@ -98,6 +98,7 @@ export function VideoPlaceholder({
               src={thumbnail}
               alt={title}
               className="w-full h-full object-cover opacity-60"
+              loading="lazy"
             />
           )
         )}
@@ -130,6 +131,7 @@ export function VideoPlaceholder({
           src={thumbnail}
           alt={title}
           className="w-full h-full object-cover opacity-60 group-hover:opacity-40 transition-opacity"
+          loading="lazy"
         />
       )}
       <div className="absolute inset-0 flex flex-col items-center justify-center gap-3">
