@@ -81,8 +81,10 @@ export function AboutPage() {
                   Every project is personally overseen to ensure the highest standards.
                 </p>
                 <p>
-                  As an owner-operator, Kameron acts as project estimator, lead operator, site supervisor,
-                  and your primary contact. When you hire us, you're hiring the owner's expertise directly.
+                  Kameron oversees every project personally — from the initial site walk and estimate through
+                  final grade check. He's built a skilled team that handles the heavy equipment while he focuses
+                  on quality control, client communication, and growing the business. When you hire us, you're
+                  hiring the owner's standards and a crew trained to deliver them.
                 </p>
               </div>
               <div className="flex flex-wrap gap-4 mt-6">
@@ -135,7 +137,7 @@ export function AboutPage() {
         <div className="max-w-7xl mx-auto px-4">
           <div className="text-center mb-14">
             <p className="text-[#C4956A] uppercase tracking-wider text-sm mb-2">Our Team</p>
-            <h2 className="text-3xl md:text-4xl text-[#3D2B1F] mb-4">Small Crew, Big Results</h2>
+            <h2 className="text-3xl md:text-4xl text-[#3D2B1F] mb-4">Built to Deliver</h2>
             <p className="text-muted-foreground max-w-2xl mx-auto">
               Think of excavation crews like surgeons with heavy equipment. The machine is powerful,
               but the operator skill determines the outcome.
@@ -143,7 +145,7 @@ export function AboutPage() {
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {[
-              { img: kameronHardhat, title: "Kameron Lethermon", role: "Owner / Lead Operator", desc: "Military background. Personally oversees every project from estimate to final grade." },
+              { img: kameronHardhat, title: "Kameron Lethermon", role: "Owner / Founder", desc: "Military background. On-site daily directing crews, coordinating with builders, and ensuring every project meets spec." },
               { img: imgEquipment, title: "Equipment Operators", role: "Skilled Machine Operators", desc: "Running excavators, bulldozers, skid steers, and graders with precision daily." },
               { img: imgRoller, title: "Hauling Crew", role: "Transport & Logistics", desc: "Moving earth, rock, and debris efficiently across Sarasota-Bradenton." },
               { img: imgTrenching, title: "Site Laborers", role: "Grade Stakes & Drainage", desc: "Setting elevations, installing pipe, and keeping every jobsite organized." },
@@ -159,6 +161,15 @@ export function AboutPage() {
                 </div>
               </div>
             ))}
+          </div>
+          <div className="text-center mt-10">
+            <Link
+              to="/team"
+              className="inline-flex items-center gap-2 text-[#C4956A] hover:text-[#b07f55] transition-colors font-medium"
+            >
+              Meet the Full Team
+              <ChevronRight className="w-5 h-5" />
+            </Link>
           </div>
         </div>
       </section>

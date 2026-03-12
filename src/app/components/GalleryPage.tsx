@@ -55,7 +55,7 @@ const galleryItems = [
   { img: imgYanmar, title: "Yanmar Mini Excavator Residential", cat: "Excavation", location: "Bradenton, FL", alt: "Red Yanmar mini excavator at residential foundation excavation site with worker in Bradenton FL" },
   { img: imgPoolBackfill, title: "Pool Rough Grade Backfill", cat: "Excavation", location: "Sarasota, FL", alt: "Completed pool shell with graded backfill ready for deck work in Sarasota FL" },
   { img: kameronTruck, title: "Branded Truck on Jobsite", cat: "Equipment", location: "Sarasota, FL", alt: "Lethermon Grade Excavations branded work truck with excavator on active jobsite" },
-  { img: kameronCollage2, title: "Kameron Lethermon at Work", cat: "Equipment", location: "Bradenton, FL", alt: "Kameron Lethermon owner-operator of Lethermon Grade Excavations on jobsite in Bradenton FL" },
+  { img: kameronCollage2, title: "Kameron Lethermon at Work", cat: "Equipment", location: "Bradenton, FL", alt: "Kameron Lethermon owner of Lethermon Grade Excavations on jobsite in Bradenton FL" },
 ];
 
 const videos = [

@@ -254,23 +254,23 @@ export function HomePage() {
             <div>
               <p className="text-[#C4956A] uppercase tracking-wider text-sm mb-2">Meet the Owner</p>
               <h2 className="text-3xl md:text-4xl text-[#3D2B1F] mb-2">Kameron Lethermon</h2>
-              <p className="text-[#C4956A] mb-6">Founder & Lead Operator</p>
+              <p className="text-[#C4956A] mb-6">Founder & Owner</p>
 
               <blockquote className="border-l-4 border-[#C4956A] pl-5 mb-6 italic text-muted-foreground">
-                "I don't send a crew — I lead it. Every project gets my personal attention from the first site walk to final grade check."
+                "I built this crew so I could focus on what matters — being on every jobsite, making sure the work is done right, and growing relationships with the builders who trust us."
               </blockquote>
 
               <p className="text-muted-foreground mb-4">
-                After years in military service and civilian heavy-equipment operation, Kameron founded Lethermon Grade Excavations with a simple mission: deliver the same discipline, precision, and reliability that the military demands — to every jobsite in Southwest Florida.
+                After years in military service and civilian construction experience, Kameron founded Lethermon Grade Excavations with a simple mission: deliver the same discipline, precision, and reliability that the military demands — to every jobsite in Southwest Florida.
               </p>
               <p className="text-muted-foreground mb-6">
-                As an owner-operator, Kameron is on-site for every project. No middlemen, no miscommunication — just direct accountability from the person whose name is on the truck.
+                Kameron is on-site for every project — directing the crew, coordinating with builders, and ensuring every grade meets spec. No middlemen, no miscommunication — just direct accountability from the person whose name is on the truck.
               </p>
 
               {/* Key traits */}
               <div className="grid grid-cols-2 gap-3 mb-8">
                 {[
-                  { icon: HardHat, label: "Owner-Operated" },
+                  { icon: HardHat, label: "Owner On-Site Daily" },
                   { icon: Shield, label: "Military Discipline" },
                   { icon: Award, label: "BBB A+ Rated" },
                   { icon: Users, label: "Hands-On Leadership" },
@@ -317,7 +317,7 @@ export function HomePage() {
                 <p className="text-[#C4956A] uppercase tracking-wider text-sm mb-2">On Every Jobsite</p>
                 <h2 className="text-white text-2xl md:text-3xl lg:text-4xl mb-3">Our Name Is on the Truck</h2>
                 <p className="text-gray-300 text-sm md:text-base">
-                  When you hire Lethermon, you get the owner on-site with real equipment — not a subcontractor with a rental.
+                  When you hire Lethermon, you get the owner on-site directing a professional crew — not a subcontractor you've never met.
                 </p>
               </div>
             </div>

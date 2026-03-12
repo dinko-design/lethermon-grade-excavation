@@ -64,6 +64,7 @@ export function Footer() {
             <ul className="space-y-2">
               {[
                 { to: "/about", label: "About Us" },
+                { to: "/team", label: "Our Team" },
                 { to: "/reviews", label: "Reviews" },
                 { to: "/projects", label: "Projects" },
                 { to: "/gallery", label: "Gallery" },

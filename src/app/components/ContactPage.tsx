@@ -67,7 +67,7 @@ export function ContactPage() {
                 <ImageWithFallback src={kameronSite} alt="Kameron Lethermon - Owner, Lethermon Grade Excavations" className="w-full h-52 object-cover object-top" />
                 <div className="bg-card p-4">
                   <p className="text-[#3D2B1F] text-sm">Kameron Lethermon</p>
-                  <p className="text-[#C4956A] text-xs">Owner / Lead Operator</p>
+                  <p className="text-[#C4956A] text-xs">Owner</p>
                   <p className="text-muted-foreground text-xs mt-1">Your primary contact from estimate to final grade.</p>
                 </div>
               </div>

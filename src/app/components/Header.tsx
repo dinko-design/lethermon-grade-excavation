@@ -189,6 +189,7 @@ export function Header() {
               <div className="flex flex-col gap-0.5 px-3 pb-2">
                 {[
                   { to: "/about", label: "About" },
+                  { to: "/team", label: "Team" },
                   { to: "/reviews", label: "Reviews" },
                   { to: "/blog", label: "Blog" },
                   { to: "/service-areas", label: "Service Areas" },

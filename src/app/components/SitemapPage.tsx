@@ -12,6 +12,7 @@ export function SitemapPage() {
       links: [
         { to: "/", label: "Home" },
         { to: "/about", label: "About Us" },
+        { to: "/team", label: "Our Team" },
         { to: "/contact", label: "Contact / Free Estimate" },
         { to: "/reviews", label: "Client Reviews" },
         { to: "/projects", label: "Projects Portfolio" },
@@ -51,6 +52,16 @@ export function SitemapPage() {
         { to: "/careers", label: "Careers" },
         { to: "/press-releases", label: "Press Releases" },
         { to: "/media-kit", label: "Media Kit" },
+      ],
+    },
+    {
+      title: "Offers & Landing Pages",
+      links: [
+        { to: "/offer/land-clearing", label: "Land Clearing Offer" },
+        { to: "/offer/excavation", label: "Excavation Offer" },
+        { to: "/offer/site-grading", label: "Site Grading Offer" },
+        { to: "/offer/drainage", label: "Drainage Offer" },
+        { to: "/offer/demolition", label: "Demolition Offer" },
       ],
     },
     {
