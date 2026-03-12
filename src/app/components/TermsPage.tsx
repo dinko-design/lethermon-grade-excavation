@@ -35,7 +35,7 @@ export function TermsPage() {
             { title: "10. Limitation of Liability", body: `To the maximum extent permitted by law, ${companyName} shall not be liable for any indirect, incidental, special, or consequential damages arising from the use of this Site or our services.` },
             { title: "11. Governing Law", body: "These Terms and Conditions are governed by the laws of the State of Florida. Any disputes arising from these terms shall be resolved in the courts of Manatee County, Florida." },
             { title: "12. Changes to Terms", body: "We reserve the right to modify these Terms and Conditions at any time. Changes will be posted on this page with an updated revision date. Continued use of the Site after changes constitutes acceptance of the modified terms." },
-            { title: "13. Contact Information", body: `If you have questions about these Terms and Conditions, contact us at:\n\n${companyName}\n${settings?.address || "5429 University Pkwy #1067\nBradenton, FL 34201"}\n${phone}\n${settings?.email || "info@lethermongradeexcavations.com"}` },
+            { title: "13. Contact Information", body: `If you have questions about these Terms and Conditions, contact us at:\n\n${companyName}\n${settings?.address ? `${settings.address.street}, ${settings.address.city}, ${settings.address.state} ${settings.address.zip}` : "5429 University Pkwy #1067\nBradenton, FL 34201"}\n${phone}\n${settings?.email || "info@lethermongradeexcavations.com"}` },
           ].map((s) => (
             <div key={s.title}>
               <h2 className="text-[#3D2B1F] mb-3">{s.title}</h2>

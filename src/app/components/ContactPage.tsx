@@ -94,7 +94,11 @@ export function ContactPage() {
                   </div>
                   <div>
                     <p className="text-[#3D2B1F]">Office</p>
-                    <p className="text-muted-foreground">{settings?.address || "5429 University Pkwy #1067, Bradenton, FL 34201"}</p>
+                    <p className="text-muted-foreground">
+                      {settings?.address
+                        ? `${settings.address.street}, ${settings.address.city}, ${settings.address.state} ${settings.address.zip}`
+                        : "5429 University Pkwy #1067, Bradenton, FL 34201"}
+                    </p>
                   </div>
                 </div>
 

@@ -117,7 +117,7 @@ export function MediaKitPage() {
                 <p><strong className="text-[#3D2B1F]">Kameron Lethermon</strong>, Owner</p>
                 <p className="flex items-center gap-2"><Phone className="w-3.5 h-3.5 text-[#C4956A]" /> {phone}</p>
                 <p className="flex items-center gap-2"><Mail className="w-3.5 h-3.5 text-[#C4956A]" /> {settings?.email || "info@lethermongradeexcavations.com"}</p>
-                <p className="flex items-center gap-2"><MapPin className="w-3.5 h-3.5 text-[#C4956A]" /> {settings?.address || "5429 University Pkwy #1067, Bradenton, FL 34201"}</p>
+                <p className="flex items-center gap-2"><MapPin className="w-3.5 h-3.5 text-[#C4956A]" /> {settings?.address ? `${settings.address.street}, ${settings.address.city}, ${settings.address.state} ${settings.address.zip}` : "5429 University Pkwy #1067, Bradenton, FL 34201"}</p>
               </div>
               <div className="space-y-2">
                 <Link to="/press-releases" className="flex items-center gap-2 text-[#C4956A] text-sm hover:underline"><FileText className="w-3.5 h-3.5" /> View Press Releases</Link>
