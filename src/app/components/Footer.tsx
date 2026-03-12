@@ -43,6 +43,9 @@ export function Footer() {
           <div>
             <h3 className="text-[#C4956A] mb-4 text-xs uppercase tracking-wider">Services</h3>
             <ul className="space-y-2">
+              <li>
+                <Link to="/services" className="text-gray-400 hover:text-[#C4956A] transition-colors text-sm font-medium">All Services</Link>
+              </li>
               {[
                 { to: "/services/land-clearing", label: "Land Clearing" },
                 { to: "/services/excavation", label: "Excavation" },
@@ -106,6 +109,7 @@ export function Footer() {
             <ul className="space-y-2">
               {[
                 { to: "/blog", label: "Blog" },
+                { to: "/videos", label: "Videos" },
                 { to: "/press-releases", label: "Press Releases" },
                 { to: "/media-kit", label: "Media Kit" },
                 { to: "/location", label: "Location" },

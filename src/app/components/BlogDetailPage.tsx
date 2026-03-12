@@ -1,7 +1,8 @@
 import { Link, useParams } from "react-router";
-import { Clock, ArrowLeft, ArrowRight, Phone, Share2 } from "lucide-react";
+import { Clock, ArrowLeft, ArrowRight, Phone, Share2, Play } from "lucide-react";
 import { ImageWithFallback } from "./figma/ImageWithFallback";
 import { useBlogPosts } from "../providers/SanityProvider";
+import { videos } from "./data";
 import { usePageSEO } from "../hooks/usePageSEO";
 import { useMemo } from "react";
 
@@ -168,6 +169,41 @@ export function BlogDetailPage() {
               Read Client Reviews →
             </Link>
           </div>
+
+          {/* Related videos */}
+          {(videos.filter((v) => v.blogSlugs?.includes(post.slug)).length > 0 || videos.length > 0) && (
+            <div className="mt-12">
+              <h3 className="text-lg font-semibold text-[#3D2B1F] mb-4">Related Videos</h3>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                {(videos.filter((v) => v.blogSlugs?.includes(post.slug)).length > 0
+                  ? videos.filter((v) => v.blogSlugs?.includes(post.slug))
+                  : videos.slice(0, 2)
+                ).map((video) => (
+                  <Link
+                    key={video.slug}
+                    to={`/videos/${video.slug}`}
+                    className="group flex gap-4 bg-card rounded-lg p-4 border border-border hover:border-[#C4956A]/30 transition-all"
+                  >
+                    <div className="relative w-32 h-20 flex-shrink-0 rounded overflow-hidden bg-[#2A1D12]">
+                      <img src={video.poster} alt={video.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform" />
+                      <div className="absolute inset-0 flex items-center justify-center bg-black/20">
+                        <Play className="w-6 h-6 text-white ml-0.5" />
+                      </div>
+                    </div>
+                    <div className="min-w-0">
+                      <span className="text-[#3D2B1F] font-medium text-sm group-hover:text-[#C4956A] transition-colors line-clamp-2">
+                        {video.title}
+                      </span>
+                      <span className="text-[#C4956A] text-xs mt-1 inline-block">Watch video →</span>
+                    </div>
+                  </Link>
+                ))}
+              </div>
+              <Link to="/videos" className="text-[#C4956A] text-sm font-medium hover:underline inline-flex items-center gap-1 mt-3">
+                View all videos <ArrowRight className="w-4 h-4" />
+              </Link>
+            </div>
+          )}
         </div>
       </section>
 

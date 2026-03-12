@@ -8,8 +8,10 @@ const utilityLinks = [
   { to: "/about", label: "About" },
   { to: "/reviews", label: "Reviews" },
   { to: "/blog", label: "Blog" },
+  { to: "/services", label: "Services" },
   { to: "/service-areas", label: "Areas" },
   { to: "/gallery", label: "Gallery" },
+  { to: "/videos", label: "Videos" },
   { to: "/contact", label: "Contact" },
 ];
 
@@ -192,8 +194,10 @@ export function Header() {
                   { to: "/team", label: "Team" },
                   { to: "/reviews", label: "Reviews" },
                   { to: "/blog", label: "Blog" },
+                  { to: "/services", label: "All Services" },
                   { to: "/service-areas", label: "Service Areas" },
                   { to: "/gallery", label: "Gallery" },
+                  { to: "/videos", label: "Videos" },
                   { to: "/trust", label: "Trust & Recognition" },
                   { to: "/careers", label: "Careers" },
                 ].map((link) => (

@@ -1,8 +1,8 @@
 import { Link, useParams } from "react-router";
 import { usePageSEO } from "../hooks/usePageSEO";
-import { MapPin, ArrowRight, Phone, CheckCircle, ArrowLeft, Trees, Shovel, Ruler, Droplets, Building2, Cable } from "lucide-react";
+import { MapPin, ArrowRight, Phone, CheckCircle, ArrowLeft, Trees, Shovel, Ruler, Droplets, Building2, Cable, Play } from "lucide-react";
 import { StarRating } from "./StarRating";
-import { IMG } from "./data";
+import { IMG, videos } from "./data";
 import { useServiceAreas, useReviews, useCompanySettings } from "../providers/SanityProvider";
 import { ImageWithFallback } from "./figma/ImageWithFallback";
 
@@ -528,6 +528,49 @@ export function ServiceAreaDetailPage() {
           </div>
         </div>
       </section>
+
+      {/* Videos from this area */}
+      {videos.filter((v) => v.areaSlugs.includes(area.slug)).length > 0 && (
+        <section className="py-16 bg-background">
+          <div className="max-w-7xl mx-auto px-4">
+            <h2 className="text-2xl text-[#3D2B1F] text-center mb-8">Videos from {area.city}</h2>
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+              {videos
+                .filter((v) => v.areaSlugs.includes(area.slug))
+                .map((video) => (
+                  <Link
+                    key={video.slug}
+                    to={`/videos/${video.slug}`}
+                    className="group block bg-card rounded-xl border border-border overflow-hidden hover:border-[#C4956A]/30 hover:shadow-lg transition-all"
+                  >
+                    <div className="relative aspect-video bg-[#2A1D12]">
+                      <img
+                        src={video.poster}
+                        alt={video.title}
+                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                      />
+                      <div className="absolute inset-0 flex items-center justify-center bg-black/20 group-hover:bg-black/30 transition-colors">
+                        <div className="w-12 h-12 rounded-full bg-[#C4956A] flex items-center justify-center group-hover:scale-110 transition-transform">
+                          <Play className="w-5 h-5 text-white ml-1" />
+                        </div>
+                      </div>
+                    </div>
+                    <div className="p-4">
+                      <span className="text-[#3D2B1F] font-medium text-sm group-hover:text-[#C4956A] transition-colors">
+                        {video.title}
+                      </span>
+                    </div>
+                  </Link>
+                ))}
+            </div>
+            <div className="text-center mt-6">
+              <Link to="/videos" className="text-[#C4956A] text-sm font-medium hover:underline inline-flex items-center gap-1">
+                View all videos <ArrowRight className="w-4 h-4" />
+              </Link>
+            </div>
+          </div>
+        </section>
+      )}
 
       {/* Nearby areas */}
       <section className="py-16 bg-secondary">

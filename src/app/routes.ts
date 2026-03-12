@@ -28,6 +28,9 @@ const TermsPage = lazy(() => import("./components/TermsPage").then((m) => ({ def
 const PrivacyPage = lazy(() => import("./components/PrivacyPage").then((m) => ({ default: m.PrivacyPage })));
 const SitemapPage = lazy(() => import("./components/SitemapPage").then((m) => ({ default: m.SitemapPage })));
 const TeamPage = lazy(() => import("./components/TeamPage").then((m) => ({ default: m.TeamPage })));
+const VideosPage = lazy(() => import("./components/VideosPage").then((m) => ({ default: m.VideosPage })));
+const VideoWatchPage = lazy(() => import("./components/VideoWatchPage").then((m) => ({ default: m.VideoWatchPage })));
+const ServicesPage = lazy(() => import("./components/ServicesPage").then((m) => ({ default: m.ServicesPage })));
 
 // Offer / Landing pages (Google Ads)
 const LandClearingOffer = lazy(() => import("./components/landing/LandClearingOffer").then((m) => ({ default: m.LandClearingOffer })));
@@ -48,6 +51,7 @@ export const router = createBrowserRouter([
       { path: "gallery", Component: GalleryPage },
       { path: "contact", Component: ContactPage },
       // Services
+      { path: "services", Component: ServicesPage },
       { path: "services/land-clearing", Component: LandClearingPage },
       { path: "services/excavation", Component: ExcavationPage },
       { path: "services/site-grading", Component: SiteGradingPage },
@@ -62,6 +66,9 @@ export const router = createBrowserRouter([
       // Service Areas
       { path: "service-areas", Component: ServiceAreasPage },
       { path: "service-areas/:slug", Component: ServiceAreaDetailPage },
+      // Videos
+      { path: "videos", Component: VideosPage },
+      { path: "videos/:slug", Component: VideoWatchPage },
       // Location
       { path: "location", Component: LocationPage },
       // Trust

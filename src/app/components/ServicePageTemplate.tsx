@@ -1,9 +1,10 @@
 import { Link } from "react-router";
-import { CheckCircle, Phone, ArrowRight, Star, Shield, Clock, ChevronRight, MapPin } from "lucide-react";
+import { CheckCircle, Phone, ArrowRight, Star, Shield, Clock, ChevronRight, MapPin, Play } from "lucide-react";
 import { ImageWithFallback } from "./figma/ImageWithFallback";
 import { StarRating } from "./StarRating";
 import { VideoPlaceholder } from "./VideoPlaceholder";
 import { useReviews, useServiceAreas, useCompanySettings } from "../providers/SanityProvider";
+import { videos } from "./data";
 import { usePageSEO } from "../hooks/usePageSEO";
 import type { LucideIcon } from "lucide-react";
 
@@ -177,7 +178,7 @@ export function ServicePageTemplate({ data }: { data: ServicePageData }) {
             <nav className="flex items-center gap-1.5 text-xs text-white/50 mb-5">
               <Link to="/" className="hover:text-white/80 transition-colors">Home</Link>
               <ChevronRight className="w-3 h-3" />
-              <span className="text-white/30">Services</span>
+              <Link to="/services" className="hover:text-white/80 transition-colors">Services</Link>
               <ChevronRight className="w-3 h-3" />
               <span className="text-[#C4956A]">{data.title}</span>
             </nav>
@@ -473,6 +474,75 @@ export function ServicePageTemplate({ data }: { data: ServicePageData }) {
           </div>
         </div>
       </section>
+
+      {/* Related Videos */}
+      {videos.filter((v) => v.serviceSlugs.includes(data.slug)).length > 0 && (
+        <section className="py-16 bg-secondary">
+          <div className="max-w-7xl mx-auto px-4">
+            <h2 className="text-2xl text-[#3D2B1F] text-center mb-8">Watch {data.title} in Action</h2>
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+              {videos
+                .filter((v) => v.serviceSlugs.includes(data.slug))
+                .map((video) => (
+                  <Link
+                    key={video.slug}
+                    to={`/videos/${video.slug}`}
+                    className="group block bg-card rounded-xl border border-border overflow-hidden hover:border-[#C4956A]/30 hover:shadow-lg transition-all"
+                  >
+                    <div className="relative aspect-video bg-[#2A1D12]">
+                      <img
+                        src={video.poster}
+                        alt={video.title}
+                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                      />
+                      <div className="absolute inset-0 flex items-center justify-center bg-black/20 group-hover:bg-black/30 transition-colors">
+                        <div className="w-12 h-12 rounded-full bg-[#C4956A] flex items-center justify-center group-hover:scale-110 transition-transform">
+                          <Play className="w-5 h-5 text-white ml-1" />
+                        </div>
+                      </div>
+                    </div>
+                    <div className="p-4">
+                      <span className="text-[#3D2B1F] font-medium text-sm group-hover:text-[#C4956A] transition-colors">
+                        {video.title}
+                      </span>
+                    </div>
+                  </Link>
+                ))}
+            </div>
+            <div className="text-center mt-6">
+              <Link to="/videos" className="text-[#C4956A] text-sm font-medium hover:underline inline-flex items-center gap-1">
+                View all videos <ArrowRight className="w-4 h-4" />
+              </Link>
+            </div>
+          </div>
+        </section>
+      )}
+
+      {/* Popular areas */}
+      {allServiceAreas.length > 0 && (
+        <section className="py-16 bg-background">
+          <div className="max-w-7xl mx-auto px-4">
+            <h2 className="text-2xl text-[#3D2B1F] text-center mb-8">We Serve These Areas</h2>
+            <div className="flex flex-wrap justify-center gap-3">
+              {allServiceAreas.slice(0, 6).map((area) => (
+                <Link
+                  key={area.slug}
+                  to={`/service-areas/${area.slug}`}
+                  className="px-4 py-2.5 bg-card rounded-lg border border-border hover:border-[#C4956A]/30 text-[#3D2B1F] text-sm font-medium transition-all flex items-center gap-2"
+                >
+                  <MapPin className="w-3.5 h-3.5 text-[#C4956A]" />
+                  {area.city}
+                </Link>
+              ))}
+            </div>
+            <div className="text-center mt-6">
+              <Link to="/service-areas" className="text-[#C4956A] text-sm font-medium hover:underline inline-flex items-center gap-1">
+                View all service areas <ArrowRight className="w-4 h-4" />
+              </Link>
+            </div>
+          </div>
+        </section>
+      )}
 
       {/* CTA */}
       <section className="py-16 bg-[#C4956A] noise-overlay grit-top">

@@ -1,12 +1,12 @@
 import { useState } from "react";
 import { usePageSEO } from "../hooks/usePageSEO";
 import { Link } from "react-router";
-import { Phone, Camera, Play } from "lucide-react";
+import { Phone, Camera } from "lucide-react";
 import kameronTruck from "@/assets/kameron-truck.webp";
 import kameronCollage2 from "@/assets/kameron-collage.webp";
 import { ImageWithFallback } from "./figma/ImageWithFallback";
 import { VideoPlaceholder } from "./VideoPlaceholder";
-import { IMG } from "./data";
+import { IMG, videos } from "./data";
 import { useCompanySettings } from "../providers/SanityProvider";
 import imgOverhead from "@/assets/images/grading-overhead-commercial.webp";
 import imgClearing from "@/assets/images/land-clearing-stump-removal.webp";
@@ -25,14 +25,6 @@ import imgPoolBackfill from "@/assets/images/excavation-pool-backfill.webp";
 import imgDrainageSunset from "@/assets/images/drainage-pvc-sunset.webp";
 import imgSarasota from "@/assets/images/grading-sarasota-custom-home.webp";
 import imgYanmar from "@/assets/images/excavation-yanmar-residential.webp";
-import heroVideo from "@/assets/videos/hero-background.mp4";
-import heroPoster from "@/assets/videos/hero-background-poster.webp";
-import clearingVideo from "@/assets/videos/land-clearing.mp4";
-import clearingPoster from "@/assets/videos/land-clearing-poster.webp";
-import demoVideo from "@/assets/videos/demolition-longboat-key.mp4";
-import demoPoster from "@/assets/videos/demolition-longboat-key-poster.webp";
-import gradingVideo from "@/assets/videos/grading-drone.mp4";
-import gradingPoster from "@/assets/videos/grading-drone-poster.webp";
 
 const categories = ["All", "Land Clearing", "Excavation", "Grading", "Drainage", "Demolition", "Equipment"];
 
@@ -56,13 +48,6 @@ const galleryItems = [
   { img: imgPoolBackfill, title: "Pool Rough Grade Backfill", cat: "Excavation", location: "Sarasota, FL", alt: "Completed pool shell with graded backfill ready for deck work in Sarasota FL" },
   { img: kameronTruck, title: "Branded Truck on Jobsite", cat: "Equipment", location: "Sarasota, FL", alt: "Lethermon Grade Excavations branded work truck with excavator on active jobsite" },
   { img: kameronCollage2, title: "Kameron Lethermon at Work", cat: "Equipment", location: "Bradenton, FL", alt: "Kameron Lethermon owner of Lethermon Grade Excavations on jobsite in Bradenton FL" },
-];
-
-const videos = [
-  { title: "Land Clearing Timelapse", thumbnail: clearingPoster, videoSrc: clearingVideo },
-  { title: "Drone Grading Footage", thumbnail: gradingPoster, videoSrc: gradingVideo },
-  { title: "Demolition Project", thumbnail: demoPoster, videoSrc: demoVideo },
-  { title: "Equipment on Site", thumbnail: heroPoster, videoSrc: heroVideo },
 ];
 
 export function GalleryPage() {
@@ -151,19 +136,28 @@ export function GalleryPage() {
             <p className="text-[#C4956A] uppercase tracking-wider text-sm mb-2">Video Gallery</p>
             <h2 className="text-3xl text-white">Watch Our Projects</h2>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {videos.map((v) => (
-              <VideoPlaceholder
-                key={v.title}
-                title={v.title}
-                thumbnail={v.thumbnail}
-                videoSrc={v.videoSrc}
-                className="h-52"
-              />
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {videos.map((video) => (
+              <div key={video.slug} className="flex flex-col">
+                <VideoPlaceholder
+                  title={video.title}
+                  thumbnail={video.poster}
+                  videoSrc={video.videoSrc}
+                  className="h-52"
+                />
+                <Link
+                  to={`/videos/${video.slug}`}
+                  className="mt-3 text-center text-[#C4956A] text-sm font-medium hover:underline"
+                >
+                  Watch on video page →
+                </Link>
+              </div>
             ))}
           </div>
-          <p className="text-center text-gray-400 text-sm mt-8">
-            Video content coming soon. Subscribe to our channel for project updates.
+          <p className="text-center mt-8">
+            <Link to="/videos" className="text-[#C4956A] font-medium hover:underline inline-flex items-center gap-1">
+              Browse all videos
+            </Link>
           </p>
         </div>
       </section>

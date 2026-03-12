@@ -18,6 +18,17 @@ import imgCrane from "@/assets/images/demolition-waterfront-cover.webp";
 import imgExcavatorArm from "@/assets/images/excavation-yanmar-residential.webp";
 import imgExcavatorBucket from "@/assets/images/excavation-pool-backfill.webp";
 
+import heroVideo from "@/assets/videos/hero-background.mp4";
+import heroPoster from "@/assets/videos/hero-background-poster.webp";
+import clearingVideo from "@/assets/videos/land-clearing.mp4";
+import clearingPoster from "@/assets/videos/land-clearing-poster.webp";
+import demoVideo from "@/assets/videos/demolition-longboat-key.mp4";
+import demoPoster from "@/assets/videos/demolition-longboat-key-poster.webp";
+import gradingVideo from "@/assets/videos/grading-drone.mp4";
+import gradingPoster from "@/assets/videos/grading-drone-poster.webp";
+import drainageVideo from "@/assets/videos/drainage-retention-pond.mp4";
+import drainagePoster from "@/assets/videos/drainage-retention-pond-poster.webp";
+
 export const IMG = {
   excavatorDig: imgExcavatorDig,
   bulldozerClear: imgBulldozerClear,
@@ -165,6 +176,76 @@ export const serviceAreasDetailed: Record<string, {
     servicesHighlight: ["Large lot clearing for estate homes", "Rock excavation capabilities", "Subdivision pad preparation", "Drainage for flood-prone areas"],
   },
 };
+
+export interface VideoItem {
+  slug: string;
+  title: string;
+  description: string;
+  videoSrc: string;
+  poster: string;
+  serviceSlugs: string[];
+  areaSlugs: string[];
+  blogSlugs?: string[];
+  date?: string;
+}
+
+export const videos: VideoItem[] = [
+  {
+    slug: "land-clearing-timelapse",
+    title: "Land Clearing Timelapse",
+    description: "Watch our crew clear a residential lot — brush, stumps, and debris removed with professional equipment. Land clearing is the first step to a build-ready site in Southwest Florida.",
+    videoSrc: clearingVideo,
+    poster: clearingPoster,
+    serviceSlugs: ["land-clearing"],
+    areaSlugs: [],
+    blogSlugs: ["land-clearing-cost-florida"],
+    date: "2025-11-01",
+  },
+  {
+    slug: "grading-drone-footage",
+    title: "Drone Grading Footage",
+    description: "Aerial view of laser-guided site grading in action. See how we achieve precision elevations and drainage slopes for foundation pads and commercial sites.",
+    videoSrc: gradingVideo,
+    poster: gradingPoster,
+    serviceSlugs: ["site-grading"],
+    areaSlugs: [],
+    blogSlugs: ["site-grading-importance-florida-construction"],
+    date: "2025-10-15",
+  },
+  {
+    slug: "demolition-longboat-key",
+    title: "Demolition Project — Longboat Key",
+    description: "Waterfront demolition and site cleanup. Our crew removes structures safely and leaves the site ready for the next phase of development.",
+    videoSrc: demoVideo,
+    poster: demoPoster,
+    serviceSlugs: ["demolition"],
+    areaSlugs: ["sarasota"],
+    blogSlugs: [],
+    date: "2025-09-20",
+  },
+  {
+    slug: "equipment-on-site",
+    title: "Equipment on Site",
+    description: "Our heavy equipment fleet in action — excavators, dozers, and compactors working on excavation and site preparation projects across Bradenton and Sarasota.",
+    videoSrc: heroVideo,
+    poster: heroPoster,
+    serviceSlugs: ["excavation", "site-grading"],
+    areaSlugs: ["bradenton"],
+    blogSlugs: ["choosing-excavation-contractor-florida"],
+    date: "2025-08-10",
+  },
+  {
+    slug: "drainage-retention-pond",
+    title: "Drainage & Retention Pond Installation",
+    description: "Installing drainage systems and retention areas. Proper water management is critical for Florida properties — see how we handle stormwater and erosion control.",
+    videoSrc: drainageVideo,
+    poster: drainagePoster,
+    serviceSlugs: ["drainage"],
+    areaSlugs: ["palmetto"],
+    blogSlugs: ["florida-drainage-problems-solutions"],
+    date: "2025-07-05",
+  },
+];
 
 export const blogPosts = [
   {
