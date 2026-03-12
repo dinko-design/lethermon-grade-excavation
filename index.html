@@ -29,9 +29,12 @@
     <meta name="twitter:description" content="Professional excavation, land clearing, site grading, drainage, demolition, and trenching in Southwest Florida." />
     <meta name="twitter:image" content="https://www.lethermongradeexcavations.com/og-image.jpg" />
 
-    <!-- Fonts: preconnect + non-blocking load -->
+    <!-- Preconnect to critical origins -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://54e85gr0.apicdn.sanity.io" crossorigin />
+
+    <!-- Fonts: non-blocking load -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;700;800&display=swap" media="print" onload="this.media='all'" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" media="print" onload="this.media='all'" />
     <noscript>
@@ -44,6 +47,11 @@
   </head>
 
   <body>
+    <!-- Static hero shell: paints immediately while React loads, hidden once app mounts -->
+    <div id="hero-shell" style="position:relative;min-height:600px;background:#1a1008;overflow:hidden">
+      <img src="/hero-jobsite.webp" alt="" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover" width="960" height="831" fetchpriority="high" />
+      <div style="position:absolute;inset:0;background:linear-gradient(to right,rgba(26,16,8,.95),rgba(26,16,8,.80),rgba(26,16,8,.30))"></div>
+    </div>
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
   </body>

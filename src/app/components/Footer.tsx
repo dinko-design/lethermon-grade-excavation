@@ -1,4 +1,4 @@
-import logo from "@/assets/206a28336ec240b04f829ff9f6ee440a4dd2c962.png";
+import logo from "@/assets/206a28336ec240b04f829ff9f6ee440a4dd2c962.webp";
 import dinkoLogo from "@/assets/2645bec3cc98ea2f8dc68f9a6126a41bc9481e51.png";
 import { Link } from "react-router";
 import { Phone, MapPin, Mail, Clock } from "lucide-react";
@@ -19,7 +19,7 @@ export function Footer() {
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8">
           {/* Company */}
           <div className="col-span-2 md:col-span-3 lg:col-span-2">
-            <img src={logo} alt="Lethermon Grade Excavations" className="h-20 w-auto mb-4 brightness-0 invert" />
+            <img src={logo} alt="Lethermon Grade Excavations" className="h-20 w-auto mb-4 brightness-0 invert" width={200} height={114} loading="lazy" />
             <p className="text-gray-400 text-sm mb-4">
               Professional excavation & site preparation serving Southwest Florida.
               Discipline. Precision. Reliability.

@@ -1,7 +1,7 @@
 import { useState, useEffect, useRef } from "react";
 import { Link, useLocation } from "react-router";
 import { Menu, X, Phone, MapPin, Trees, Shovel, Ruler, Droplets, Building2, Cable } from "lucide-react";
-import logo from "@/assets/206a28336ec240b04f829ff9f6ee440a4dd2c962.png";
+import logo from "@/assets/206a28336ec240b04f829ff9f6ee440a4dd2c962.webp";
 import { useCompanySettings } from "../providers/SanityProvider";
 
 const utilityLinks = [
@@ -105,7 +105,7 @@ export function Header() {
         <div className="max-w-7xl mx-auto px-4">
           <div className="flex items-center justify-between h-20 lg:h-24">
             <Link to="/" className="flex-shrink-0">
-              <img src={logo} alt="Lethermon Grade Excavations" className="h-14 lg:h-20 w-auto" />
+              <img src={logo} alt="Lethermon Grade Excavations" className="h-14 lg:h-20 w-auto" width={200} height={114} />
             </Link>
 
             {/* Desktop service links - stacked icon/text */}
@@ -152,6 +152,7 @@ export function Header() {
               <button
                 className="text-[#3D2B1F] p-2"
                 onClick={() => setMobileOpen(!mobileOpen)}
+                aria-label={mobileOpen ? "Close navigation menu" : "Open navigation menu"}
               >
                 {mobileOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
               </button>

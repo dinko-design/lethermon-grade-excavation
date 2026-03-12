@@ -469,10 +469,10 @@ export function HomePage() {
         <div className="max-w-7xl mx-auto px-4">
           <div className="flex items-end justify-between mb-8">
             <div>
-              <p className="text-[#C4956A] uppercase tracking-wider text-sm mb-2">Resources</p>
+              <p className="text-[#9B7347] uppercase tracking-wider text-sm mb-2">Resources</p>
               <h2 className="text-2xl text-[#3D2B1F]">From Our Blog</h2>
             </div>
-            <Link to="/blog" className="text-[#C4956A] text-sm flex items-center gap-1 hover:gap-2 transition-all">
+            <Link to="/blog" className="text-[#9B7347] text-sm flex items-center gap-1 hover:gap-2 transition-all">
               All Articles <ArrowRight className="w-4 h-4" />
             </Link>
           </div>
@@ -488,7 +488,7 @@ export function HomePage() {
                 </div>
                 <div className="p-5">
                   <h3 className="text-[#3D2B1F] text-sm">{post.title}</h3>
-                  <span className="text-[#C4956A] text-xs mt-2 flex items-center gap-1 group-hover:gap-2 transition-all">Read Article <ArrowRight className="w-3 h-3" /></span>
+                  <span className="text-[#9B7347] text-xs mt-2 flex items-center gap-1 group-hover:gap-2 transition-all">Read Article <ArrowRight className="w-3 h-3" /></span>
                 </div>
               </Link>
             ))}
