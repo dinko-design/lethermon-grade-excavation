@@ -18,7 +18,7 @@ export function LandingLayout() {
   const phoneTel = settings?.phoneTel || "9412907208";
 
   return (
-    <div className="min-h-screen flex flex-col antialiased" style={{ fontFamily: "'Inter', sans-serif" }}>
+    <div className="min-h-screen flex flex-col antialiased" style={{ fontFamily: "var(--font-inter), 'Inter', sans-serif" }}>
       <ScrollToTop />
 
       {/* Minimal Header — logo + phone only */}

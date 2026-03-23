@@ -318,7 +318,7 @@ export function HomePage() {
             <div className="max-w-7xl mx-auto px-4 w-full">
               <div className="max-w-2xl">
                 <p className="text-[#C4956A] uppercase tracking-widest text-sm md:text-base mb-4 font-medium">On Every Jobsite</p>
-                <h2 className="text-white text-4xl md:text-5xl lg:text-6xl mb-5 leading-tight" style={{ fontFamily: "'Outfit', sans-serif" }}>Our Name Is on the Truck</h2>
+                <h2 className="text-white text-4xl md:text-5xl lg:text-6xl mb-5 leading-tight" style={{ fontFamily: "var(--font-outfit), 'Outfit', sans-serif" }}>Our Name Is on the Truck</h2>
                 <p className="text-gray-200 text-base md:text-lg lg:text-xl leading-relaxed max-w-xl">
                   When you hire Lethermon, you get the owner on-site directing a professional crew — not a subcontractor you've never met.
                 </p>

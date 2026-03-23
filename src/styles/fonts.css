@@ -1,1 +1,2 @@
-/* Fonts loaded via <link> tags in index.html for non-blocking rendering */
+/* Fonts self-hosted via next/font/google in app/layout.tsx */
+/* CSS variables --font-outfit and --font-inter are set on <html> */

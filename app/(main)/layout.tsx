@@ -96,7 +96,7 @@ export default function MainLayout({ children }: { children: React.ReactNode }) 
   const organizationSchema = useOrganizationSchema();
 
   return (
-    <div className="min-h-screen flex flex-col antialiased" style={{ fontFamily: "'Inter', sans-serif" }}>
+    <div className="min-h-screen flex flex-col antialiased">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}

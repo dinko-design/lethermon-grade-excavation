@@ -104,7 +104,7 @@ export function Layout() {
   const organizationSchema = useOrganizationSchema();
 
   return (
-    <div className="min-h-screen flex flex-col antialiased" style={{ fontFamily: "'Inter', sans-serif" }}>
+    <div className="min-h-screen flex flex-col antialiased" style={{ fontFamily: "var(--font-inter), 'Inter', sans-serif" }}>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}

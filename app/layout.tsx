@@ -1,6 +1,21 @@
 import type { Metadata } from "next";
+import { Outfit, Inter } from "next/font/google";
 import "@/styles/index.css";
 import { SanityProvider } from "@/app/providers/SanityProvider";
+
+const outfit = Outfit({
+  subsets: ["latin"],
+  weight: ["500", "600", "700", "800"],
+  display: "swap",
+  variable: "--font-outfit",
+});
+
+const inter = Inter({
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700", "800"],
+  display: "swap",
+  variable: "--font-inter",
+});
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.lethermongradeexcavations.com"),
@@ -31,22 +46,10 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en">
+    <html lang="en" className={`${outfit.variable} ${inter.variable}`}>
       <head>
-        {/* Preconnect to critical origins */}
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        {/* Preconnect to Sanity CDN */}
         <link rel="preconnect" href="https://54e85gr0.apicdn.sanity.io" crossOrigin="anonymous" />
-
-        {/* Fonts */}
-        <link
-          rel="stylesheet"
-          href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;700;800&display=swap"
-        />
-        <link
-          rel="stylesheet"
-          href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
-        />
       </head>
       <body>
         <SanityProvider>{children}</SanityProvider>

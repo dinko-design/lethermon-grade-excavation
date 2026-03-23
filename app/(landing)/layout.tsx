@@ -9,7 +9,7 @@ export default function LandingLayout({ children }: { children: React.ReactNode 
   const phoneTel = settings?.phoneTel || "9412907208";
 
   return (
-    <div className="min-h-screen flex flex-col antialiased" style={{ fontFamily: "'Inter', sans-serif" }}>
+    <div className="min-h-screen flex flex-col antialiased">
       {/* Minimal Header — logo + phone only */}
       <header className="sticky top-0 z-50 bg-[#3D2B1F] border-b border-white/10">
         <div className="max-w-7xl mx-auto px-4 flex items-center justify-between h-16">

@@ -93,7 +93,7 @@ export function LandingPageTemplate({ data }: { data: LandingPageData }) {
               <span className="text-[#C4956A] text-sm font-medium">{data.hero.offer}</span>
             </div>
 
-            <h1 className="text-white text-3xl sm:text-4xl md:text-5xl leading-tight mb-4" style={{ fontFamily: "'Outfit', sans-serif" }}>
+            <h1 className="text-white text-3xl sm:text-4xl md:text-5xl leading-tight mb-4" style={{ fontFamily: "var(--font-outfit), 'Outfit', sans-serif" }}>
               {data.hero.headline}
             </h1>
             <p className="text-gray-300 text-lg md:text-xl mb-6 leading-relaxed">
@@ -152,7 +152,7 @@ export function LandingPageTemplate({ data }: { data: LandingPageData }) {
       {/* ── Section 3: Visual Proof ── */}
       <section className="py-16 md:py-20 bg-background">
         <div className="max-w-7xl mx-auto px-4">
-          <h2 className="text-[#3D2B1F] text-2xl md:text-3xl mb-10 text-center" style={{ fontFamily: "'Outfit', sans-serif" }}>
+          <h2 className="text-[#3D2B1F] text-2xl md:text-3xl mb-10 text-center" style={{ fontFamily: "var(--font-outfit), 'Outfit', sans-serif" }}>
             {data.proofSection.heading}
           </h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
@@ -173,7 +173,7 @@ export function LandingPageTemplate({ data }: { data: LandingPageData }) {
           </div>
           {data.proofSection.stat && (
             <div className="mt-8 text-center">
-              <span className="text-[#C4956A] text-4xl font-bold" style={{ fontFamily: "'Outfit', sans-serif" }}>
+              <span className="text-[#C4956A] text-4xl font-bold" style={{ fontFamily: "var(--font-outfit), 'Outfit', sans-serif" }}>
                 {data.proofSection.stat.value}
               </span>
               <span className="text-muted-foreground text-lg ml-2">{data.proofSection.stat.label}</span>
@@ -185,7 +185,7 @@ export function LandingPageTemplate({ data }: { data: LandingPageData }) {
       {/* ── Section 4: Clear Offer ── */}
       <section className="py-16 md:py-20 bg-secondary noise-overlay">
         <div className="relative z-10 max-w-4xl mx-auto px-4 text-center">
-          <h2 className="text-[#3D2B1F] text-2xl md:text-3xl mb-4" style={{ fontFamily: "'Outfit', sans-serif" }}>
+          <h2 className="text-[#3D2B1F] text-2xl md:text-3xl mb-4" style={{ fontFamily: "var(--font-outfit), 'Outfit', sans-serif" }}>
             {data.offerSection.heading}
           </h2>
           <p className="text-muted-foreground text-lg mb-8 max-w-2xl mx-auto">
@@ -215,7 +215,7 @@ export function LandingPageTemplate({ data }: { data: LandingPageData }) {
       {/* ── Section 5: Process ── */}
       <section className="py-16 md:py-20 bg-[#3D2B1F] noise-overlay grit-top grit-bottom">
         <div className="relative z-10 max-w-7xl mx-auto px-4">
-          <h2 className="text-white text-2xl md:text-3xl mb-12 text-center" style={{ fontFamily: "'Outfit', sans-serif" }}>
+          <h2 className="text-white text-2xl md:text-3xl mb-12 text-center" style={{ fontFamily: "var(--font-outfit), 'Outfit', sans-serif" }}>
             How It Works
           </h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -244,7 +244,7 @@ export function LandingPageTemplate({ data }: { data: LandingPageData }) {
         <section className="py-16 md:py-20 bg-background">
           <div className="max-w-7xl mx-auto px-4">
             <div className="text-center mb-12">
-              <h2 className="text-[#3D2B1F] text-2xl md:text-3xl mb-3" style={{ fontFamily: "'Outfit', sans-serif" }}>
+              <h2 className="text-[#3D2B1F] text-2xl md:text-3xl mb-3" style={{ fontFamily: "var(--font-outfit), 'Outfit', sans-serif" }}>
                 What Our Clients Say
               </h2>
               <div className="flex items-center justify-center gap-2">
@@ -312,7 +312,7 @@ export function LandingPageTemplate({ data }: { data: LandingPageData }) {
       {/* ── Final CTA ── */}
       <section className="py-12 bg-[#C4956A]">
         <div className="max-w-4xl mx-auto px-4 text-center">
-          <h2 className="text-white text-2xl md:text-3xl mb-4" style={{ fontFamily: "'Outfit', sans-serif" }}>
+          <h2 className="text-white text-2xl md:text-3xl mb-4" style={{ fontFamily: "var(--font-outfit), 'Outfit', sans-serif" }}>
             Ready to Get Started?
           </h2>
           <p className="text-white/80 mb-6">
