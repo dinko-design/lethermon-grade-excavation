@@ -63,6 +63,37 @@ export function HomePage() {
     description:
       "Professional excavation, land clearing, site grading, drainage solutions, demolition, and utility trenching serving Bradenton, Sarasota, Venice, and Lakewood Ranch. 200+ projects. 5-star rated. Call (941) 290-7208 for a free estimate.",
     path: "/",
+    jsonLd: {
+      "@type": "HowTo",
+      name: "How to Get Your Site Prepared with Lethermon Grade Excavations",
+      description: "Our simple 4-step process to go from raw land to a build-ready site.",
+      step: [
+        {
+          "@type": "HowToStep",
+          position: 1,
+          name: "Call or Request Estimate",
+          text: "Tell us about your project. We respond within 24 hours.",
+        },
+        {
+          "@type": "HowToStep",
+          position: 2,
+          name: "Free Site Evaluation",
+          text: "We visit your property to assess soil, drainage, and access.",
+        },
+        {
+          "@type": "HowToStep",
+          position: 3,
+          name: "Transparent Proposal",
+          text: "Receive a detailed quote with clear scope and pricing.",
+        },
+        {
+          "@type": "HowToStep",
+          position: 4,
+          name: "Expert Execution",
+          text: "Our crew prepares your site to spec, ready for the next trade.",
+        },
+      ],
+    },
   });
 
   return (

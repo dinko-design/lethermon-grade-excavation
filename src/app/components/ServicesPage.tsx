@@ -26,13 +26,13 @@ const servicesSchema = {
       "@type": "WebPage",
       name: "Excavation Services | Lethermon Grade Excavations",
       description: "Land clearing, excavation, site grading, drainage, demolition, and utility trenching in Bradenton, Sarasota, and Southwest Florida. Build-ready guarantee.",
-      url: "https://lethermongrade.com/services",
+      url: "https://www.lethermongradeexcavations.com/services",
     },
     {
       "@type": "BreadcrumbList",
       itemListElement: [
-        { "@type": "ListItem", position: 1, name: "Home", item: "https://lethermongrade.com" },
-        { "@type": "ListItem", position: 2, name: "Services", item: "https://lethermongrade.com/services" },
+        { "@type": "ListItem", position: 1, name: "Home", item: "https://www.lethermongradeexcavations.com" },
+        { "@type": "ListItem", position: 2, name: "Services", item: "https://www.lethermongradeexcavations.com/services" },
       ],
     },
     {
@@ -42,7 +42,7 @@ const servicesSchema = {
         "@type": "ListItem",
         position: i + 1,
         name: s.title,
-        url: `https://lethermongrade.com${s.to}`,
+        url: `https://www.lethermongradeexcavations.com${s.to}`,
       })),
     },
   ],

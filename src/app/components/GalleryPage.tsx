@@ -61,7 +61,7 @@ export function GalleryPage() {
     path: "/gallery",
   });
   const [activeCategory, setActiveCategory] = useState("All");
-  const [lightboxImg, setLightboxImg] = useState<string | null>(null);
+  const [lightboxImg, setLightboxImg] = useState<{ img: string; alt: string } | null>(null);
 
   const filtered = activeCategory === "All"
     ? galleryItems
@@ -110,7 +110,7 @@ export function GalleryPage() {
               <div
                 key={`${item.title}-${i}`}
                 className="break-inside-avoid rounded-xl overflow-hidden shadow-sm border border-border bg-card group cursor-pointer"
-                onClick={() => setLightboxImg(item.img)}
+                onClick={() => setLightboxImg({ img: item.img, alt: item.alt })}
               >
                 <div className={`overflow-hidden ${i % 3 === 0 ? "h-72" : i % 3 === 1 ? "h-56" : "h-64"}`}>
                   <ImageWithFallback
@@ -191,7 +191,7 @@ export function GalleryPage() {
           className="fixed inset-0 bg-black/90 z-50 flex items-center justify-center p-4 cursor-pointer"
           onClick={() => setLightboxImg(null)}
         >
-          <img src={lightboxImg} alt="Gallery" className="max-w-full max-h-[90vh] rounded-xl object-contain" />
+          <img src={lightboxImg.img} alt={lightboxImg.alt} className="max-w-full max-h-[90vh] rounded-xl object-contain" />
           <button className="absolute top-6 right-6 text-white text-2xl hover:text-[#C4956A]">&times;</button>
         </div>
       )}

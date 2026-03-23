@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 
 const SITE_NAME = "Lethermon Grade Excavations";
-const BASE_URL = "https://lethermongrade.com";
+const BASE_URL = "https://www.lethermongradeexcavations.com";
 const DEFAULT_OG_IMAGE = `${BASE_URL}/og-image.jpg`;
 
 interface PageSEOConfig {

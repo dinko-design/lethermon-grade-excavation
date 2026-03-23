@@ -20,13 +20,13 @@ export function ServiceAreasPage() {
         "@type": "WebPage",
         name: "Service Areas - Lethermon Grade Excavations",
         description: `Professional excavation services across ${areas.length} Southwest Florida communities. ${totalProjects}+ completed projects in Sarasota, Manatee, Pinellas, and Charlotte counties.`,
-        url: "https://lethermongrade.com/service-areas",
+        url: "https://www.lethermongradeexcavations.com/service-areas",
       },
       {
         "@type": "BreadcrumbList",
         itemListElement: [
-          { "@type": "ListItem", position: 1, name: "Home", item: "https://lethermongrade.com" },
-          { "@type": "ListItem", position: 2, name: "Service Areas", item: "https://lethermongrade.com/service-areas" },
+          { "@type": "ListItem", position: 1, name: "Home", item: "https://www.lethermongradeexcavations.com" },
+          { "@type": "ListItem", position: 2, name: "Service Areas", item: "https://www.lethermongradeexcavations.com/service-areas" },
         ],
       },
       {
@@ -36,7 +36,7 @@ export function ServiceAreasPage() {
           "@type": "ListItem",
           position: i + 1,
           name: `${a.city}, Florida`,
-          url: `https://lethermongrade.com/service-areas/${a.slug}`,
+          url: `https://www.lethermongradeexcavations.com/service-areas/${a.slug}`,
         })),
       },
     ],

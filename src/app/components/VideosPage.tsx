@@ -11,13 +11,13 @@ const videosSchema = {
       "@type": "WebPage",
       name: "Project Videos | Lethermon Grade Excavations",
       description: "Watch excavation, grading, land clearing, demolition, and drainage project videos from Lethermon Grade Excavations. Real jobsites across Bradenton, Sarasota, and Southwest Florida.",
-      url: "https://lethermongrade.com/videos",
+      url: "https://www.lethermongradeexcavations.com/videos",
     },
     {
       "@type": "BreadcrumbList",
       itemListElement: [
-        { "@type": "ListItem", position: 1, name: "Home", item: "https://lethermongrade.com" },
-        { "@type": "ListItem", position: 2, name: "Videos", item: "https://lethermongrade.com/videos" },
+        { "@type": "ListItem", position: 1, name: "Home", item: "https://www.lethermongradeexcavations.com" },
+        { "@type": "ListItem", position: 2, name: "Videos", item: "https://www.lethermongradeexcavations.com/videos" },
       ],
     },
     {
@@ -27,7 +27,7 @@ const videosSchema = {
         "@type": "ListItem",
         position: i + 1,
         name: v.title,
-        url: `https://lethermongrade.com/videos/${v.slug}`,
+        url: `https://www.lethermongradeexcavations.com/videos/${v.slug}`,
       })),
     },
   ],

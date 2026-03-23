@@ -16,7 +16,7 @@ function ArticleSchema({ post }: { post: { title: string; excerpt: string; img?:
         "@type": "Article",
         headline: post.title,
         description: post.excerpt,
-        image: `https://lethermongrade.com${post.img}`,
+        image: `https://www.lethermongradeexcavations.com${post.img}`,
         datePublished: post.date,
         dateModified: post.date,
         author: {
@@ -25,30 +25,30 @@ function ArticleSchema({ post }: { post: { title: string; excerpt: string; img?:
           jobTitle: "Owner",
           worksFor: {
             "@type": "LocalBusiness",
-            "@id": "https://lethermongrade.com/#business",
+            "@id": "https://www.lethermongradeexcavations.com/#business",
             name: "Lethermon Grade Excavations",
           },
         },
         publisher: {
           "@type": "Organization",
           name: "Lethermon Grade Excavations",
-          url: "https://lethermongrade.com",
+          url: "https://www.lethermongradeexcavations.com",
           logo: {
             "@type": "ImageObject",
-            url: "https://lethermongrade.com/logo.png",
+            url: "https://www.lethermongradeexcavations.com/logo.png",
           },
         },
         mainEntityOfPage: {
           "@type": "WebPage",
-          "@id": `https://lethermongrade.com/blog/${post.slug}`,
+          "@id": `https://www.lethermongradeexcavations.com/blog/${post.slug}`,
         },
       },
       {
         "@type": "BreadcrumbList",
         itemListElement: [
-          { "@type": "ListItem", position: 1, name: "Home", item: "https://lethermongrade.com" },
-          { "@type": "ListItem", position: 2, name: "Blog", item: "https://lethermongrade.com/blog" },
-          { "@type": "ListItem", position: 3, name: post.title, item: `https://lethermongrade.com/blog/${post.slug}` },
+          { "@type": "ListItem", position: 1, name: "Home", item: "https://www.lethermongradeexcavations.com" },
+          { "@type": "ListItem", position: 2, name: "Blog", item: "https://www.lethermongradeexcavations.com/blog" },
+          { "@type": "ListItem", position: 3, name: post.title, item: `https://www.lethermongradeexcavations.com/blog/${post.slug}` },
         ],
       },
     ],

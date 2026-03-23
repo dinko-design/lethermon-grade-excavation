@@ -23,7 +23,7 @@ function ReviewsSchema({ reviews, companyName }: { reviews: Array<{name: string;
   const schema = {
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
-    "@id": "https://lethermongrade.com/#business",
+    "@id": "https://www.lethermongradeexcavations.com/#business",
     name: companyName,
     aggregateRating: {
       "@type": "AggregateRating",

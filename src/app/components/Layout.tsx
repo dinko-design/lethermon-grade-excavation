@@ -18,7 +18,7 @@ function useOrganizationSchema() {
 
   return useMemo(() => {
     const s = settings;
-    const baseUrl = s?.website || "https://lethermongrade.com";
+    const baseUrl = s?.website || "https://www.lethermongradeexcavations.com";
 
     return {
       "@context": "https://schema.org",
@@ -100,14 +100,37 @@ function useOrganizationSchema() {
   }, [settings, areas]);
 }
 
+function useWebSiteSchema() {
+  const settings = useCompanySettings();
+  return useMemo(() => {
+    const baseUrl = settings?.website || "https://www.lethermongradeexcavations.com";
+    return {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      name: settings?.name || "Lethermon Grade Excavations",
+      url: baseUrl,
+      potentialAction: {
+        "@type": "SearchAction",
+        target: `${baseUrl}/search?q={search_term_string}`,
+        "query-input": "required name=search_term_string",
+      },
+    };
+  }, [settings]);
+}
+
 export function Layout() {
   const organizationSchema = useOrganizationSchema();
+  const webSiteSchema = useWebSiteSchema();
 
   return (
     <div className="min-h-screen flex flex-col antialiased" style={{ fontFamily: "var(--font-inter), 'Inter', sans-serif" }}>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(webSiteSchema) }}
       />
       <ScrollToTop />
       <Header />

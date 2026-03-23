@@ -10,7 +10,7 @@ function useOrganizationSchema() {
 
   return useMemo(() => {
     const s = settings;
-    const baseUrl = s?.website || "https://lethermongrade.com";
+    const baseUrl = s?.website || "https://www.lethermongradeexcavations.com";
 
     return {
       "@context": "https://schema.org",

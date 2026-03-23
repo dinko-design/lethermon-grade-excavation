@@ -172,7 +172,7 @@ function ServiceGallery({ title, images }: { title: string; images: string[] }) 
                     i === lightboxIndex ? "border-[#C4956A] opacity-100" : "border-transparent opacity-50 hover:opacity-80"
                   }`}
                 >
-                  <img src={img} alt="" className="w-full h-full object-cover" />
+                  <img src={img} alt={`${title} project — photo ${i + 1}`} className="w-full h-full object-cover" />
                 </button>
               ))}
             </div>
@@ -189,12 +189,12 @@ function ServiceSchema({ data, areasList }: { data: ServicePageData; areasList: 
     "@graph": [
       {
         "@type": "Service",
-        "@id": `https://lethermongrade.com/services/${data.slug}#service`,
+        "@id": `https://www.lethermongradeexcavations.com/services/${data.slug}#service`,
         name: `${data.title} - Lethermon Grade Excavations`,
         description: data.tagline,
         provider: {
           "@type": "LocalBusiness",
-          "@id": "https://lethermongrade.com/#business",
+          "@id": "https://www.lethermongradeexcavations.com/#business",
           name: "Lethermon Grade Excavations",
           telephone: "+1-941-290-7208",
           address: {
@@ -217,12 +217,12 @@ function ServiceSchema({ data, areasList }: { data: ServicePageData; areasList: 
             bestRating: "5",
           },
           priceRange: "$$",
-          image: "https://lethermongrade.com/logo.png",
-          url: "https://lethermongrade.com",
+          image: "https://www.lethermongradeexcavations.com/logo.png",
+          url: "https://www.lethermongradeexcavations.com",
           areaServed: areasList.map((a) => ({
             "@type": "City",
             name: a.city,
-            "@id": `https://lethermongrade.com/service-areas/${a.slug}`,
+            "@id": `https://www.lethermongradeexcavations.com/service-areas/${a.slug}`,
           })),
         },
         serviceType: data.title,
@@ -244,7 +244,7 @@ function ServiceSchema({ data, areasList }: { data: ServicePageData; areasList: 
       },
       {
         "@type": "FAQPage",
-        "@id": `https://lethermongrade.com/services/${data.slug}#faq`,
+        "@id": `https://www.lethermongradeexcavations.com/services/${data.slug}#faq`,
         mainEntity: data.faq.map((item) => ({
           "@type": "Question",
           name: item.q,
@@ -261,19 +261,19 @@ function ServiceSchema({ data, areasList }: { data: ServicePageData; areasList: 
             "@type": "ListItem",
             position: 1,
             name: "Home",
-            item: "https://lethermongrade.com",
+            item: "https://www.lethermongradeexcavations.com",
           },
           {
             "@type": "ListItem",
             position: 2,
             name: "Services",
-            item: "https://lethermongrade.com/#services",
+            item: "https://www.lethermongradeexcavations.com/#services",
           },
           {
             "@type": "ListItem",
             position: 3,
             name: data.title,
-            item: `https://lethermongrade.com/services/${data.slug}`,
+            item: `https://www.lethermongradeexcavations.com/services/${data.slug}`,
           },
         ],
       },

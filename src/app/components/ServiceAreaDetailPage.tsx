@@ -1,4 +1,5 @@
 "use client";
+import { useEffect } from "react";
 import { Link } from "@/compat/Link";
 import { useParams } from "next/navigation";
 import { usePageSEO } from "../hooks/usePageSEO";
@@ -197,12 +198,12 @@ function ServiceAreaSchema({ area, companyName, phoneTel }: { area: { city: stri
     "@graph": [
       {
         "@type": "LocalBusiness",
-        "@id": "https://lethermongrade.com/#business",
+        "@id": "https://www.lethermongradeexcavations.com/#business",
         name: companyName,
         description: `Professional excavation and site preparation services in ${area.city}, Florida. Land clearing, grading, drainage, demolition, and utility trenching.`,
         telephone: `+1-${phoneTel.slice(0,3)}-${phoneTel.slice(3,6)}-${phoneTel.slice(6)}`,
-        url: "https://lethermongrade.com",
-        image: "https://lethermongrade.com/logo.png",
+        url: "https://www.lethermongradeexcavations.com",
+        image: "https://www.lethermongradeexcavations.com/logo.png",
         address: {
           "@type": "PostalAddress",
           streetAddress: "1404 21st ST W.",
@@ -250,12 +251,12 @@ function ServiceAreaSchema({ area, companyName, phoneTel }: { area: { city: stri
       },
       {
         "@type": "WebPage",
-        "@id": `https://lethermongrade.com/service-areas/${area.slug}`,
+        "@id": `https://www.lethermongradeexcavations.com/service-areas/${area.slug}`,
         name: `Excavation & Site Prep in ${area.city}, FL - Lethermon Grade Excavations`,
         description: `${area.projects}+ completed excavation projects in ${area.city}. Land clearing, grading, drainage, demolition, and trenching services serving ${area.description}.`,
         isPartOf: {
           "@type": "WebSite",
-          "@id": "https://lethermongrade.com/#website",
+          "@id": "https://www.lethermongradeexcavations.com/#website",
         },
       },
       {
@@ -265,19 +266,19 @@ function ServiceAreaSchema({ area, companyName, phoneTel }: { area: { city: stri
             "@type": "ListItem",
             position: 1,
             name: "Home",
-            item: "https://lethermongrade.com",
+            item: "https://www.lethermongradeexcavations.com",
           },
           {
             "@type": "ListItem",
             position: 2,
             name: "Service Areas",
-            item: "https://lethermongrade.com/service-areas",
+            item: "https://www.lethermongradeexcavations.com/service-areas",
           },
           {
             "@type": "ListItem",
             position: 3,
             name: area.city,
-            item: `https://lethermongrade.com/service-areas/${area.slug}`,
+            item: `https://www.lethermongradeexcavations.com/service-areas/${area.slug}`,
           },
         ],
       },
@@ -310,6 +311,29 @@ export function ServiceAreaDetailPage() {
     description: area ? `Professional excavation, grading, land clearing, and drainage in ${area.city}, FL. ${area.projects}+ projects completed. Serving ${area.city} and surrounding areas. Call ${phone}.` : "",
     path: `/service-areas/${slug}`,
   });
+
+  // Geo meta tags for service area pages
+  useEffect(() => {
+    if (!area) return;
+
+    const setMeta = (name: string, content: string) => {
+      let el = document.querySelector(`meta[name="${name}"]`);
+      if (!el) {
+        el = document.createElement("meta");
+        el.setAttribute("name", name);
+        document.head.appendChild(el);
+      }
+      el.setAttribute("content", content);
+    };
+
+    setMeta("geo.region", "US-FL");
+    setMeta("geo.placename", `${area.city}, Florida`);
+
+    return () => {
+      document.querySelector('meta[name="geo.region"]')?.remove();
+      document.querySelector('meta[name="geo.placename"]')?.remove();
+    };
+  }, [area]);
 
   if (!area) {
     return (
