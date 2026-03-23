@@ -3,8 +3,8 @@ import { useState } from "react";
 import { usePageSEO } from "../hooks/usePageSEO";
 import { Link } from "@/compat/Link";
 import { Phone, Camera } from "lucide-react";
-import kameronTruck from "@/assets/kameron-truck.webp";
-import kameronCollage2 from "@/assets/kameron-collage.webp";
+import imgFleet from "@/assets/images/equipment-deere-fleet.webp";
+import imgCommercialGrading from "@/assets/images/grading-commercial-parking.webp";
 import { ImageWithFallback } from "./figma/ImageWithFallback";
 import { VideoPlaceholder } from "./VideoPlaceholder";
 import { IMG, videos } from "./data";
@@ -47,8 +47,8 @@ const galleryItems = [
   { img: imgDrainageSunset, title: "PVC Pipe Installation at Sunset", cat: "Drainage", location: "Palmetto, FL", alt: "PVC drainage pipes laid in trench near retention pond at sunset in Palmetto FL" },
   { img: imgYanmar, title: "Yanmar Mini Excavator Residential", cat: "Excavation", location: "Bradenton, FL", alt: "Red Yanmar mini excavator at residential foundation excavation site with worker in Bradenton FL" },
   { img: imgPoolBackfill, title: "Pool Rough Grade Backfill", cat: "Excavation", location: "Sarasota, FL", alt: "Completed pool shell with graded backfill ready for deck work in Sarasota FL" },
-  { img: kameronTruck, title: "Branded Truck on Jobsite", cat: "Equipment", location: "Sarasota, FL", alt: "Lethermon Grade Excavations branded work truck with excavator on active jobsite" },
-  { img: kameronCollage2, title: "Kameron Lethermon at Work", cat: "Equipment", location: "Bradenton, FL", alt: "Kameron Lethermon owner of Lethermon Grade Excavations on jobsite in Bradenton FL" },
+  { img: imgFleet, title: "Equipment Fleet on Site", cat: "Equipment", location: "Sarasota, FL", alt: "Lethermon Grade Excavations John Deere equipment fleet on active jobsite in Southwest Florida" },
+  { img: imgCommercialGrading, title: "Commercial Parking Grading", cat: "Grading", location: "Bradenton, FL", alt: "Commercial parking lot grading project in Bradenton FL" },
 ];
 
 export function GalleryPage() {

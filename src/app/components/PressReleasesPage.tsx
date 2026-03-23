@@ -34,19 +34,22 @@ export function PressReleasesPage() {
         <div className="max-w-4xl mx-auto px-4">
           <div className="space-y-8">
             {pressReleases.map((pr) => (
-              <article key={pr.slug} className="bg-card rounded-xl border border-border p-8 shadow-sm">
+              <article key={pr.slug} className="bg-card rounded-xl border border-border p-8 shadow-sm hover:shadow-md transition-shadow">
                 <div className="flex items-center gap-3 mb-3 text-sm text-muted-foreground">
                   <Calendar className="w-4 h-4 text-[#C4956A]" />
                   <time>{new Date(pr.date).toLocaleDateString("en-US", { month: "long", day: "numeric", year: "numeric" })}</time>
                   <span className="text-xs bg-[#C4956A]/10 text-[#C4956A] px-2 py-0.5 rounded-full">Press Release</span>
                 </div>
-                <h2 className="text-xl text-[#3D2B1F] mb-3">{pr.title}</h2>
-                <p className="text-muted-foreground mb-4">{pr.content}</p>
-                <div className="border-t border-border pt-4 mt-4">
-                  <p className="text-xs text-muted-foreground">
-                    <strong className="text-[#3D2B1F]">Media Contact:</strong> Kameron Lethermon, Owner | {phone} | {settings?.email || "info@lethermongradeexcavations.com"}
-                  </p>
-                </div>
+                <Link to={`/press-releases/${pr.slug}`}>
+                  <h2 className="text-xl text-[#3D2B1F] mb-3 hover:text-[#C4956A] transition-colors">{pr.title}</h2>
+                </Link>
+                <p className="text-muted-foreground mb-4">{pr.excerpt}</p>
+                <Link
+                  to={`/press-releases/${pr.slug}`}
+                  className="inline-flex items-center gap-1 text-[#C4956A] text-sm hover:gap-2 transition-all"
+                >
+                  Read Full Release <ArrowRight className="w-4 h-4" />
+                </Link>
               </article>
             ))}
           </div>

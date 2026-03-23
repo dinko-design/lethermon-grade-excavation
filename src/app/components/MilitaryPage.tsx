@@ -6,7 +6,7 @@ import { StarRating } from "./StarRating";
 import { ImageWithFallback } from "./figma/ImageWithFallback";
 import { useCompanySettings } from "../providers/SanityProvider";
 import kameronSite from "@/assets/kameron-site.webp";
-import kameronTruck from "@/assets/kameron-truck.webp";
+import imgFleet from "@/assets/images/equipment-deere-fleet.webp";
 
 const militaryValues = [
   {
@@ -228,11 +228,11 @@ export function MilitaryPage() {
       <section className="relative overflow-hidden">
         <div className="relative h-64 md:h-80">
           <ImageWithFallback
-            src={kameronTruck}
-            alt="Lethermon Grade Excavations branded truck on a Florida jobsite"
+            src={imgFleet}
+            alt="Lethermon Grade Excavations equipment on a Southwest Florida jobsite"
             className="w-full h-full object-cover"
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-[#3D2B1F]/70 via-transparent to-[#3D2B1F]/30" />
+          <div className="absolute inset-0 bg-gradient-to-t from-[#1a1008]/90 via-[#1a1008]/40 to-[#1a1008]/20" />
           <div className="absolute bottom-6 left-0 right-0 text-center">
             <p className="text-[#C4956A] uppercase tracking-wider text-xs mb-1">Military-Owned. Faith-Based. Community-First.</p>
             <p className="text-white/80 text-sm">Proudly serving Bradenton, Sarasota & Southwest Florida</p>

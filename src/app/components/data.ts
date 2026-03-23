@@ -390,25 +390,53 @@ export const blogPosts = [
 
 export const pressReleases = [
   {
-    slug: "lethermon-reaches-200-projects",
-    title: "Lethermon Grade Excavations Completes 200th Project Milestone",
+    slug: "lethermon-launches-new-website-palmetto-headquarters",
+    title: "Lethermon Grade Excavations Launches New Website, Establishes Palmetto Headquarters",
+    date: "2026-03-23",
+    excerpt: "Southwest Florida excavation contractor unveils redesigned website and announces permanent base of operations at 1404 21st ST W in Palmetto, FL.",
+    content: [
+      "PALMETTO, FL — Lethermon Grade Excavations, a military-owned excavation and site preparation contractor serving Southwest Florida, today announced the launch of its redesigned website and the establishment of its permanent headquarters at 1404 21st ST W, Palmetto, FL 34221.",
+      "The new website at lethermongradeexcavations.com features comprehensive service information, project galleries, and an expanded online presence designed to serve builders, developers, and property owners across the Sarasota-Bradenton region. The site includes dedicated pages highlighting the company's faith-based values and military heritage — two pillars that have defined the business since its founding.",
+      "\"Our new website reflects who we are as a company — straightforward, professional, and built on values that matter,\" said owner Kameron Lethermon. \"And our new Palmetto headquarters gives us a permanent base with 14 acres, room for our full equipment fleet, and a central location to serve all of Southwest Florida.\"",
+      "The Palmetto facility features space for the company's growing fleet of excavators, bulldozers, skid steers, and dump trucks, along with material storage and crew staging areas. The location provides direct access to major routes serving Sarasota, Bradenton, Venice, Lakewood Ranch, and surrounding communities.",
+      "With over 1,000 completed projects and a 5.0-star rating across 27+ reviews, Lethermon Grade Excavations has established itself as a trusted partner for residential and commercial excavation, land clearing, site grading, drainage solutions, demolition, and utility trenching throughout Southwest Florida.",
+    ],
+  },
+  {
+    slug: "lethermon-reaches-1000-projects",
+    title: "Lethermon Grade Excavations Surpasses 1,000 Completed Projects",
     date: "2026-01-15",
-    excerpt: "Bradenton-based excavation company celebrates 200 completed projects across Sarasota, Manatee, and Charlotte counties.",
-    content: "BRADENTON, FL — Lethermon Grade Excavations, a full-service excavation and site preparation contractor serving Southwest Florida, announced the completion of its 200th project since founding. The milestone project, a commercial site preparation in Lakewood Ranch, represents the company's continued growth in the Sarasota-Bradenton market. 'Reaching 200 projects is a testament to the trust builders and developers place in our team,' said owner Kameron Lethermon. 'Every project receives the same attention to detail whether it's our first or our 200th.'",
+    excerpt: "Military-owned excavation company celebrates a major milestone with over 1,000 projects completed across Sarasota, Manatee, and Charlotte counties.",
+    content: [
+      "BRADENTON, FL — Lethermon Grade Excavations, a full-service excavation and site preparation contractor serving Southwest Florida, has surpassed 1,000 completed projects since its founding over 15 years ago.",
+      "The milestone reflects the company's steady growth in the Sarasota-Bradenton construction market, where it has built a reputation for reliability, precision, and owner-led operations. Projects range from residential lot clearing and pool excavation to large-scale commercial site development and subdivision infrastructure.",
+      "\"Reaching 1,000 projects is a testament to the trust builders and developers place in our team,\" said owner Kameron Lethermon. \"Every project receives the same attention to detail whether it's a $5,000 residential lot or a $200,000 commercial site. That consistency is what keeps builders coming back.\"",
+      "The company currently operates a fleet of excavators, bulldozers, skid steers, rollers, and dump trucks, supported by laser-guided grading systems for precision site work. Lethermon Grade Excavations serves Sarasota, Bradenton, Venice, Lakewood Ranch, Parrish, Palmetto, St. Petersburg, and North Port.",
+    ],
   },
   {
     slug: "lethermon-expands-equipment-fleet",
     title: "Lethermon Grade Excavations Expands Equipment Fleet",
     date: "2025-10-22",
     excerpt: "Company adds new excavator and grading equipment to support growing demand in Southwest Florida construction market.",
-    content: "BRADENTON, FL — Lethermon Grade Excavations has expanded its equipment fleet with the addition of a new excavator and laser-guided grading system. The expansion supports increasing demand for excavation and site preparation services across the Sarasota-Bradenton region. 'Investing in modern equipment means better results and faster turnaround for our clients,' said Kameron Lethermon. 'The new laser grading system achieves even greater precision for foundation pads and drainage slopes.'",
+    content: [
+      "BRADENTON, FL — Lethermon Grade Excavations has expanded its equipment fleet with the addition of a new excavator and laser-guided grading system. The expansion supports increasing demand for excavation and site preparation services across the Sarasota-Bradenton region.",
+      "The new equipment includes a late-model excavator for foundation digging, pool excavation, and demolition work, along with an upgraded laser grading system that achieves sub-inch accuracy for foundation pads and drainage slopes.",
+      "\"Investing in modern equipment means better results and faster turnaround for our clients,\" said owner Kameron Lethermon. \"The new laser grading system achieves even greater precision, which means fewer callbacks and faster inspections for the builders we work with.\"",
+      "Lethermon Grade Excavations maintains a policy of investing in late-model equipment to minimize downtime and ensure consistent performance across all project types.",
+    ],
   },
   {
     slug: "lethermon-partners-local-builders",
     title: "Lethermon Grade Excavations Establishes Builder Partnership Program",
     date: "2025-08-10",
     excerpt: "New program offers preferred scheduling and pricing for builders committed to ongoing excavation partnerships.",
-    content: "BRADENTON, FL — Lethermon Grade Excavations has launched a Builder Partnership Program designed to streamline the excavation process for builders with ongoing project needs. The program offers preferred scheduling, volume pricing, and dedicated crew availability for participating builders. 'Builders need a reliable excavation partner they can count on project after project,' said Kameron Lethermon. 'Our Builder Partnership Program formalizes that relationship with guaranteed availability and consistent pricing.'",
+    content: [
+      "BRADENTON, FL — Lethermon Grade Excavations has launched a Builder Partnership Program designed to streamline the excavation process for builders with ongoing project needs.",
+      "The program offers preferred scheduling, volume pricing, and dedicated crew availability for participating builders. Partners receive priority access to equipment and crews during peak construction season, along with consistent pricing structures that simplify project budgeting.",
+      "\"Builders need a reliable excavation partner they can count on project after project,\" said owner Kameron Lethermon. \"Our Builder Partnership Program formalizes that relationship with guaranteed availability and consistent pricing. When a builder calls us for their tenth project, they know exactly what to expect.\"",
+      "The program is open to licensed general contractors and builders operating in the Sarasota, Manatee, and Charlotte county areas. Interested builders can contact Lethermon Grade Excavations directly to discuss partnership terms.",
+    ],
   },
 ];
 

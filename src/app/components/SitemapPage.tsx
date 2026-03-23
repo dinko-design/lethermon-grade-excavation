@@ -1,11 +1,12 @@
 "use client";
 import { Link } from "@/compat/Link";
 import { usePageSEO } from "../hooks/usePageSEO";
-import { useServiceAreas, useBlogPosts } from "../providers/SanityProvider";
+import { useServiceAreas, useBlogPosts, usePressReleases } from "../providers/SanityProvider";
 
 export function SitemapPage() {
   const serviceAreas = useServiceAreas();
   const blogPosts = useBlogPosts();
+  const pressReleases = usePressReleases();
 
   const sections = [
     {
@@ -58,6 +59,7 @@ export function SitemapPage() {
         { to: "/military", label: "Military-Owned & Veteran Discount" },
         { to: "/careers", label: "Careers" },
         { to: "/press-releases", label: "Press Releases" },
+        ...pressReleases.map((pr) => ({ to: `/press-releases/${pr.slug}`, label: pr.title })),
         { to: "/media-kit", label: "Media Kit" },
       ],
     },

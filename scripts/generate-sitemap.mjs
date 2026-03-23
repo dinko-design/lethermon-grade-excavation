@@ -68,7 +68,8 @@ const videoSlugs = [
 
 /** Press release slugs */
 const pressReleaseSlugs = [
-  "lethermon-reaches-200-projects",
+  "lethermon-launches-new-website-palmetto-headquarters",
+  "lethermon-reaches-1000-projects",
   "lethermon-expands-equipment-fleet",
   "lethermon-partners-local-builders",
 ];
@@ -132,6 +133,11 @@ const pages = [
 
   // --- Press releases ---
   { loc: "/press-releases", changefreq: "monthly", priority: "0.5" },
+  ...pressReleaseSlugs.map((slug) => ({
+    loc: `/press-releases/${slug}`,
+    changefreq: "monthly",
+    priority: "0.5",
+  })),
 ];
 
 // ---------------------------------------------------------------------------

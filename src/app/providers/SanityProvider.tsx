@@ -99,6 +99,7 @@ function buildStaticFallback(): ContentContextValue {
       slug: pr.slug,
       date: pr.date,
       excerpt: pr.excerpt,
+      content: pr.content,
     })),
     jobListings: staticOpenPositions.map((j, i) => ({
       _id: `job-${i}`,

@@ -23,6 +23,7 @@ const LocationPage = lazy(() => import("./components/LocationPage").then((m) => 
 const TrustPage = lazy(() => import("./components/TrustPage").then((m) => ({ default: m.TrustPage })));
 const CareersPage = lazy(() => import("./components/CareersPage").then((m) => ({ default: m.CareersPage })));
 const PressReleasesPage = lazy(() => import("./components/PressReleasesPage").then((m) => ({ default: m.PressReleasesPage })));
+const PressReleaseDetailPage = lazy(() => import("./components/PressReleaseDetailPage").then((m) => ({ default: m.PressReleaseDetailPage })));
 const MediaKitPage = lazy(() => import("./components/MediaKitPage").then((m) => ({ default: m.MediaKitPage })));
 const TermsPage = lazy(() => import("./components/TermsPage").then((m) => ({ default: m.TermsPage })));
 const PrivacyPage = lazy(() => import("./components/PrivacyPage").then((m) => ({ default: m.PrivacyPage })));
@@ -91,6 +92,7 @@ export const router = createBrowserRouter([
       { path: "careers", Component: CareersPage },
       // Press
       { path: "press-releases", Component: PressReleasesPage },
+      { path: "press-releases/:slug", Component: PressReleaseDetailPage },
       { path: "media-kit", Component: MediaKitPage },
       // Legal
       { path: "terms", Component: TermsPage },
