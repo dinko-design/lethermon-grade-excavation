@@ -11,19 +11,19 @@ const companyDropdownLinks = [
   { to: "/faith", label: "Faith" },
   { to: "/military", label: "Military" },
   { to: "/team", label: "Our Team" },
+  { to: "/reviews", label: "Reviews" },
   { to: "/trust", label: "Trust & Recognition" },
+  { to: "/service-areas", label: "Service Areas" },
+  { to: "/contact", label: "Contact" },
 ];
 
 const companyPaths = companyDropdownLinks.map((l) => l.to);
 
 const utilityLinks = [
-  { to: "/reviews", label: "Reviews" },
   { to: "/blog", label: "Blog" },
   { to: "/services", label: "Services" },
-  { to: "/service-areas", label: "Areas" },
   { to: "/gallery", label: "Gallery" },
   { to: "/videos", label: "Videos" },
-  { to: "/contact", label: "Contact" },
 ];
 
 const serviceLinks = [
@@ -110,7 +110,7 @@ export function Header() {
               {/* Company dropdown */}
               <div className="relative group">
                 <button
-                  className={`flex items-center gap-0.5 hover:text-[#C4956A] transition-colors ${
+                  className={`flex items-center gap-0.5 text-xs hover:text-[#C4956A] transition-colors ${
                     companyPaths.includes(pathname) ? "text-[#C4956A]" : ""
                   }`}
                 >
@@ -255,7 +255,10 @@ export function Header() {
                   { to: "/faith", label: "Faith" },
                   { to: "/military", label: "Military" },
                   { to: "/team", label: "Our Team" },
+                  { to: "/reviews", label: "Reviews" },
                   { to: "/trust", label: "Trust & Recognition" },
+                  { to: "/service-areas", label: "Service Areas" },
+                  { to: "/contact", label: "Contact" },
                 ].map((link) => (
                   <Link
                     key={link.to}
@@ -274,10 +277,8 @@ export function Header() {
               <div className="border-t border-border my-3" />
               <div className="flex flex-col gap-0.5 px-3 pb-2">
                 {[
-                  { to: "/reviews", label: "Reviews" },
                   { to: "/blog", label: "Blog" },
                   { to: "/services", label: "All Services" },
-                  { to: "/service-areas", label: "Service Areas" },
                   { to: "/gallery", label: "Gallery" },
                   { to: "/videos", label: "Videos" },
                   { to: "/careers", label: "Careers" },

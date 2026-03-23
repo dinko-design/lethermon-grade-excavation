@@ -63,7 +63,7 @@ export function Footer() {
           {/* Services */}
           <div>
             <h3 className="text-[#C4956A] mb-4 text-xs uppercase tracking-wider">Services</h3>
-            <ul className="space-y-2">
+            <ul className="space-y-3">
               <li>
                 <Link to="/services" className="text-gray-400 hover:text-[#C4956A] transition-colors text-sm font-medium">All Services</Link>
               </li>
@@ -113,6 +113,7 @@ export function Footer() {
             <h3 className="text-[#C4956A] mb-4 text-xs uppercase tracking-wider">Service Areas</h3>
             <ul className="space-y-2">
               {[
+                { to: "/service-areas", label: "All Areas" },
                 { to: "/service-areas/sarasota", label: "Sarasota" },
                 { to: "/service-areas/bradenton", label: "Bradenton" },
                 { to: "/service-areas/venice", label: "Venice" },
@@ -139,7 +140,6 @@ export function Footer() {
                 { to: "/press-releases", label: "Press Releases" },
                 { to: "/media-kit", label: "Media Kit" },
                 { to: "/location", label: "Location" },
-                { to: "/service-areas", label: "All Areas" },
               ].map((link) => (
                 <li key={link.to}>
                   <Link to={link.to} className="text-gray-400 hover:text-[#C4956A] transition-colors text-sm">{link.label}</Link>
