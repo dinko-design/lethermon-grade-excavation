@@ -20,7 +20,7 @@ export function RatingBadge({ compact = false }: { compact?: boolean }) {
     <div className={`inline-flex items-center gap-2 ${compact ? "" : "bg-white/10 backdrop-blur-sm rounded-full px-4 py-2 border border-white/10"}`}>
       <StarRating rating={5} size={compact ? 14 : 15} />
       <span className={compact ? "text-xs text-muted-foreground" : "text-sm text-white/90"}>
-        5.0 Rating | 47+ Reviews
+        5.0 Rating | 27+ Reviews
       </span>
     </div>
   );

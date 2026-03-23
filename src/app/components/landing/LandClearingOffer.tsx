@@ -23,7 +23,7 @@ const data: LandingPageData = {
   trustBadges: [
     { icon: Shield, label: "Licensed & Insured", detail: "Full liability coverage" },
     { icon: Award, label: "Military-Owned", detail: "Veteran-operated business" },
-    { icon: Star, label: "5.0 Rating", detail: "47+ verified reviews" },
+    { icon: Star, label: "5.0 Rating", detail: "27+ verified reviews" },
     { icon: CheckCircle, label: "1,000+ Projects", detail: "SW Florida since 2009" },
     { icon: Clock, label: "Same-Week Scheduling", detail: "Fast mobilization" },
   ],

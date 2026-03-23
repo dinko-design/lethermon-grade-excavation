@@ -213,7 +213,7 @@ function ServiceSchema({ data, areasList }: { data: ServicePageData; areasList: 
           aggregateRating: {
             "@type": "AggregateRating",
             ratingValue: "5.0",
-            reviewCount: "47",
+            reviewCount: "27",
             bestRating: "5",
           },
           priceRange: "$$",

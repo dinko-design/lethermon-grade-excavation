@@ -57,7 +57,7 @@ function buildStaticFallback(): ContentContextValue {
       address: { street: "1404 21st ST W.", city: "Palmetto", state: "FL", zip: "34221", country: "US" },
       geo: { lat: 27.4989, lng: -82.5748 },
       hours: "Mon-Fri 7AM-5PM, Sat by appointment",
-      aggregateRating: { ratingValue: "5.0", reviewCount: "47", bestRating: "5" },
+      aggregateRating: { ratingValue: "5.0", reviewCount: "27", bestRating: "5" },
       priceRange: "$$",
       projectTypes: staticProjectTypes,
     },

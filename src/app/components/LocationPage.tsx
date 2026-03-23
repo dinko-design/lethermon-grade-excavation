@@ -88,8 +88,7 @@ export function LocationPage() {
                   <div>
                     <p className="text-[#3D2B1F]">Business Hours</p>
                     <div className="text-muted-foreground text-sm space-y-1 mt-1">
-                      <p>Monday - Friday: 7:00 AM - 5:00 PM</p>
-                      <p>Saturday: By Appointment</p>
+                      <p>Monday - Saturday: 7:00 AM - 6:00 PM</p>
                       <p>Sunday: Closed</p>
                       <p className="text-[#C4956A] text-xs mt-2">* Emergency availability for existing clients</p>
                     </div>

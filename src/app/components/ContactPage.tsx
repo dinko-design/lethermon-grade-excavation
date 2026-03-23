@@ -2,13 +2,13 @@
 import { useState } from "react";
 import { useRouter } from "next/navigation";
 import { usePageSEO } from "../hooks/usePageSEO";
-import { Phone, MapPin, Mail, Clock, Send, Loader2 } from "lucide-react";
+import { Phone, MapPin, Clock, Send, Loader2 } from "lucide-react";
 import { StarRating } from "./StarRating";
 import { useCompanySettings } from "../providers/SanityProvider";
 import { ImageWithFallback } from "./figma/ImageWithFallback";
 import { useCaptureAdParams, getGclid } from "../hooks/useGclid";
 import kameronSite from "@/assets/kameron-site.webp";
-import kameronTruck from "@/assets/kameron-truck.webp";
+
 
 export function ContactPage() {
   usePageSEO({
@@ -69,7 +69,7 @@ export function ContactPage() {
           </p>
           <div className="flex items-center gap-2 mt-5">
             <StarRating rating={5} size={16} />
-            <span className="text-white/70 text-sm">5.0 Rating | 47+ Reviews | Free Estimates</span>
+            <span className="text-white/70 text-sm">5.0 Rating | 27+ Reviews | Free Estimates</span>
           </div>
         </div>
       </section>
@@ -95,11 +95,6 @@ export function ContactPage() {
                   <p className="text-[#C4956A] text-xs">Owner</p>
                   <p className="text-muted-foreground text-xs mt-1">Your primary contact from estimate to final grade.</p>
                 </div>
-              </div>
-
-              {/* Branded truck */}
-              <div className="rounded-xl overflow-hidden shadow-md border border-border">
-                <ImageWithFallback src={kameronTruck} alt="Lethermon Grade Excavations branded truck with excavator on jobsite" className="w-full h-40 object-cover" />
               </div>
 
               <div className="space-y-6">
@@ -129,21 +124,11 @@ export function ContactPage() {
 
                 <div className="flex items-start gap-4">
                   <div className="w-12 h-12 rounded-lg bg-[#5C4A1E]/10 flex items-center justify-center flex-shrink-0">
-                    <Mail className="w-5 h-5 text-[#5C4A1E]" />
-                  </div>
-                  <div>
-                    <p className="text-[#3D2B1F]">Email</p>
-                    <p className="text-muted-foreground">{settings?.email || "info@lethermongradeexcavations.com"}</p>
-                  </div>
-                </div>
-
-                <div className="flex items-start gap-4">
-                  <div className="w-12 h-12 rounded-lg bg-[#5C4A1E]/10 flex items-center justify-center flex-shrink-0">
                     <Clock className="w-5 h-5 text-[#5C4A1E]" />
                   </div>
                   <div>
                     <p className="text-[#3D2B1F]">Hours</p>
-                    <p className="text-muted-foreground">Mon - Fri: 7:00 AM - 5:00 PM<br />Sat: By Appointment</p>
+                    <p className="text-muted-foreground">Mon - Sat: 7:00 AM - 6:00 PM<br />Sun: Closed</p>
                   </div>
                 </div>
               </div>

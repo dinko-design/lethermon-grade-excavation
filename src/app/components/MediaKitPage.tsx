@@ -48,7 +48,7 @@ export function MediaKitPage() {
               <div className="space-y-3">
                 <p><strong className="text-[#3D2B1F]">Service Area:</strong> Sarasota, Manatee, Pinellas & Charlotte Counties</p>
                 <p><strong className="text-[#3D2B1F]">Projects Completed:</strong> 1,000+</p>
-                <p><strong className="text-[#3D2B1F]">Rating:</strong> 5.0 Stars (47+ Reviews)</p>
+                <p><strong className="text-[#3D2B1F]">Rating:</strong> 5.0 Stars (27+ Reviews)</p>
                 <p><strong className="text-[#3D2B1F]">Accreditation:</strong> BBB A+ Rated</p>
               </div>
             </div>

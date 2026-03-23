@@ -45,7 +45,7 @@ const guarantees = [
 
 const stats = [
   { value: "1,000+", label: "Projects Completed" },
-  { value: "47+", label: "5-Star Reviews" },
+  { value: "27+", label: "5-Star Reviews" },
   { value: "15+", label: "Years Experience" },
   { value: "100%", label: "Insured & Guaranteed" },
 ];
@@ -336,6 +336,27 @@ export function HomePage() {
         </div>
       </section>
 
+      {/* ═══ Guarantees ═══ */}
+      <section className="py-20 bg-secondary noise-overlay dot-grid grit-bottom">
+        <div className="relative z-10 max-w-7xl mx-auto px-4">
+          <div className="text-center mb-14">
+            <p className="text-[#7E95A8] uppercase tracking-wider text-sm mb-2">Our Pledges</p>
+            <h2 className="text-3xl md:text-4xl text-[#3D2B1F] mb-4">Guarantees You Can Count On</h2>
+          </div>
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
+            {guarantees.map((g) => (
+              <div key={g.title} className="text-center p-5 md:p-8 rounded-xl bg-card border border-border shadow-sm hover:shadow-md hover:-translate-y-0.5 transition-all duration-300">
+                <div className="w-14 h-14 md:w-16 md:h-16 rounded-full bg-[#7E95A8]/10 flex items-center justify-center mx-auto mb-4 md:mb-5">
+                  <g.icon className="w-6 h-6 md:w-8 md:h-8 text-[#7E95A8]" />
+                </div>
+                <h3 className="text-[#3D2B1F] text-sm md:text-base mb-2 md:mb-3">{g.title}</h3>
+                <p className="text-muted-foreground text-xs md:text-sm">{g.desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* ═══ Branded Truck Banner ═══ */}
       <section className="relative py-0 overflow-hidden">
         <div className="relative h-[50vh] md:h-[60vh] lg:h-[70vh]">
@@ -360,27 +381,6 @@ export function HomePage() {
         </div>
       </section>
 
-      {/* ═══ Guarantees ═══ */}
-      <section className="py-20 bg-secondary noise-overlay dot-grid grit-bottom">
-        <div className="relative z-10 max-w-7xl mx-auto px-4">
-          <div className="text-center mb-14">
-            <p className="text-[#7E95A8] uppercase tracking-wider text-sm mb-2">Our Pledges</p>
-            <h2 className="text-3xl md:text-4xl text-[#3D2B1F] mb-4">Guarantees You Can Count On</h2>
-          </div>
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
-            {guarantees.map((g) => (
-              <div key={g.title} className="text-center p-5 md:p-8 rounded-xl bg-card border border-border shadow-sm hover:shadow-md hover:-translate-y-0.5 transition-all duration-300">
-                <div className="w-14 h-14 md:w-16 md:h-16 rounded-full bg-[#7E95A8]/10 flex items-center justify-center mx-auto mb-4 md:mb-5">
-                  <g.icon className="w-6 h-6 md:w-8 md:h-8 text-[#7E95A8]" />
-                </div>
-                <h3 className="text-[#3D2B1F] text-sm md:text-base mb-2 md:mb-3">{g.title}</h3>
-                <p className="text-muted-foreground text-xs md:text-sm">{g.desc}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* ═══ Reviews ═══ */}
       <section className="py-20 bg-[#1a1008] noise-overlay-heavy dot-grid grit-top">
         <div className="relative z-10 max-w-7xl mx-auto px-4">
@@ -389,7 +389,7 @@ export function HomePage() {
             <h2 className="text-3xl md:text-4xl text-white mb-2">What Our Clients Say</h2>
             <div className="flex items-center justify-center gap-2 mt-3">
               <StarRating rating={5} size={20} />
-              <span className="text-white/70">5.0 Average from 47+ Reviews</span>
+              <span className="text-white/70">5.0 Average from 27+ Reviews</span>
             </div>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">

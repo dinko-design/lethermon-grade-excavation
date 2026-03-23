@@ -14,7 +14,7 @@ const platforms = [
 
 const stats = [
   { value: "5.0", label: "Average Rating" },
-  { value: "47+", label: "Total Reviews" },
+  { value: "27+", label: "Total Reviews" },
   { value: "100%", label: "Would Recommend" },
   { value: "0", label: "Complaints" },
 ];
@@ -25,10 +25,18 @@ function ReviewsSchema({ reviews, companyName }: { reviews: Array<{name: string;
     "@type": "LocalBusiness",
     "@id": "https://www.lethermongradeexcavations.com/#business",
     name: companyName,
+    address: {
+      "@type": "PostalAddress",
+      streetAddress: "1404 21st ST W",
+      addressLocality: "Palmetto",
+      addressRegion: "FL",
+      postalCode: "34221",
+      addressCountry: "US",
+    },
     aggregateRating: {
       "@type": "AggregateRating",
       ratingValue: "5.0",
-      reviewCount: "47",
+      reviewCount: "27",
       bestRating: "5",
       worstRating: "1",
     },
@@ -60,7 +68,7 @@ export function ReviewsPage() {
 
   usePageSEO({
     title: "Customer Reviews & Testimonials | Lethermon Grade Excavations",
-    description: "Read 47+ five-star reviews from builders, contractors, and homeowners who trust Lethermon Grade Excavations for excavation and grading in Bradenton and Sarasota FL.",
+    description: "Read 27+ five-star reviews from builders, contractors, and homeowners who trust Lethermon Grade Excavations for excavation and grading in Bradenton and Sarasota FL.",
     path: "/reviews",
   });
   return (
@@ -78,7 +86,7 @@ export function ReviewsPage() {
           <div className="flex items-center gap-3 mt-6">
             <StarRating rating={5} size={22} />
             <span className="text-white text-lg">5.0</span>
-            <span className="text-white/60">from 47+ verified reviews</span>
+            <span className="text-white/60">from 27+ verified reviews</span>
           </div>
         </div>
       </section>

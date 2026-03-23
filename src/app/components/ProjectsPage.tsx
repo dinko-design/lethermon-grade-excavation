@@ -178,7 +178,7 @@ export function ProjectsPage() {
           <div className="text-center mb-10">
             <div className="flex items-center justify-center gap-2 mb-2">
               <StarRating rating={5} size={20} />
-              <span className="text-white/70">5.0 from 47+ Reviews</span>
+              <span className="text-white/70">5.0 from 27+ Reviews</span>
             </div>
             <h2 className="text-2xl text-white">What Builders & Owners Say</h2>
           </div>

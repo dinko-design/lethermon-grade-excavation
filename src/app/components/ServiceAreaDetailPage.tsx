@@ -29,7 +29,7 @@ const citySeoContent: Record<string, { sections: { heading: string; paragraphs: 
           "Our deep experience in Sarasota County means we understand local permitting timelines, tree protection ordinances, and the specific soil conditions in each neighborhood. This knowledge translates to faster project completion, fewer surprises, and inspections that pass the first time.",
         ],
         bullets: [
-          "47+ completed Sarasota projects",
+          "27+ completed Sarasota projects",
           "Sarasota County permit expertise",
           "Coastal and inland soil knowledge",
           "Tree protection ordinance compliance",
@@ -220,7 +220,7 @@ function ServiceAreaSchema({ area, companyName, phoneTel }: { area: { city: stri
         aggregateRating: {
           "@type": "AggregateRating",
           ratingValue: "5.0",
-          reviewCount: "47",
+          reviewCount: "27",
           bestRating: "5",
         },
         priceRange: "$$",
@@ -536,7 +536,7 @@ export function ServiceAreaDetailPage() {
       <section className="py-16 bg-[#1a1008] noise-overlay-heavy grit-top">
         <div className="relative z-10 max-w-7xl mx-auto px-4">
           <div className="text-center mb-10">
-            <StarRating rating={5} size={20} />
+            <div className="flex justify-center"><StarRating rating={5} size={20} /></div>
             <h2 className="text-2xl text-white mt-3">Reviews from {area.city} Clients</h2>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">

@@ -70,7 +70,7 @@ function useOrganizationSchema() {
       aggregateRating: {
         "@type": "AggregateRating",
         ratingValue: s?.aggregateRating?.ratingValue || "5.0",
-        reviewCount: s?.aggregateRating?.reviewCount || "47",
+        reviewCount: s?.aggregateRating?.reviewCount || "27",
         bestRating: s?.aggregateRating?.bestRating || "5",
         worstRating: "1",
       },
@@ -80,9 +80,9 @@ function useOrganizationSchema() {
       openingHoursSpecification: [
         {
           "@type": "OpeningHoursSpecification",
-          dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+          dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
           opens: "07:00",
-          closes: "17:00",
+          closes: "18:00",
         },
       ],
       sameAs: [

@@ -4,7 +4,7 @@ import { usePageSEO } from "../hooks/usePageSEO";
 import { Shield, Target, Heart, Users, Wrench, HardHat, ChevronRight, Award, Star, MapPin } from "lucide-react";
 import { ImageWithFallback } from "./figma/ImageWithFallback";
 import kameronSite from "@/assets/kameron-site.webp";
-import kameronTruck from "@/assets/kameron-truck.webp";
+import imgFleet from "@/assets/images/equipment-deere-fleet.webp";
 import { StarRating } from "./StarRating";
 import { VideoPlaceholder } from "./VideoPlaceholder";
 import { IMG } from "./data";
@@ -56,7 +56,7 @@ export function AboutPage() {
           </p>
           <div className="flex items-center gap-2 mt-5">
             <StarRating rating={5} size={16} />
-            <span className="text-white/70 text-sm">5.0 Rating | 47+ Reviews | 1,000+ Projects</span>
+            <span className="text-white/70 text-sm">5.0 Rating | 27+ Reviews | 1,000+ Projects</span>
           </div>
         </div>
       </section>
@@ -197,17 +197,17 @@ export function AboutPage() {
         </div>
       </section>
 
-      {/* Branded Truck */}
+      {/* Fleet / Jobsite */}
       <section className="relative overflow-hidden">
         <div className="relative h-64 md:h-80">
           <ImageWithFallback
-            src={kameronTruck}
-            alt="Lethermon Grade Excavations branded Ford Super Duty work truck on a Florida jobsite with Volvo excavator"
+            src={imgFleet}
+            alt="Lethermon Grade Excavations equipment fleet on a Southwest Florida jobsite"
             className="w-full h-full object-cover"
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-[#3D2B1F]/70 via-transparent to-[#3D2B1F]/30" />
+          <div className="absolute inset-0 bg-gradient-to-t from-[#1a1008]/90 via-[#1a1008]/40 to-[#1a1008]/20" />
           <div className="absolute bottom-6 left-0 right-0 text-center">
-            <p className="text-[#C4956A] uppercase tracking-wider text-xs mb-1">Our Name. Our Reputation. On Every Jobsite.</p>
+            <p className="text-[#C4956A] uppercase tracking-wider text-xs mb-1">Our Equipment. Our Crew. On Every Jobsite.</p>
             <p className="text-white/80 text-sm">Sarasota, FL &bull; {phone}</p>
           </div>
         </div>
@@ -221,7 +221,7 @@ export function AboutPage() {
             <h2 className="text-3xl text-[#3D2B1F] mb-2">What People Say About Us</h2>
             <div className="flex items-center justify-center gap-2 mt-3">
               <StarRating rating={5} size={20} />
-              <span className="text-muted-foreground">5.0 Average from 47+ Reviews</span>
+              <span className="text-muted-foreground">5.0 Average from 27+ Reviews</span>
             </div>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">

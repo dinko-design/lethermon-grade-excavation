@@ -251,7 +251,7 @@ export function LandingPageTemplate({ data }: { data: LandingPageData }) {
               </h2>
               <div className="flex items-center justify-center gap-2">
                 <StarRating rating={5} size={18} />
-                <span className="text-muted-foreground text-sm">5.0 Rating from 47+ Reviews</span>
+                <span className="text-muted-foreground text-sm">5.0 Rating from 27+ Reviews</span>
               </div>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">

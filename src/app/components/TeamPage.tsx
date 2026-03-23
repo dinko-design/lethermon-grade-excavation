@@ -116,7 +116,7 @@ export function TeamPage() {
           </p>
           <div className="flex items-center gap-2 mt-5">
             <StarRating rating={5} size={16} />
-            <span className="text-white/70 text-sm">5.0 Rating | 47+ Reviews | 1,000+ Projects</span>
+            <span className="text-white/70 text-sm">5.0 Rating | 27+ Reviews | 1,000+ Projects</span>
           </div>
         </div>
       </section>

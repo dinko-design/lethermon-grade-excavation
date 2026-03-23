@@ -2,7 +2,7 @@
 import logo from "@/assets/lethermon-grade-excavations-logo-white.png";
 import dinkoLogo from "@/assets/2645bec3cc98ea2f8dc68f9a6126a41bc9481e51.png";
 import { Link } from "@/compat/Link";
-import { Phone, MapPin, Mail, Clock, Trees, Shovel, Ruler, Droplets, Building2, Cable } from "lucide-react";
+import { Phone, MapPin, Mail, Clock, Trees, Shovel, Ruler, Droplets, Building2, Cable, Hammer, Construction, CloudRain, Landmark } from "lucide-react";
 import { StarRating } from "./StarRating";
 import { useCompanySettings } from "../providers/SanityProvider";
 
@@ -27,7 +27,7 @@ export function Footer() {
             </p>
             <div className="flex items-center gap-2 mb-2">
               <StarRating rating={5} size={14} />
-              <span className="text-gray-400 text-xs">5.0 | 47+ Reviews</span>
+              <span className="text-gray-400 text-xs">5.0 | 27+ Reviews</span>
             </div>
             <p className="text-[#C4956A] text-xs">Fully Insured | BBB A+ Rated</p>
             <div className="mt-4 space-y-2">
@@ -71,8 +71,12 @@ export function Footer() {
                 { to: "/services/land-clearing", label: "Land Clearing", icon: Trees },
                 { to: "/services/excavation", label: "Excavation", icon: Shovel },
                 { to: "/services/site-grading", label: "Site Grading", icon: Ruler },
+                { to: "/services/site-development", label: "Site Development", icon: Construction },
+                { to: "/services/foundation-prep", label: "Foundation Prep", icon: Landmark },
                 { to: "/services/drainage", label: "Drainage", icon: Droplets },
+                { to: "/services/stormwater-drainage", label: "Stormwater Drainage", icon: CloudRain },
                 { to: "/services/demolition", label: "Demolition", icon: Building2 },
+                { to: "/services/concrete-removal", label: "Concrete Removal", icon: Hammer },
                 { to: "/services/trenching", label: "Trenching", icon: Cable },
               ].map((link) => {
                 const Icon = link.icon;

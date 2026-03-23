@@ -27,6 +27,14 @@ function ArticleSchema({ post }: { post: { title: string; excerpt: string; img?:
             "@type": "LocalBusiness",
             "@id": "https://www.lethermongradeexcavations.com/#business",
             name: "Lethermon Grade Excavations",
+            address: {
+              "@type": "PostalAddress",
+              streetAddress: "1404 21st ST W",
+              addressLocality: "Palmetto",
+              addressRegion: "FL",
+              postalCode: "34221",
+              addressCountry: "US",
+            },
           },
         },
         publisher: {

@@ -16,7 +16,7 @@ const credentials = [
 
 const recognition = [
   { title: "1,000+ Projects Completed", desc: "Across Sarasota, Manatee, and Charlotte counties since founding.", icon: Award },
-  { title: "5.0 Star Rating", desc: "Perfect 5-star average across 47+ verified client reviews.", icon: Star },
+  { title: "5.0 Star Rating", desc: "Perfect 5-star average across 27+ verified client reviews.", icon: Star },
   { title: "Builder Partnership Program", desc: "Trusted by multiple repeat builders for ongoing excavation needs.", icon: Users },
   { title: "Military Background", desc: "Owner Kameron Lethermon brings military discipline to every project.", icon: Shield },
   { title: "Modern Equipment Fleet", desc: "Laser-guided grading systems and late-model heavy equipment.", icon: Truck },
@@ -54,7 +54,7 @@ export function TrustPage() {
           </p>
           <div className="flex items-center gap-2 mt-5">
             <StarRating rating={5} size={16} />
-            <span className="text-white/70 text-sm">5.0 Rating | 47+ Reviews | BBB A+ Rated</span>
+            <span className="text-white/70 text-sm">5.0 Rating | 27+ Reviews | BBB A+ Rated</span>
           </div>
         </div>
       </section>
@@ -87,7 +87,7 @@ export function TrustPage() {
             {[
               { label: "FULLY INSURED", sub: "GL & Workers' Comp" },
               { label: "BBB A+ RATED", sub: "Zero Complaints" },
-              { label: "5.0 STARS", sub: "47+ Reviews" },
+              { label: "5.0 STARS", sub: "27+ Reviews" },
               { label: "1,000+ PROJECTS", sub: "Completed" },
               { label: "MILITARY OWNED", sub: "Veteran Operated" },
               { label: "LICENSED", sub: "State of Florida" },
@@ -157,7 +157,7 @@ export function TrustPage() {
             ))}
           </div>
           <div className="text-center mt-8">
-            <Link to="/reviews" className="text-[#C4956A] text-sm hover:underline">Read all 47+ reviews →</Link>
+            <Link to="/reviews" className="text-[#C4956A] text-sm hover:underline">Read all 27+ reviews →</Link>
           </div>
         </div>
       </section>

@@ -93,7 +93,7 @@ export const serviceAreasDetailed: Record<string, {
     neighborhoods: ["Downtown Sarasota", "Gulf Gate", "Bee Ridge", "Siesta Key", "Palmer Ranch", "Fruitville", "North Sarasota", "Southgate", "Indian Beach/Sapphire Shores"],
     mapQuery: "Sarasota,FL",
     intro: [
-      "Lethermon Grade Excavations is Sarasota's trusted excavation and site preparation contractor. With 47+ completed projects in the Sarasota area, we have deep knowledge of local soil conditions, permitting requirements, and building codes unique to Sarasota County.",
+      "Lethermon Grade Excavations is Sarasota's trusted excavation and site preparation contractor. With 27+ completed projects in the Sarasota area, we have deep knowledge of local soil conditions, permitting requirements, and building codes unique to Sarasota County.",
       "From custom homes in Palmer Ranch to commercial development along Fruitville Road, our crew handles land clearing, excavation, grading, drainage, and demolition for builders, developers, and property owners throughout Sarasota.",
     ],
     servicesHighlight: ["Custom home foundation grading in Palmer Ranch", "Commercial pad excavation on US-41 corridor", "Drainage solutions for Gulf Gate properties", "Land clearing for Bee Ridge developments"],
