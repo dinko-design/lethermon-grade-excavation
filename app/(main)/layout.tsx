@@ -19,7 +19,7 @@ function useOrganizationSchema() {
       name: s?.name || "Lethermon Grade Excavations",
       alternateName: "Lethermon Grade",
       description: s?.description ||
-        "Professional excavation, land clearing, site grading, drainage, demolition, and utility trenching services serving Southwest Florida including Sarasota, Bradenton, Venice, and Lakewood Ranch. Military-owned, fully insured, 200+ projects completed.",
+        "Professional excavation, land clearing, site grading, drainage, demolition, and utility trenching services serving Southwest Florida including Sarasota, Bradenton, Venice, and Lakewood Ranch. Military-owned, fully insured, 1,000+ projects completed.",
       telephone: `+1-${s?.phone?.replace(/[^\d]/g, "").replace(/(\d{3})(\d{3})(\d{4})/, "$1-$2-$3") || "941-290-7208"}`,
       url: baseUrl,
       logo: `${baseUrl}/logo.png`,

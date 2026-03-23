@@ -23,7 +23,7 @@ const data: LandingPageData = {
     { icon: Shield, label: "Licensed & Insured", detail: "Full liability coverage" },
     { icon: Award, label: "Military-Owned", detail: "Veteran-operated business" },
     { icon: Star, label: "5.0 Rating", detail: "47+ verified reviews" },
-    { icon: CheckCircle, label: "200+ Projects", detail: "SW Florida since 2009" },
+    { icon: CheckCircle, label: "1,000+ Projects", detail: "SW Florida since 2009" },
     { icon: Clock, label: "Priority Scheduling", detail: "Builder partnerships" },
   ],
   proofSection: {
@@ -33,7 +33,7 @@ const data: LandingPageData = {
       { src: gradingLot, alt: "Graded residential lot in Bradenton FL", caption: "Residential lot grading — Bradenton" },
       { src: gradingResidential, alt: "Precision residential grading in Bradenton", caption: "Finish grading for new construction" },
     ],
-    stat: { value: "200+", label: "Projects Completed in SW Florida" },
+    stat: { value: "1,000+", label: "Projects Completed in SW Florida" },
   },
   offerSection: {
     heading: "Get Your Free Grading Consultation",

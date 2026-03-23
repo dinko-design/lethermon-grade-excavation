@@ -24,7 +24,7 @@ export const metadata: Metadata = {
     template: "%s | Lethermon Grade Excavations",
   },
   description:
-    "Professional excavation, land clearing, site grading, drainage solutions, demolition, and utility trenching in Bradenton, Sarasota, and Southwest Florida. 200+ projects completed. Call (941) 290-7208.",
+    "Professional excavation, land clearing, site grading, drainage solutions, demolition, and utility trenching in Bradenton, Sarasota, and Southwest Florida. 1,000+ projects completed. Call (941) 290-7208.",
   robots: "index, follow",
   openGraph: {
     siteName: "Lethermon Grade Excavations",

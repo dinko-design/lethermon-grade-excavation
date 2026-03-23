@@ -23,7 +23,7 @@ const data: LandingPageData = {
     { icon: Shield, label: "Licensed & Insured", detail: "Full liability coverage" },
     { icon: Award, label: "Military-Owned", detail: "Veteran-operated business" },
     { icon: Star, label: "5.0 Rating", detail: "47+ verified reviews" },
-    { icon: CheckCircle, label: "200+ Projects", detail: "SW Florida since 2009" },
+    { icon: CheckCircle, label: "1,000+ Projects", detail: "SW Florida since 2009" },
     { icon: Clock, label: "Fast Turnaround", detail: "Most demos in 1-3 days" },
   ],
   proofSection: {
@@ -33,7 +33,7 @@ const data: LandingPageData = {
       { src: demolitionWaterfront, alt: "Waterfront structure demolition", caption: "Waterfront structure removal" },
       { src: IMG.heavyEquip, alt: "Heavy equipment fleet for demolition projects", caption: "Modern equipment for safe demolition" },
     ],
-    stat: { value: "200+", label: "Projects Completed in SW Florida" },
+    stat: { value: "1,000+", label: "Projects Completed in SW Florida" },
   },
   offerSection: {
     heading: "Get Your Free Demolition Quote",

@@ -14,7 +14,7 @@ import excavationCoastal2 from "@/assets/images/excavation-pool-coastal-2.webp";
 const data: ServicePageData = {
   slug: "excavation",
   seoTitle: "Excavation Services & Foundation Digging | Bradenton & Sarasota FL",
-  seoDescription: "Expert excavation for foundations, pools, and site preparation in Bradenton, Sarasota, and Southwest Florida. 200+ projects completed. Free estimates — (941) 290-7208.",
+  seoDescription: "Expert excavation for foundations, pools, and site preparation in Bradenton, Sarasota, and Southwest Florida. 1,000+ projects completed. Free estimates — (941) 290-7208.",
   icon: Shovel,
   title: "Excavation",
   tagline: "Professional foundation digging, structural excavation, and site preparation for residential and commercial projects in Sarasota-Bradenton.",

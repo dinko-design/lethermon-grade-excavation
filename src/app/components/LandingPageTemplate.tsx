@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { Phone, Check, ChevronRight, Shield, Award, Clock, Star as StarIcon, Download } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
 import { usePageSEO } from "../hooks/usePageSEO";
+import { useCaptureAdParams } from "../hooks/useGclid";
 import { useCompanySettings, useReviews } from "../providers/SanityProvider";
 import { StarRating } from "./StarRating";
 import { ImageWithFallback } from "./figma/ImageWithFallback";
@@ -52,6 +53,7 @@ function scrollToForm() {
 }
 
 export function LandingPageTemplate({ data }: { data: LandingPageData }) {
+  useCaptureAdParams();
   const settings = useCompanySettings();
   const phone = settings?.phone || "(941) 290-7208";
   const phoneTel = settings?.phoneTel || "9412907208";
@@ -282,7 +284,6 @@ export function LandingPageTemplate({ data }: { data: LandingPageData }) {
             heading={data.form.heading}
             subheading={data.form.subheading}
             projectTypeOptions={data.form.projectTypeOptions}
-            successMessage={data.form.successMessage}
           />
 
           {/* Optional Lead Magnet */}

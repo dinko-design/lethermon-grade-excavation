@@ -24,7 +24,7 @@ const data: LandingPageData = {
     { icon: Shield, label: "Licensed & Insured", detail: "Full liability coverage" },
     { icon: Award, label: "Military-Owned", detail: "Veteran-operated business" },
     { icon: Star, label: "5.0 Rating", detail: "47+ verified reviews" },
-    { icon: CheckCircle, label: "200+ Projects", detail: "SW Florida since 2009" },
+    { icon: CheckCircle, label: "1,000+ Projects", detail: "SW Florida since 2009" },
     { icon: Clock, label: "48-Hour Mobilization", detail: "Fast crew deployment" },
   ],
   proofSection: {
@@ -34,7 +34,7 @@ const data: LandingPageData = {
       { src: excavationArm, alt: "Residential excavation with Yanmar equipment", caption: "Foundation excavation — residential" },
       { src: excavationBucket, alt: "Excavation backfill work in progress", caption: "Precise grading and backfill" },
     ],
-    stat: { value: "200+", label: "Projects Completed in SW Florida" },
+    stat: { value: "1,000+", label: "Projects Completed in SW Florida" },
   },
   offerSection: {
     heading: "Get Your Free Excavation Estimate",

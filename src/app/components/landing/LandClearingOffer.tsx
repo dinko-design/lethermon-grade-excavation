@@ -24,7 +24,7 @@ const data: LandingPageData = {
     { icon: Shield, label: "Licensed & Insured", detail: "Full liability coverage" },
     { icon: Award, label: "Military-Owned", detail: "Veteran-operated business" },
     { icon: Star, label: "5.0 Rating", detail: "47+ verified reviews" },
-    { icon: CheckCircle, label: "200+ Projects", detail: "SW Florida since 2009" },
+    { icon: CheckCircle, label: "1,000+ Projects", detail: "SW Florida since 2009" },
     { icon: Clock, label: "Same-Week Scheduling", detail: "Fast mobilization" },
   ],
   proofSection: {
@@ -34,7 +34,7 @@ const data: LandingPageData = {
       { src: clearingBradenton, alt: "Cleared lot ready for construction in Bradenton", caption: "Build-ready lot preparation" },
       { src: clearingCover, alt: "Land clearing equipment on Florida jobsite", caption: "Heavy equipment on site — same-week mobilization" },
     ],
-    stat: { value: "200+", label: "Projects Completed in SW Florida" },
+    stat: { value: "1,000+", label: "Projects Completed in SW Florida" },
   },
   offerSection: {
     heading: "Get Your Free Land Clearing Evaluation",

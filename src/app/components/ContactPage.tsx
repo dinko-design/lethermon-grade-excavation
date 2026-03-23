@@ -1,10 +1,12 @@
 "use client";
 import { useState } from "react";
+import { useRouter } from "next/navigation";
 import { usePageSEO } from "../hooks/usePageSEO";
-import { Phone, MapPin, Mail, Clock, CheckCircle, Send } from "lucide-react";
+import { Phone, MapPin, Mail, Clock, Send, Loader2 } from "lucide-react";
 import { StarRating } from "./StarRating";
 import { useCompanySettings } from "../providers/SanityProvider";
 import { ImageWithFallback } from "./figma/ImageWithFallback";
+import { useCaptureAdParams, getGclid } from "../hooks/useGclid";
 import kameronSite from "@/assets/kameron-site.webp";
 import kameronTruck from "@/assets/kameron-truck.webp";
 
@@ -14,6 +16,9 @@ export function ContactPage() {
     description: "Get a free excavation estimate from Lethermon Grade Excavations. Call (941) 290-7208 or fill out our form. Serving Bradenton, Sarasota, Venice, and all of Southwest Florida.",
     path: "/contact",
   });
+  const router = useRouter();
+  useCaptureAdParams();
+
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -21,15 +26,34 @@ export function ContactPage() {
     projectType: "",
     message: "",
   });
-  const [submitted, setSubmitted] = useState(false);
+  const [submitting, setSubmitting] = useState(false);
+  const [error, setError] = useState(false);
   const settings = useCompanySettings();
   const phone = settings?.phone || "(941) 290-7208";
   const phoneTel = settings?.phoneTel || "9412907208";
-  const companyName = settings?.name || "Lethermon Grade Excavations";
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setSubmitted(true);
+    setSubmitting(true);
+    setError(false);
+
+    try {
+      const body = new URLSearchParams({
+        "form-name": "contact",
+        gclid: getGclid(),
+        ...formData,
+      });
+      await fetch("/", {
+        method: "POST",
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        body: body.toString(),
+      });
+      router.push("/contact/thank-you");
+    } catch {
+      setError(true);
+    } finally {
+      setSubmitting(false);
+    }
   };
 
   return (
@@ -153,26 +177,9 @@ export function ContactPage() {
 
             {/* Contact Form */}
             <div className="lg:col-span-2">
-              {submitted ? (
-                <div className="bg-card rounded-xl border border-border p-12 text-center">
-                  <div className="w-20 h-20 rounded-full bg-green-100 flex items-center justify-center mx-auto mb-6">
-                    <CheckCircle className="w-10 h-10 text-green-600" />
-                  </div>
-                  <h2 className="text-2xl text-[#3D2B1F] mb-4">Estimate Request Received!</h2>
-                  <p className="text-muted-foreground max-w-md mx-auto mb-6">
-                    Thank you for contacting {companyName}. We typically respond within 
-                    24 hours to discuss your project and schedule a site evaluation.
-                  </p>
-                  <a
-                    href={`tel:${phoneTel}`}
-                    className="inline-flex items-center gap-2 text-[#5C4A1E] hover:text-[#C4956A] transition-colors"
-                  >
-                    <Phone className="w-4 h-4" />
-                    Need faster response? Call {phone}
-                  </a>
-                </div>
-              ) : (
-                <form onSubmit={handleSubmit} className="bg-card rounded-xl border border-border p-8 md:p-10 shadow-sm">
+                <form name="contact" method="POST" data-netlify="true" onSubmit={handleSubmit} className="bg-card rounded-xl border border-border p-8 md:p-10 shadow-sm">
+                  <input type="hidden" name="form-name" value="contact" />
+                  <input type="hidden" name="gclid" value="" />
                   <h2 className="text-2xl text-[#3D2B1F] mb-2">Request a Free Estimate</h2>
                   <p className="text-muted-foreground mb-8">
                     Tell us about your project and we'll get back to you with a transparent estimate.
@@ -183,6 +190,7 @@ export function ContactPage() {
                       <label className="block text-[#3D2B1F] mb-2 text-sm">Full Name *</label>
                       <input
                         type="text"
+                        name="name"
                         required
                         value={formData.name}
                         onChange={(e) => setFormData({ ...formData, name: e.target.value })}
@@ -194,6 +202,7 @@ export function ContactPage() {
                       <label className="block text-[#3D2B1F] mb-2 text-sm">Phone Number *</label>
                       <input
                         type="tel"
+                        name="phone"
                         required
                         value={formData.phone}
                         onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
@@ -208,6 +217,7 @@ export function ContactPage() {
                       <label className="block text-[#3D2B1F] mb-2 text-sm">Email Address</label>
                       <input
                         type="email"
+                        name="email"
                         value={formData.email}
                         onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                         className="w-full px-4 py-3 rounded-lg border border-border bg-input-background focus:border-[#C4956A] focus:ring-1 focus:ring-[#C4956A] outline-none transition-colors"
@@ -217,6 +227,7 @@ export function ContactPage() {
                     <div>
                       <label className="block text-[#3D2B1F] mb-2 text-sm">Project Type *</label>
                       <select
+                        name="projectType"
                         required
                         value={formData.projectType}
                         onChange={(e) => setFormData({ ...formData, projectType: e.target.value })}
@@ -237,6 +248,7 @@ export function ContactPage() {
                   <div className="mb-6">
                     <label className="block text-[#3D2B1F] mb-2 text-sm">Project Details</label>
                     <textarea
+                      name="message"
                       rows={5}
                       value={formData.message}
                       onChange={(e) => setFormData({ ...formData, message: e.target.value })}
@@ -245,19 +257,25 @@ export function ContactPage() {
                     />
                   </div>
 
+                  {error && (
+                    <p className="text-red-600 text-sm mb-4">
+                      Something went wrong. Please try again or call us directly.
+                    </p>
+                  )}
+
                   <button
                     type="submit"
-                    className="w-full md:w-auto inline-flex items-center justify-center gap-2 bg-[#5C4A1E] text-white px-8 py-4 rounded-lg hover:bg-[#3D2B1F] transition-colors"
+                    disabled={submitting}
+                    className="w-full md:w-auto inline-flex items-center justify-center gap-2 bg-[#5C4A1E] text-white px-8 py-4 rounded-lg hover:bg-[#3D2B1F] transition-colors disabled:opacity-70"
                   >
-                    <Send className="w-4 h-4" />
-                    Submit Estimate Request
+                    {submitting ? <Loader2 className="w-4 h-4 animate-spin" /> : <Send className="w-4 h-4" />}
+                    {submitting ? "Submitting..." : "Submit Estimate Request"}
                   </button>
 
                   <p className="text-muted-foreground text-xs mt-4">
                     * Required fields. We respect your privacy and will never share your information.
                   </p>
                 </form>
-              )}
             </div>
           </div>
         </div>

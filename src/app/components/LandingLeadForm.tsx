@@ -1,6 +1,8 @@
 import { useState } from "react";
-import { CheckCircle, Phone, Send, Loader2 } from "lucide-react";
+import { useRouter } from "next/navigation";
+import { Send, Loader2 } from "lucide-react";
 import { useCompanySettings } from "../providers/SanityProvider";
+import { useCaptureAdParams, getGclid } from "../hooks/useGclid";
 
 interface LandingLeadFormProps {
   formName: string;
@@ -8,7 +10,6 @@ interface LandingLeadFormProps {
   heading: string;
   subheading: string;
   projectTypeOptions: string[];
-  successMessage: string;
 }
 
 function encode(data: Record<string, string>) {
@@ -23,11 +24,9 @@ export function LandingLeadForm({
   heading,
   subheading,
   projectTypeOptions,
-  successMessage,
 }: LandingLeadFormProps) {
-  const settings = useCompanySettings();
-  const phone = settings?.phone || "(941) 290-7208";
-  const phoneTel = settings?.phoneTel || "9412907208";
+  const router = useRouter();
+  useCaptureAdParams();
 
   const [formData, setFormData] = useState({
     name: "",
@@ -36,7 +35,6 @@ export function LandingLeadForm({
     projectType: projectTypeOptions[0] || "",
     message: "",
   });
-  const [submitted, setSubmitted] = useState(false);
   const [submitting, setSubmitting] = useState(false);
   const [error, setError] = useState(false);
 
@@ -53,42 +51,18 @@ export function LandingLeadForm({
           "form-name": formName,
           source: "google-ads",
           "landing-page": slug,
+          gclid: getGclid(),
           ...formData,
         }),
       });
-      setSubmitted(true);
-      if (typeof window !== "undefined" && (window as any).dataLayer) {
-        (window as any).dataLayer.push({
-          event: "form_submission",
-          form_name: formName,
-          landing_page: slug,
-        });
-      }
+      // Redirect to the service-specific thank-you page for conversion tracking
+      router.push(`/offer/${slug}/thank-you`);
     } catch {
       setError(true);
     } finally {
       setSubmitting(false);
     }
   };
-
-  if (submitted) {
-    return (
-      <div id="lead-form" className="bg-card rounded-xl border border-border p-10 text-center">
-        <div className="w-20 h-20 rounded-full bg-green-100 flex items-center justify-center mx-auto mb-6">
-          <CheckCircle className="w-10 h-10 text-green-600" />
-        </div>
-        <h3 className="text-2xl text-[#3D2B1F] mb-4">Request Received!</h3>
-        <p className="text-muted-foreground max-w-md mx-auto mb-6">{successMessage}</p>
-        <a
-          href={`tel:${phoneTel}`}
-          className="inline-flex items-center gap-2 text-[#5C4A1E] hover:text-[#C4956A] transition-colors"
-        >
-          <Phone className="w-4 h-4" />
-          Need faster response? Call {phone}
-        </a>
-      </div>
-    );
-  }
 
   return (
     <form
@@ -102,6 +76,7 @@ export function LandingLeadForm({
       <input type="hidden" name="form-name" value={formName} />
       <input type="hidden" name="source" value="google-ads" />
       <input type="hidden" name="landing-page" value={slug} />
+      <input type="hidden" name="gclid" value="" />
 
       <h3 className="text-2xl text-[#3D2B1F] mb-2">{heading}</h3>
       <p className="text-muted-foreground mb-8">{subheading}</p>

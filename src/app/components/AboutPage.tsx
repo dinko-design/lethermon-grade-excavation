@@ -4,9 +4,7 @@ import { usePageSEO } from "../hooks/usePageSEO";
 import { Shield, Target, Heart, Users, Wrench, HardHat, ChevronRight, Award, Star, MapPin } from "lucide-react";
 import { ImageWithFallback } from "./figma/ImageWithFallback";
 import kameronSite from "@/assets/kameron-site.webp";
-import kameronHardhat from "@/assets/kameron-hardhat.webp";
 import kameronTruck from "@/assets/kameron-truck.webp";
-import kameronCollage2 from "@/assets/kameron-collage.webp";
 import { StarRating } from "./StarRating";
 import { VideoPlaceholder } from "./VideoPlaceholder";
 import { IMG } from "./data";
@@ -36,7 +34,7 @@ const equipment = [
 export function AboutPage() {
   usePageSEO({
     title: "About Lethermon Grade Excavations | Bradenton FL",
-    description: "Meet Kameron Lethermon and the crew behind Southwest Florida's trusted excavation company. Military-owned, fully insured, 200+ projects completed in Bradenton and Sarasota.",
+    description: "Meet Kameron Lethermon and the crew behind Southwest Florida's trusted excavation company. Military-owned, fully insured, 1,000+ projects completed in Bradenton and Sarasota.",
     path: "/about",
   });
   const reviews = useReviews();
@@ -58,7 +56,7 @@ export function AboutPage() {
           </p>
           <div className="flex items-center gap-2 mt-5">
             <StarRating rating={5} size={16} />
-            <span className="text-white/70 text-sm">5.0 Rating | 47+ Reviews | 200+ Projects</span>
+            <span className="text-white/70 text-sm">5.0 Rating | 47+ Reviews | 1,000+ Projects</span>
           </div>
         </div>
       </section>
@@ -102,10 +100,7 @@ export function AboutPage() {
             </div>
             <div className="space-y-4">
               <div className="rounded-xl overflow-hidden shadow-lg">
-                <ImageWithFallback src={kameronSite} alt="Kameron Lethermon - Owner of Lethermon Grade Excavations" className="w-full h-72 object-cover object-top" />
-              </div>
-              <div className="rounded-xl overflow-hidden shadow-md">
-                <ImageWithFallback src={kameronCollage2} alt="Kameron Lethermon operating excavator, reviewing plans with contractor, shaking hands with client, and portrait on jobsite" className="w-full h-auto object-cover" />
+                <ImageWithFallback src={kameronSite} alt="Kameron Lethermon - Owner of Lethermon Grade Excavations" className="w-full h-auto object-cover object-top" />
               </div>
             </div>
           </div>
@@ -146,7 +141,7 @@ export function AboutPage() {
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {[
-              { img: kameronHardhat, title: "Kameron Lethermon", role: "Owner / Founder", desc: "Military background. On-site daily directing crews, coordinating with builders, and ensuring every project meets spec." },
+              { img: kameronSite, title: "Kameron Lethermon", role: "Owner / Founder", desc: "Military background. On-site daily directing crews, coordinating with builders, and ensuring every project meets spec." },
               { img: imgEquipment, title: "Equipment Operators", role: "Skilled Machine Operators", desc: "Running excavators, bulldozers, skid steers, and graders with precision daily." },
               { img: imgRoller, title: "Hauling Crew", role: "Transport & Logistics", desc: "Moving earth, rock, and debris efficiently across Sarasota-Bradenton." },
               { img: imgTrenching, title: "Site Laborers", role: "Grade Stakes & Drainage", desc: "Setting elevations, installing pipe, and keeping every jobsite organized." },

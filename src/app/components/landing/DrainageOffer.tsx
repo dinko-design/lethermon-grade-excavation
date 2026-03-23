@@ -22,7 +22,7 @@ const data: LandingPageData = {
     { icon: Shield, label: "Licensed & Insured", detail: "Full liability coverage" },
     { icon: Award, label: "Military-Owned", detail: "Veteran-operated business" },
     { icon: Star, label: "5.0 Rating", detail: "47+ verified reviews" },
-    { icon: CheckCircle, label: "200+ Projects", detail: "SW Florida since 2009" },
+    { icon: CheckCircle, label: "1,000+ Projects", detail: "SW Florida since 2009" },
     { icon: Clock, label: "Same-Day Evaluation", detail: "For urgent drainage issues" },
   ],
   proofSection: {
@@ -32,7 +32,7 @@ const data: LandingPageData = {
       { src: IMG.gradedLot, alt: "Graded lot with proper drainage in Bradenton", caption: "Proper grading for drainage" },
       { src: IMG.florida, alt: "Residential drainage work in Florida", caption: "Residential drainage correction" },
     ],
-    stat: { value: "200+", label: "Drainage & Grading Projects Completed" },
+    stat: { value: "1,000+", label: "Drainage & Grading Projects Completed" },
   },
   offerSection: {
     heading: "Get Your Free Drainage Inspection",

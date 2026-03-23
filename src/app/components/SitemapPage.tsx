@@ -54,6 +54,8 @@ export function SitemapPage() {
     {
       title: "Company",
       links: [
+        { to: "/faith", label: "Faith-Based Business" },
+        { to: "/military", label: "Military-Owned & Veteran Discount" },
         { to: "/careers", label: "Careers" },
         { to: "/press-releases", label: "Press Releases" },
         { to: "/media-kit", label: "Media Kit" },

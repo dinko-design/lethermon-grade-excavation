@@ -31,6 +31,8 @@ const TeamPage = lazy(() => import("./components/TeamPage").then((m) => ({ defau
 const VideosPage = lazy(() => import("./components/VideosPage").then((m) => ({ default: m.VideosPage })));
 const VideoWatchPage = lazy(() => import("./components/VideoWatchPage").then((m) => ({ default: m.VideoWatchPage })));
 const ServicesPage = lazy(() => import("./components/ServicesPage").then((m) => ({ default: m.ServicesPage })));
+const FaithPage = lazy(() => import("./components/FaithPage").then((m) => ({ default: m.FaithPage })));
+const MilitaryPage = lazy(() => import("./components/MilitaryPage").then((m) => ({ default: m.MilitaryPage })));
 
 // Offer / Landing pages (Google Ads)
 const LandClearingOffer = lazy(() => import("./components/landing/LandClearingOffer").then((m) => ({ default: m.LandClearingOffer })));
@@ -38,6 +40,14 @@ const ExcavationOffer = lazy(() => import("./components/landing/ExcavationOffer"
 const SiteGradingOffer = lazy(() => import("./components/landing/SiteGradingOffer").then((m) => ({ default: m.SiteGradingOffer })));
 const DrainageOffer = lazy(() => import("./components/landing/DrainageOffer").then((m) => ({ default: m.DrainageOffer })));
 const DemolitionOffer = lazy(() => import("./components/landing/DemolitionOffer").then((m) => ({ default: m.DemolitionOffer })));
+
+// Thank-you pages (conversion tracking destinations)
+const LandClearingThankYou = lazy(() => import("./components/landing/LandClearingThankYou").then((m) => ({ default: m.LandClearingThankYou })));
+const ExcavationThankYou = lazy(() => import("./components/landing/ExcavationThankYou").then((m) => ({ default: m.ExcavationThankYou })));
+const SiteGradingThankYou = lazy(() => import("./components/landing/SiteGradingThankYou").then((m) => ({ default: m.SiteGradingThankYou })));
+const DrainageThankYou = lazy(() => import("./components/landing/DrainageThankYou").then((m) => ({ default: m.DrainageThankYou })));
+const DemolitionThankYou = lazy(() => import("./components/landing/DemolitionThankYou").then((m) => ({ default: m.DemolitionThankYou })));
+const ContactThankYou = lazy(() => import("./components/ContactThankYou").then((m) => ({ default: m.ContactThankYou })));
 
 export const router = createBrowserRouter([
   {
@@ -50,6 +60,7 @@ export const router = createBrowserRouter([
       { path: "projects", Component: ProjectsPage },
       { path: "gallery", Component: GalleryPage },
       { path: "contact", Component: ContactPage },
+      { path: "contact/thank-you", Component: ContactThankYou },
       // Services
       { path: "services", Component: ServicesPage },
       { path: "services/land-clearing", Component: LandClearingPage },
@@ -73,6 +84,9 @@ export const router = createBrowserRouter([
       { path: "location", Component: LocationPage },
       // Trust
       { path: "trust", Component: TrustPage },
+      // Faith & Military
+      { path: "faith", Component: FaithPage },
+      { path: "military", Component: MilitaryPage },
       // Careers
       { path: "careers", Component: CareersPage },
       // Press
@@ -91,10 +105,15 @@ export const router = createBrowserRouter([
     Component: LandingLayout,
     children: [
       { path: "land-clearing", Component: LandClearingOffer },
+      { path: "land-clearing/thank-you", Component: LandClearingThankYou },
       { path: "excavation", Component: ExcavationOffer },
+      { path: "excavation/thank-you", Component: ExcavationThankYou },
       { path: "site-grading", Component: SiteGradingOffer },
+      { path: "site-grading/thank-you", Component: SiteGradingThankYou },
       { path: "drainage", Component: DrainageOffer },
+      { path: "drainage/thank-you", Component: DrainageThankYou },
       { path: "demolition", Component: DemolitionOffer },
+      { path: "demolition/thank-you", Component: DemolitionThankYou },
     ],
   },
 ]);

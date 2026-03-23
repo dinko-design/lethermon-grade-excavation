@@ -15,7 +15,7 @@ const credentials = [
 ];
 
 const recognition = [
-  { title: "200+ Projects Completed", desc: "Across Sarasota, Manatee, and Charlotte counties since founding.", icon: Award },
+  { title: "1,000+ Projects Completed", desc: "Across Sarasota, Manatee, and Charlotte counties since founding.", icon: Award },
   { title: "5.0 Star Rating", desc: "Perfect 5-star average across 47+ verified client reviews.", icon: Star },
   { title: "Builder Partnership Program", desc: "Trusted by multiple repeat builders for ongoing excavation needs.", icon: Users },
   { title: "Military Background", desc: "Owner Kameron Lethermon brings military discipline to every project.", icon: Shield },
@@ -88,7 +88,7 @@ export function TrustPage() {
               { label: "FULLY INSURED", sub: "GL & Workers' Comp" },
               { label: "BBB A+ RATED", sub: "Zero Complaints" },
               { label: "5.0 STARS", sub: "47+ Reviews" },
-              { label: "200+ PROJECTS", sub: "Completed" },
+              { label: "1,000+ PROJECTS", sub: "Completed" },
               { label: "MILITARY OWNED", sub: "Veteran Operated" },
               { label: "LICENSED", sub: "State of Florida" },
             ].map((b) => (
@@ -165,7 +165,7 @@ export function TrustPage() {
       <section className="py-16 bg-[#C4956A] noise-overlay grit-top">
         <div className="relative z-10 max-w-4xl mx-auto px-4 text-center">
           <h2 className="text-3xl text-white mb-4">Work With a Company You Can Trust</h2>
-          <p className="text-white/90 mb-8">Fully insured, BBB rated, and backed by 200+ completed projects.</p>
+          <p className="text-white/90 mb-8">Fully insured, BBB rated, and backed by 1,000+ completed projects.</p>
           <Link to="/contact" className="inline-flex items-center gap-2 bg-[#3D2B1F] text-white px-8 py-4 rounded-lg hover:bg-[#2a1e15] transition-colors">
             Request Free Estimate
           </Link>

@@ -44,7 +44,7 @@ const guarantees = [
 ];
 
 const stats = [
-  { value: "200+", label: "Projects Completed" },
+  { value: "1,000+", label: "Projects Completed" },
   { value: "47+", label: "5-Star Reviews" },
   { value: "15+", label: "Years Experience" },
   { value: "100%", label: "Insured & Guaranteed" },
@@ -61,7 +61,7 @@ export function HomePage() {
   usePageSEO({
     title: "Excavation Contractor in Bradenton & Sarasota FL",
     description:
-      "Professional excavation, land clearing, site grading, drainage solutions, demolition, and utility trenching serving Bradenton, Sarasota, Venice, and Lakewood Ranch. 200+ projects. 5-star rated. Call (941) 290-7208 for a free estimate.",
+      "Professional excavation, land clearing, site grading, drainage solutions, demolition, and utility trenching serving Bradenton, Sarasota, Venice, and Lakewood Ranch. 1,000+ projects. 5-star rated. Call (941) 290-7208 for a free estimate.",
     path: "/",
     jsonLd: {
       "@type": "HowTo",
@@ -137,6 +137,7 @@ export function HomePage() {
               <span className="flex items-center gap-1"><CheckCircle className="w-3 h-3 text-[#C4956A]" /> Fully Insured</span>
               <span className="flex items-center gap-1"><CheckCircle className="w-3 h-3 text-[#C4956A]" /> BBB A+ Rated</span>
               <span className="flex items-center gap-1"><CheckCircle className="w-3 h-3 text-[#C4956A]" /> Military-Owned</span>
+              <span className="flex items-center gap-1"><CheckCircle className="w-3 h-3 text-[#C4956A]" /> Faith-Based</span>
               <span className="flex items-center gap-1"><CheckCircle className="w-3 h-3 text-[#C4956A]" /> Free Estimates</span>
             </div>
 
@@ -461,7 +462,7 @@ export function HomePage() {
             <p className="text-[#C4956A] uppercase tracking-wider text-sm mb-2">Service Coverage</p>
             <h2 className="text-3xl md:text-4xl text-[#3D2B1F] mb-4">Local Authority Across Southwest Florida</h2>
             <p className="text-muted-foreground max-w-2xl mx-auto">
-              200+ completed projects across Sarasota, Manatee & Charlotte counties.
+              1,000+ completed projects across Sarasota, Manatee & Charlotte counties.
             </p>
           </div>
 

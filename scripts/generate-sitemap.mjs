@@ -93,6 +93,8 @@ const pages = [
   { loc: "/team", changefreq: "monthly", priority: "0.6" },
   { loc: "/trust", changefreq: "monthly", priority: "0.6" },
   { loc: "/location", changefreq: "monthly", priority: "0.6" },
+  { loc: "/faith", changefreq: "monthly", priority: "0.7" },
+  { loc: "/military", changefreq: "monthly", priority: "0.7" },
   { loc: "/careers", changefreq: "monthly", priority: "0.5" },
   { loc: "/media-kit", changefreq: "monthly", priority: "0.4" },
 

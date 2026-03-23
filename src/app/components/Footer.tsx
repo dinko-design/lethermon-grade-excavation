@@ -92,6 +92,8 @@ export function Footer() {
               {[
                 { to: "/about", label: "About Us" },
                 { to: "/team", label: "Our Team" },
+                { to: "/faith", label: "Faith" },
+                { to: "/military", label: "Military" },
                 { to: "/reviews", label: "Reviews" },
                 { to: "/projects", label: "Projects" },
                 { to: "/gallery", label: "Gallery" },

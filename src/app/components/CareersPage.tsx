@@ -19,7 +19,7 @@ const benefits = [
 
 const teamStats = [
   { value: "Growing", label: "Team Size", icon: Users },
-  { value: "200+", label: "Projects Together", icon: Truck },
+  { value: "1,000+", label: "Projects Together", icon: Truck },
   { value: "Local", label: "Every Job", icon: MapPin },
   { value: "Safe", label: "Zero Incidents", icon: Shield },
 ];

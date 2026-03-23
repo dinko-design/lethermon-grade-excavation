@@ -61,7 +61,7 @@ export function ProjectsPage() {
       <section className="relative py-24 bg-[#3D2B1F] noise-overlay">
         <div className="relative z-10 max-w-7xl mx-auto px-4">
           <p className="text-[#C4956A] uppercase tracking-wider text-sm mb-2">Our Work</p>
-          <h1 className="text-white text-4xl md:text-5xl mb-4">200+ Projects Completed</h1>
+          <h1 className="text-white text-4xl md:text-5xl mb-4">1,000+ Projects Completed</h1>
           <p className="text-gray-300 max-w-2xl text-lg">
             Real results from real jobsites across Sarasota, Bradenton, Venice, and surrounding areas.
           </p>

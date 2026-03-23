@@ -1,6 +1,7 @@
 User-agent: *
 Allow: /
 Disallow: /api/
+Disallow: /offer/
 
 # Allow AI crawlers for citation visibility
 User-agent: GPTBot
