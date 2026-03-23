@@ -1,3 +1,4 @@
+"use client";
 import { useState } from "react";
 import { usePageSEO } from "../hooks/usePageSEO";
 import { Phone, MapPin, Mail, Clock, CheckCircle, Send } from "lucide-react";
@@ -97,7 +98,7 @@ export function ContactPage() {
                     <p className="text-muted-foreground">
                       {settings?.address
                         ? `${settings.address.street}, ${settings.address.city}, ${settings.address.state} ${settings.address.zip}`
-                        : "5429 University Pkwy #1067, Bradenton, FL 34201"}
+                        : "1404 21st ST W., Palmetto, FL 34221"}
                     </p>
                   </div>
                 </div>
@@ -121,6 +122,20 @@ export function ContactPage() {
                     <p className="text-muted-foreground">Mon - Fri: 7:00 AM - 5:00 PM<br />Sat: By Appointment</p>
                   </div>
                 </div>
+              </div>
+
+              {/* Map */}
+              <div className="rounded-xl overflow-hidden shadow-md border border-border">
+                <iframe
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d905498.4518978231!2d-82.5374445!3d27.5593035!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3544cbdb47b1563%3A0x39e434b41886bf23!2sLethermon%20Grade%20Excavations!5e0!3m2!1sen!2sus!4v1774217173955!5m2!1sen!2sus"
+                  width="100%"
+                  height="250"
+                  style={{ border: 0 }}
+                  allowFullScreen
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                  title="Lethermon Grade Excavations Location"
+                />
               </div>
 
               {/* Service area tags */}

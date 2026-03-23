@@ -1,4 +1,5 @@
-import { Link } from "react-router";
+"use client";
+import { Link } from "@/compat/Link";
 import { usePageSEO } from "../hooks/usePageSEO";
 import { HardHat, MapPin, Clock, CheckCircle, ArrowRight, Phone, Users, Truck, Shield, Star } from "lucide-react";
 import { ImageWithFallback } from "./figma/ImageWithFallback";

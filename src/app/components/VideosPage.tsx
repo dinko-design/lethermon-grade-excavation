@@ -1,4 +1,5 @@
-import { Link } from "react-router";
+"use client";
+import { Link } from "@/compat/Link";
 import { usePageSEO } from "../hooks/usePageSEO";
 import { Play, Camera, ChevronRight } from "lucide-react";
 import { videos } from "./data";

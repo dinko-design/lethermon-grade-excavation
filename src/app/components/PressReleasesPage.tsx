@@ -1,4 +1,5 @@
-import { Link } from "react-router";
+"use client";
+import { Link } from "@/compat/Link";
 import { usePageSEO } from "../hooks/usePageSEO";
 import { Newspaper, Calendar, ArrowRight, Phone, Download } from "lucide-react";
 import { IMG } from "./data";

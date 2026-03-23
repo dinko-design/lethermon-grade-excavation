@@ -24,6 +24,9 @@
   --switch-background: #cbced4;
   --font-weight-medium: 500;
   --font-weight-normal: 400;
+  --steel: #7E95A8;
+  --steel-dark: #5A7085;
+  --steel-light: #B8C8D4;
   --ring: #5C4A1E;
   --chart-1: oklch(0.646 0.222 41.116);
   --chart-2: oklch(0.6 0.118 184.704);
@@ -109,6 +112,9 @@
   --radius-md: calc(var(--radius) - 2px);
   --radius-lg: var(--radius);
   --radius-xl: calc(var(--radius) + 4px);
+  --color-steel: var(--steel);
+  --color-steel-dark: var(--steel-dark);
+  --color-steel-light: var(--steel-light);
   --color-sidebar: var(--sidebar);
   --color-sidebar-foreground: var(--sidebar-foreground);
   --color-sidebar-primary: var(--sidebar-primary);
@@ -243,6 +249,41 @@
   pointer-events: none;
   z-index: 1;
   box-shadow: inset 0 0 120px rgba(26, 16, 8, 0.12);
+}
+
+/* ── Subtle dot grid texture ── */
+.dot-grid {
+  position: relative;
+}
+.dot-grid::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 1;
+  opacity: 0.04;
+  background-image: radial-gradient(circle, currentColor 0.75px, transparent 0.75px);
+  background-size: 20px 20px;
+}
+
+/* ── Subtle diagonal line texture ── */
+.diagonal-lines {
+  position: relative;
+}
+.diagonal-lines::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 1;
+  opacity: 0.03;
+  background-image: repeating-linear-gradient(
+    45deg,
+    transparent,
+    transparent 10px,
+    currentColor 10px,
+    currentColor 11px
+  );
 }
 
 /* ── Smooth scroll for sections ── */

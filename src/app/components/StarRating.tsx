@@ -1,3 +1,4 @@
+"use client";
 import { Star } from "lucide-react";
 
 export function StarRating({ rating = 5, size = 16 }: { rating?: number; size?: number }) {

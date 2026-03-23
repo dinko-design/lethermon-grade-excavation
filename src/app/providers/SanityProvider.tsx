@@ -1,3 +1,4 @@
+"use client";
 import { createContext, useContext, useEffect, useState, useMemo, type ReactNode } from "react";
 import { sanityClient, sanityEnabled } from "@/lib/sanity.client";
 import {
@@ -53,7 +54,7 @@ function buildStaticFallback(): ContentContextValue {
       ownerName: "Kameron Lethermon",
       email: "info@lethermongrade.com",
       website: "https://lethermongrade.com",
-      address: { street: "Bradenton", city: "Bradenton", state: "FL", zip: "34201", country: "US" },
+      address: { street: "1404 21st ST W.", city: "Palmetto", state: "FL", zip: "34221", country: "US" },
       geo: { lat: 27.4989, lng: -82.5748 },
       hours: "Mon-Fri 7AM-5PM, Sat by appointment",
       aggregateRating: { ratingValue: "5.0", reviewCount: "47", bestRating: "5" },
@@ -90,6 +91,7 @@ function buildStaticFallback(): ContentContextValue {
       date: p.date,
       category: p.category,
       readTime: p.readTime,
+      ...(p as any),
     })),
     pressReleases: staticPressReleases.map((pr) => ({
       _id: pr.slug,

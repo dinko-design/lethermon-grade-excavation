@@ -1,7 +1,9 @@
-import { Link } from "react-router";
+"use client";
+import { Link } from "@/compat/Link";
 import { usePageSEO } from "../hooks/usePageSEO";
 import { Download, Image, FileText, Phone, Mail, Globe, MapPin } from "lucide-react";
-import logo from "@/assets/70dfe01b56fa0a679a5138c33156e5829cb92a60.png";
+import logo from "@/assets/lethermon-grade-excavations-logo.png";
+import logoReversed from "@/assets/lethermon-grade-excavations-logo-white.png";
 import { IMG } from "./data";
 import { ImageWithFallback } from "./figma/ImageWithFallback";
 import { useCompanySettings } from "../providers/SanityProvider";
@@ -66,7 +68,7 @@ export function MediaKitPage() {
                 <img src={logo} alt="Lethermon Logo - Light Background" className="h-20 w-auto" />
               </div>
               <div className="bg-[#2A1D12] rounded-lg p-8 flex items-center justify-center">
-                <img src={logo} alt="Lethermon Logo - Dark Background" className="h-20 w-auto brightness-200" />
+                <img src={logoReversed} alt="Lethermon Logo - Reversed (Dark Background)" className="h-20 w-auto" />
               </div>
             </div>
             <p className="text-muted-foreground text-xs mt-4">
@@ -83,6 +85,7 @@ export function MediaKitPage() {
                 { name: "Dark Brown", hex: "#2A1D12" },
                 { name: "Warm Brown", hex: "#5C4A1E" },
                 { name: "Tan Accent", hex: "#C4956A" },
+                { name: "Steel Blue", hex: "#7E95A8" },
                 { name: "Light Tan", hex: "#F5F0EB" },
               ].map((c) => (
                 <div key={c.hex}>
@@ -117,7 +120,7 @@ export function MediaKitPage() {
                 <p><strong className="text-[#3D2B1F]">Kameron Lethermon</strong>, Owner</p>
                 <p className="flex items-center gap-2"><Phone className="w-3.5 h-3.5 text-[#C4956A]" /> {phone}</p>
                 <p className="flex items-center gap-2"><Mail className="w-3.5 h-3.5 text-[#C4956A]" /> {settings?.email || "info@lethermongradeexcavations.com"}</p>
-                <p className="flex items-center gap-2"><MapPin className="w-3.5 h-3.5 text-[#C4956A]" /> {settings?.address ? `${settings.address.street}, ${settings.address.city}, ${settings.address.state} ${settings.address.zip}` : "5429 University Pkwy #1067, Bradenton, FL 34201"}</p>
+                <p className="flex items-center gap-2"><MapPin className="w-3.5 h-3.5 text-[#C4956A]" /> {settings?.address ? `${settings.address.street}, ${settings.address.city}, ${settings.address.state} ${settings.address.zip}` : "1404 21st ST W., Palmetto, FL 34221"}</p>
               </div>
               <div className="space-y-2">
                 <Link to="/press-releases" className="flex items-center gap-2 text-[#C4956A] text-sm hover:underline"><FileText className="w-3.5 h-3.5" /> View Press Releases</Link>

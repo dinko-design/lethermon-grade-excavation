@@ -1,4 +1,5 @@
-import { Link } from "react-router";
+"use client";
+import { Link } from "@/compat/Link";
 import {
   Shield, Clock, Truck, FileText, Trees, Shovel, Ruler, Droplets, Building2, Cable,
   ChevronRight, Phone, CheckCircle, Star, MapPin, Award, HardHat, Users, ArrowRight,
@@ -6,7 +7,6 @@ import {
 const heroImg = "/hero-jobsite.webp";
 import kameronHardhat from "@/assets/kameron-hardhat.webp";
 import kameronSite from "@/assets/kameron-site.webp";
-import kameronTruck from "@/assets/kameron-truck.webp";
 import { ImageWithFallback } from "./figma/ImageWithFallback";
 import { StarRating, RatingBadge } from "./StarRating";
 import { VideoPlaceholder } from "./VideoPlaceholder";
@@ -128,13 +128,13 @@ export function HomePage() {
       </section>
 
       {/* ═══ Stats bar ═══ */}
-      <section className="bg-[#5C4A1E] text-white py-6 noise-overlay grit-bottom">
+      <section className="bg-[#2A2F35] text-white py-6 noise-overlay dot-grid grit-bottom">
         <div className="relative z-10 max-w-7xl mx-auto px-4">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
             {stats.map((s) => (
               <div key={s.label}>
-                <p className="text-2xl md:text-3xl text-[#C4956A]">{s.value}</p>
-                <p className="text-white/70 text-sm mt-1">{s.label}</p>
+                <p className="text-2xl md:text-3xl text-[#B8C8D4]">{s.value}</p>
+                <p className="text-white/60 text-sm mt-1">{s.label}</p>
               </div>
             ))}
           </div>
@@ -151,26 +151,29 @@ export function HomePage() {
               Every service backed by our Build-Ready Guarantee. Click any service to learn more.
             </p>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
             {services.map((s) => (
               <Link
                 key={s.to}
                 to={s.to}
-                className="group bg-card rounded-xl overflow-hidden shadow-sm border border-border hover:shadow-xl hover:border-[#C4956A]/30 hover:-translate-y-1 transition-all duration-300"
+                className="group relative rounded-2xl overflow-hidden hover:-translate-y-1.5 hover:shadow-2xl transition-all duration-500"
               >
-                <div className="h-48 overflow-hidden relative">
-                  <ImageWithFallback src={s.img} alt={s.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" width={400} height={192} />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
+                {/* Full-bleed image */}
+                <div className="h-72 md:h-80 overflow-hidden">
+                  <ImageWithFallback src={s.img} alt={s.title} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" width={400} height={320} />
                 </div>
-                <div className="p-6">
-                  <div className="flex items-center gap-3 mb-3">
-                    <div className="w-10 h-10 rounded-lg bg-[#5C4A1E]/8 flex items-center justify-center group-hover:bg-[#5C4A1E] transition-colors duration-300">
-                      <s.icon className="w-5 h-5 text-[#5C4A1E] group-hover:text-white transition-colors duration-300" />
+                {/* Gradient overlay */}
+                <div className="absolute inset-0 bg-gradient-to-t from-[#1a1008] via-[#2A1D12]/50 to-transparent" />
+                {/* Content at bottom */}
+                <div className="absolute bottom-0 left-0 right-0 p-6">
+                  <div className="flex items-center gap-3 mb-2">
+                    <div className="w-9 h-9 rounded-lg bg-[#C4956A] flex items-center justify-center shadow-lg">
+                      <s.icon className="w-4.5 h-4.5 text-white" />
                     </div>
-                    <h3 className="text-[#3D2B1F]">{s.title}</h3>
+                    <h3 className="text-white text-lg font-medium">{s.title}</h3>
                   </div>
-                  <p className="text-muted-foreground text-sm mb-3">{s.desc}</p>
-                  <span className="text-[#C4956A] text-sm flex items-center gap-1 group-hover:gap-2 transition-all">
+                  <p className="text-white/70 text-sm mb-3">{s.desc}</p>
+                  <span className="text-[#C4956A] text-sm font-medium flex items-center gap-1 group-hover:gap-2.5 transition-all">
                     Learn More <ArrowRight className="w-4 h-4" />
                   </span>
                 </div>
@@ -181,7 +184,7 @@ export function HomePage() {
       </section>
 
       {/* ═══ Process Section ═══ */}
-      <section className="py-20 bg-[#3D2B1F] noise-overlay grit-top grit-bottom">
+      <section className="py-20 bg-[#3D2B1F] noise-overlay diagonal-lines grit-top grit-bottom">
         <div className="relative z-10 max-w-7xl mx-auto px-4">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div>
@@ -196,10 +199,10 @@ export function HomePage() {
                 ].map((item, idx) => (
                   <div key={item.step} className="flex gap-4 group">
                     <div className="relative">
-                      <div className="w-12 h-12 rounded-full bg-[#C4956A] text-white flex items-center justify-center flex-shrink-0 text-sm group-hover:scale-110 transition-transform">
+                      <div className="w-12 h-12 rounded-full bg-[#7E95A8] text-white flex items-center justify-center flex-shrink-0 text-sm group-hover:scale-110 transition-transform">
                         {item.step}
                       </div>
-                      {idx < 3 && <div className="absolute top-12 left-1/2 w-px h-6 bg-[#C4956A]/30 -translate-x-1/2" />}
+                      {idx < 3 && <div className="absolute top-12 left-1/2 w-px h-6 bg-[#7E95A8]/30 -translate-x-1/2" />}
                     </div>
                     <div>
                       <h3 className="text-white mb-1">{item.title}</h3>
@@ -303,20 +306,20 @@ export function HomePage() {
 
       {/* ═══ Branded Truck Banner ═══ */}
       <section className="relative py-0 overflow-hidden">
-        <div className="relative h-64 md:h-80 lg:h-96">
+        <div className="relative h-[50vh] md:h-[60vh] lg:h-[70vh]">
           <img
-            src={kameronTruck}
-            alt="Lethermon Grade Excavations branded work truck and trailer with excavator on active Florida jobsite"
+            src={kameronSite}
+            alt="Kameron Lethermon — owner of Lethermon Grade Excavations — overseeing a jobsite with branded truck and excavator in Southwest Florida"
             className="w-full h-full object-cover"
-            width={1200} height={384} loading="lazy"
+            width={1200} height={600} loading="lazy"
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-[#3D2B1F]/80 via-[#3D2B1F]/40 to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-r from-[#2A1D12]/95 via-[#2A1D12]/70 to-[#2A1D12]/30" />
           <div className="absolute inset-0 flex items-center">
             <div className="max-w-7xl mx-auto px-4 w-full">
-              <div className="max-w-md">
-                <p className="text-[#C4956A] uppercase tracking-wider text-sm mb-2">On Every Jobsite</p>
-                <h2 className="text-white text-2xl md:text-3xl lg:text-4xl mb-3">Our Name Is on the Truck</h2>
-                <p className="text-gray-300 text-sm md:text-base">
+              <div className="max-w-2xl">
+                <p className="text-[#C4956A] uppercase tracking-widest text-sm md:text-base mb-4 font-medium">On Every Jobsite</p>
+                <h2 className="text-white text-4xl md:text-5xl lg:text-6xl mb-5 leading-tight" style={{ fontFamily: "'Outfit', sans-serif" }}>Our Name Is on the Truck</h2>
+                <p className="text-gray-200 text-base md:text-lg lg:text-xl leading-relaxed max-w-xl">
                   When you hire Lethermon, you get the owner on-site directing a professional crew — not a subcontractor you've never met.
                 </p>
               </div>
@@ -326,17 +329,17 @@ export function HomePage() {
       </section>
 
       {/* ═══ Guarantees ═══ */}
-      <section className="py-20 bg-secondary noise-overlay grit-bottom">
+      <section className="py-20 bg-secondary noise-overlay dot-grid grit-bottom">
         <div className="relative z-10 max-w-7xl mx-auto px-4">
           <div className="text-center mb-14">
-            <p className="text-[#C4956A] uppercase tracking-wider text-sm mb-2">Our Pledges</p>
+            <p className="text-[#7E95A8] uppercase tracking-wider text-sm mb-2">Our Pledges</p>
             <h2 className="text-3xl md:text-4xl text-[#3D2B1F] mb-4">Guarantees You Can Count On</h2>
           </div>
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
             {guarantees.map((g) => (
               <div key={g.title} className="text-center p-5 md:p-8 rounded-xl bg-card border border-border shadow-sm hover:shadow-md hover:-translate-y-0.5 transition-all duration-300">
-                <div className="w-14 h-14 md:w-16 md:h-16 rounded-full bg-[#C4956A]/10 flex items-center justify-center mx-auto mb-4 md:mb-5">
-                  <g.icon className="w-6 h-6 md:w-8 md:h-8 text-[#C4956A]" />
+                <div className="w-14 h-14 md:w-16 md:h-16 rounded-full bg-[#7E95A8]/10 flex items-center justify-center mx-auto mb-4 md:mb-5">
+                  <g.icon className="w-6 h-6 md:w-8 md:h-8 text-[#7E95A8]" />
                 </div>
                 <h3 className="text-[#3D2B1F] text-sm md:text-base mb-2 md:mb-3">{g.title}</h3>
                 <p className="text-muted-foreground text-xs md:text-sm">{g.desc}</p>
@@ -347,7 +350,7 @@ export function HomePage() {
       </section>
 
       {/* ═══ Reviews ═══ */}
-      <section className="py-20 bg-[#1a1008] noise-overlay-heavy grit-top">
+      <section className="py-20 bg-[#1a1008] noise-overlay-heavy dot-grid grit-top">
         <div className="relative z-10 max-w-7xl mx-auto px-4">
           <div className="text-center mb-14">
             <p className="text-[#C4956A] uppercase tracking-wider text-sm mb-2">Client Reviews</p>
@@ -384,24 +387,36 @@ export function HomePage() {
             <div>
               <p className="text-[#C4956A] uppercase tracking-wider text-sm mb-2">Our Work</p>
               <h2 className="text-3xl md:text-4xl text-[#3D2B1F]">Recent Projects</h2>
+              <p className="text-muted-foreground mt-2 max-w-xl">Real projects completed across Southwest Florida — from residential lots to commercial developments.</p>
             </div>
             <Link to="/projects" className="text-[#C4956A] flex items-center gap-1 mt-3 md:mt-0 hover:gap-2 transition-all text-sm">
               View All Projects <ArrowRight className="w-4 h-4" />
             </Link>
           </div>
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 md:gap-4">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
             {[
-              { img: imgOverhead, label: "Commercial Site Prep", alt: "Aerial drone view of commercial site grading project with heavy equipment in Bradenton FL" },
-              { img: imgTrenching, label: "Utility Trenching", alt: "Crew installing concrete culvert pipe in deep utility trench in Palmetto FL" },
-              { img: imgGradingCommercial, label: "Foundation Grading", alt: "Volvo roller compacting commercial parking lot foundation in Bradenton FL" },
-              { img: imgDemolition, label: "Structure Demolition", alt: "Red Yanmar excavator demolishing mobile home with Lethermon branded truck on site" },
-              { img: imgEquipment, label: "Equipment Fleet", alt: "John Deere compact track loader and wheel loader on open grading site" },
-              { img: imgPoolBackfill, label: "Pool Excavation", alt: "Completed pool shell with graded backfill ready for deck work in Sarasota FL" },
+              { img: imgOverhead, title: "Commercial Warehouse Site Prep", location: "Bradenton, FL", service: "Site Grading", scope: "5-acre commercial pad, stormwater grading, and parking lot prep for a new warehouse facility.", alt: "Aerial drone view of commercial site grading project with heavy equipment in Bradenton FL" },
+              { img: imgTrenching, title: "Underground Utility Install", location: "Palmetto, FL", service: "Trenching", scope: "700 LF of water, sewer, and storm drain trenching for a new residential subdivision.", alt: "Crew installing concrete culvert pipe in deep utility trench in Palmetto FL" },
+              { img: imgGradingCommercial, title: "Commercial Parking Pad", location: "Bradenton, FL", service: "Foundation Grading", scope: "Precision grading and compaction for a 20,000 SF commercial building pad and parking area.", alt: "Volvo roller compacting commercial parking lot foundation in Bradenton FL" },
+              { img: imgDemolition, title: "Mobile Home Demolition & Lot Clear", location: "Longboat Key, FL", service: "Demolition", scope: "Full structure demolition, debris removal, and lot clearing for new coastal construction.", alt: "Red Yanmar excavator demolishing mobile home with Lethermon branded truck on site" },
+              { img: imgPoolBackfill, title: "Pool Excavation & Backfill", location: "Sarasota, FL", service: "Excavation", scope: "Custom pool dig, dewatering, and structural backfill for a waterfront home on Siesta Key.", alt: "Completed pool shell with graded backfill ready for deck work in Sarasota FL" },
+              { img: imgDemoWaterfront, title: "Waterfront Structure Removal", location: "Venice, FL", service: "Demolition", scope: "Selective demolition of waterfront structure with environmental protection and site restoration.", alt: "Waterfront demolition project in Venice FL" },
             ].map((p) => (
-              <Link key={p.label} to="/projects" className="group rounded-xl overflow-hidden relative h-44 md:h-56">
-                <ImageWithFallback src={p.img} alt={p.alt || p.label} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" width={300} height={224} />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent" />
-                <span className="absolute bottom-3 left-3 md:bottom-4 md:left-4 text-white text-xs md:text-sm">{p.label}</span>
+              <Link key={p.title} to="/projects" className="group bg-card rounded-xl overflow-hidden border border-border hover:border-[#C4956A]/30 hover:shadow-md transition-all">
+                <div className="relative h-48 overflow-hidden">
+                  <ImageWithFallback src={p.img} alt={p.alt} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
+                  <div className="absolute top-3 left-3">
+                    <span className="bg-[#5C4A1E] text-white text-xs px-2.5 py-1 rounded-full">{p.service}</span>
+                  </div>
+                </div>
+                <div className="p-5">
+                  <h3 className="text-[#3D2B1F] font-medium mb-1.5 group-hover:text-[#5C4A1E] transition-colors">{p.title}</h3>
+                  <div className="flex items-center gap-1.5 text-[#C4956A] text-xs mb-3">
+                    <MapPin className="w-3 h-3" />
+                    {p.location}
+                  </div>
+                  <p className="text-muted-foreground text-sm leading-relaxed">{p.scope}</p>
+                </div>
               </Link>
             ))}
           </div>
@@ -409,48 +424,44 @@ export function HomePage() {
       </section>
 
       {/* ═══ Service Areas Map ═══ */}
-      <section className="py-20 bg-secondary noise-overlay grit-top grit-bottom">
+      <section className="py-20 bg-secondary noise-overlay diagonal-lines grit-top grit-bottom">
         <div className="relative z-10 max-w-7xl mx-auto px-4">
-          <div className="text-center mb-14">
+          <div className="text-center mb-10">
             <p className="text-[#C4956A] uppercase tracking-wider text-sm mb-2">Service Coverage</p>
             <h2 className="text-3xl md:text-4xl text-[#3D2B1F] mb-4">Local Authority Across Southwest Florida</h2>
             <p className="text-muted-foreground max-w-2xl mx-auto">
               200+ completed projects across Sarasota, Manatee & Charlotte counties.
             </p>
           </div>
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-            <div className="lg:col-span-2 rounded-xl overflow-hidden shadow-md border border-border bg-white">
-              <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d226604.18122392394!2d-82.63!3d27.38!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x88c340937da31753%3A0x9a42708b6c7fcafe!2sBradenton%2C%20FL!5e0!3m2!1sen!2sus!4v1700000000000!5m2!1sen!2sus"
-                width="100%"
-                height="100%"
-                style={{ border: 0, minHeight: 400 }}
-                allowFullScreen
-                loading="lazy"
-                referrerPolicy="no-referrer-when-downgrade"
-                title="Lethermon Service Area"
-              />
-            </div>
-            <div className="space-y-3 max-h-[400px] overflow-y-auto pr-2">
-              {allServiceAreas.map((area) => (
-                <Link
-                  key={area.city}
-                  to={`/service-areas/${area.slug || area.city.toLowerCase().replace(/\s+/g, "-").replace(".", "")}`}
-                  className="group bg-card rounded-lg p-4 border border-border flex items-start gap-3 hover:border-[#C4956A]/30 hover:shadow-sm transition-all block"
-                >
-                  <MapPin className="w-5 h-5 text-[#C4956A] flex-shrink-0 mt-0.5" />
-                  <div className="flex-1 min-w-0">
-                    <div className="flex items-center gap-2">
-                      <h3 className="text-[#3D2B1F] text-sm">{area.city}</h3>
-                      <span className="text-xs bg-[#C4956A]/10 text-[#C4956A] px-2 py-0.5 rounded-full">{area.projects} projects</span>
-                    </div>
-                    <p className="text-muted-foreground text-xs mt-1">{area.description}</p>
-                  </div>
-                  <ArrowRight className="w-3.5 h-3.5 text-[#C4956A] opacity-0 group-hover:opacity-100 transition-opacity flex-shrink-0 mt-1" />
-                </Link>
-              ))}
-            </div>
+
+          <div className="rounded-xl overflow-hidden shadow-md border border-border bg-white mb-10">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d905498.4518978231!2d-82.5374445!3d27.5593035!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3544cbdb47b1563%3A0x39e434b41886bf23!2sLethermon%20Grade%20Excavations!5e0!3m2!1sen!2sus!4v1774217173955!5m2!1sen!2sus"
+              width="100%"
+              height="300"
+              style={{ border: 0 }}
+              allowFullScreen
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+              title="Lethermon Service Area"
+            />
           </div>
+
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
+            {allServiceAreas.map((area) => (
+              <Link
+                key={area.city}
+                to={`/service-areas/${area.slug || area.city.toLowerCase().replace(/\s+/g, "-").replace(".", "")}`}
+                className="group bg-card rounded-lg p-4 border border-border hover:border-[#C4956A]/30 hover:shadow-md transition-all block text-center"
+              >
+                <MapPin className="w-5 h-5 text-[#C4956A] mx-auto mb-2" />
+                <h3 className="text-[#3D2B1F] text-sm font-medium">{area.city}</h3>
+                <span className="text-xs text-[#C4956A] font-medium">{area.projects}+ projects</span>
+                <p className="text-muted-foreground text-xs mt-1.5 leading-relaxed">{area.description}</p>
+              </Link>
+            ))}
+          </div>
+
           <div className="mt-10">
             <p className="text-center text-muted-foreground text-sm mb-4">Types of Projects We Handle</p>
             <div className="flex flex-wrap justify-center gap-2">

@@ -1,5 +1,7 @@
-import { Link } from "react-router";
-import { CheckCircle, Phone, ArrowRight, Star, Shield, Clock, ChevronRight, MapPin, Play } from "lucide-react";
+"use client";
+import { useState, useCallback } from "react";
+import { Link } from "@/compat/Link";
+import { CheckCircle, Phone, ArrowRight, Star, Shield, Clock, ChevronRight, ChevronLeft, MapPin, Play, X, ZoomIn } from "lucide-react";
 import { ImageWithFallback } from "./figma/ImageWithFallback";
 import { StarRating } from "./StarRating";
 import { VideoPlaceholder } from "./VideoPlaceholder";
@@ -39,6 +41,148 @@ export interface ServicePageData {
   seoDescription?: string;
 }
 
+function ServiceGallery({ title, images }: { title: string; images: string[] }) {
+  const [lightboxIndex, setLightboxIndex] = useState<number | null>(null);
+  const previewImages = images.slice(0, 3);
+  const remaining = images.length - 3;
+
+  const openLightbox = useCallback((index: number) => {
+    setLightboxIndex(index);
+    document.body.style.overflow = "hidden";
+  }, []);
+
+  const closeLightbox = useCallback(() => {
+    setLightboxIndex(null);
+    document.body.style.overflow = "";
+  }, []);
+
+  const goNext = useCallback(() => {
+    setLightboxIndex((prev) => (prev !== null ? (prev + 1) % images.length : 0));
+  }, [images.length]);
+
+  const goPrev = useCallback(() => {
+    setLightboxIndex((prev) => (prev !== null ? (prev - 1 + images.length) % images.length : 0));
+  }, [images.length]);
+
+  return (
+    <>
+      <section className="py-20 bg-secondary">
+        <div className="max-w-7xl mx-auto px-4">
+          <div className="text-center mb-10">
+            <p className="text-[#C4956A] uppercase tracking-wider text-sm mb-2">{title} Gallery</p>
+            <h2 className="text-3xl text-[#3D2B1F]">See Our {title} Work</h2>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+            {previewImages.map((img, i) => (
+              <div
+                key={i}
+                className="rounded-xl overflow-hidden h-56 lg:h-72 cursor-pointer group relative"
+                onClick={() => openLightbox(i)}
+              >
+                <ImageWithFallback
+                  src={img}
+                  alt={`${title} project by Lethermon Grade Excavations — photo ${i + 1}`}
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                />
+                <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors flex items-center justify-center">
+                  <ZoomIn className="w-8 h-8 text-white opacity-0 group-hover:opacity-100 transition-opacity drop-shadow-lg" />
+                </div>
+                {/* Show "+N more" badge on last preview image */}
+                {i === 2 && remaining > 0 && (
+                  <div className="absolute inset-0 bg-black/40 flex items-center justify-center">
+                    <span className="text-white text-lg font-medium">+{remaining} more</span>
+                  </div>
+                )}
+              </div>
+            ))}
+          </div>
+          <div className="text-center mt-8">
+            <button
+              onClick={() => openLightbox(0)}
+              className="text-[#C4956A] inline-flex items-center gap-1 hover:gap-2 transition-all text-sm cursor-pointer"
+            >
+              View All {images.length} Photos <ArrowRight className="w-4 h-4" />
+            </button>
+          </div>
+        </div>
+      </section>
+
+      {/* Lightbox */}
+      {lightboxIndex !== null && (
+        <div
+          className="fixed inset-0 z-[100] bg-black/95 flex items-center justify-center"
+          onClick={closeLightbox}
+        >
+          {/* Close button */}
+          <button
+            onClick={closeLightbox}
+            className="absolute top-4 right-4 text-white/70 hover:text-white transition-colors z-10"
+            aria-label="Close gallery"
+          >
+            <X className="w-8 h-8" />
+          </button>
+
+          {/* Counter */}
+          <div className="absolute top-5 left-1/2 -translate-x-1/2 text-white/60 text-sm">
+            {lightboxIndex + 1} / {images.length}
+          </div>
+
+          {/* Previous */}
+          {images.length > 1 && (
+            <button
+              onClick={(e) => { e.stopPropagation(); goPrev(); }}
+              className="absolute left-3 md:left-6 top-1/2 -translate-y-1/2 w-12 h-12 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center text-white transition-colors z-10"
+              aria-label="Previous photo"
+            >
+              <ChevronLeft className="w-6 h-6" />
+            </button>
+          )}
+
+          {/* Image */}
+          <div
+            className="max-w-5xl max-h-[85vh] px-16 md:px-20"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <img
+              src={images[lightboxIndex]}
+              alt={`${title} project — photo ${lightboxIndex + 1}`}
+              className="max-w-full max-h-[85vh] object-contain rounded-lg"
+            />
+          </div>
+
+          {/* Next */}
+          {images.length > 1 && (
+            <button
+              onClick={(e) => { e.stopPropagation(); goNext(); }}
+              className="absolute right-3 md:right-6 top-1/2 -translate-y-1/2 w-12 h-12 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center text-white transition-colors z-10"
+              aria-label="Next photo"
+            >
+              <ChevronRight className="w-6 h-6" />
+            </button>
+          )}
+
+          {/* Thumbnail strip */}
+          {images.length > 1 && (
+            <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2 max-w-[90vw] overflow-x-auto px-4 py-2">
+              {images.map((img, i) => (
+                <button
+                  key={i}
+                  onClick={(e) => { e.stopPropagation(); setLightboxIndex(i); }}
+                  className={`flex-shrink-0 w-16 h-12 rounded overflow-hidden border-2 transition-all ${
+                    i === lightboxIndex ? "border-[#C4956A] opacity-100" : "border-transparent opacity-50 hover:opacity-80"
+                  }`}
+                >
+                  <img src={img} alt="" className="w-full h-full object-cover" />
+                </button>
+              ))}
+            </div>
+          )}
+        </div>
+      )}
+    </>
+  );
+}
+
 function ServiceSchema({ data, areasList }: { data: ServicePageData; areasList: { city: string; slug: string }[] }) {
   const schema = {
     "@context": "https://schema.org",
@@ -55,8 +199,8 @@ function ServiceSchema({ data, areasList }: { data: ServicePageData; areasList: 
           telephone: "+1-941-290-7208",
           address: {
             "@type": "PostalAddress",
-            streetAddress: "Bradenton",
-            addressLocality: "Bradenton",
+            streetAddress: "1404 21st ST W.",
+            addressLocality: "Palmetto",
             addressRegion: "FL",
             postalCode: "34201",
             addressCountry: "US",
@@ -305,7 +449,7 @@ export function ServicePageTemplate({ data }: { data: ServicePageData }) {
                   <p className="text-gray-400 text-sm">{step.desc}</p>
                 </div>
                 {i < data.process.length - 1 && (
-                  <ArrowRight className="hidden lg:block absolute top-1/2 -right-3 w-6 h-6 text-[#C4956A]/50 -translate-y-1/2" />
+                  <ArrowRight className="hidden lg:block absolute top-[44px] -right-3 w-6 h-6 text-[#C4956A]/50 -translate-y-1/2" />
                 )}
               </div>
             ))}
@@ -345,26 +489,7 @@ export function ServicePageTemplate({ data }: { data: ServicePageData }) {
       </section>
 
       {/* Gallery */}
-      <section className="py-20 bg-secondary">
-        <div className="max-w-7xl mx-auto px-4">
-          <div className="text-center mb-10">
-            <p className="text-[#C4956A] uppercase tracking-wider text-sm mb-2">{data.title} Gallery</p>
-            <h2 className="text-3xl text-[#3D2B1F]">See Our {data.title} Work</h2>
-          </div>
-          <div className="grid grid-cols-2 lg:grid-cols-3 gap-4">
-            {data.galleryImages.map((img, i) => (
-              <div key={i} className="rounded-xl overflow-hidden h-52 lg:h-64">
-                <ImageWithFallback src={img} alt={`${data.title} project by Lethermon Grade Excavations in Southwest Florida — photo ${i + 1}`} className="w-full h-full object-cover hover:scale-105 transition-transform duration-500" />
-              </div>
-            ))}
-          </div>
-          <div className="text-center mt-8">
-            <Link to="/gallery" className="text-[#C4956A] flex items-center justify-center gap-1 hover:gap-2 transition-all">
-              View Full Gallery <ArrowRight className="w-4 h-4" />
-            </Link>
-          </div>
-        </div>
-      </section>
+      <ServiceGallery title={data.title} images={data.galleryImages} />
 
       {/* SEO Content Block 2 */}
       {data.seoContent && data.seoContent[1] && (
@@ -476,13 +601,15 @@ export function ServicePageTemplate({ data }: { data: ServicePageData }) {
       </section>
 
       {/* Related Videos */}
-      {videos.filter((v) => v.serviceSlugs.includes(data.slug)).length > 0 && (
+      {videos.filter((v) => v.serviceSlugs.includes(data.slug)).length > 0 && (() => {
+        const serviceVideos = videos.filter((v) => v.serviceSlugs.includes(data.slug));
+        const count = serviceVideos.length;
+        return (
         <section className="py-16 bg-secondary">
-          <div className="max-w-7xl mx-auto px-4">
+          <div className={count === 1 ? "max-w-2xl mx-auto px-4" : "max-w-7xl mx-auto px-4"}>
             <h2 className="text-2xl text-[#3D2B1F] text-center mb-8">Watch {data.title} in Action</h2>
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-              {videos
-                .filter((v) => v.serviceSlugs.includes(data.slug))
+            <div className={count === 1 ? "flex justify-center" : count === 2 ? "grid grid-cols-1 sm:grid-cols-2 gap-6 max-w-4xl mx-auto" : "grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6"}>
+              {serviceVideos
                 .map((video) => (
                   <Link
                     key={video.slug}
@@ -516,7 +643,8 @@ export function ServicePageTemplate({ data }: { data: ServicePageData }) {
             </div>
           </div>
         </section>
-      )}
+        );
+      })()}
 
       {/* Popular areas */}
       {allServiceAreas.length > 0 && (

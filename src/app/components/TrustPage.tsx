@@ -1,4 +1,5 @@
-import { Link } from "react-router";
+"use client";
+import { Link } from "@/compat/Link";
 import { usePageSEO } from "../hooks/usePageSEO";
 import { Shield, Award, CheckCircle, Star, FileText, HardHat, Phone, Users, Truck, Clock, ThumbsUp, BadgeCheck } from "lucide-react";
 import { StarRating } from "./StarRating";

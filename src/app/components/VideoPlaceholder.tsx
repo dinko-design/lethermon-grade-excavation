@@ -1,3 +1,4 @@
+"use client";
 import { Play, Pause } from "lucide-react";
 import { useState, useRef, useEffect } from "react";
 
@@ -63,11 +64,11 @@ export function VideoPlaceholder({
             muted
             loop
             playsInline
-            className="w-full h-full object-cover"
+            className="absolute inset-0 w-full h-full object-cover"
           />
         )}
         {!isVisible && thumbnail && (
-          <img src={thumbnail} alt={title} className="w-full h-full object-cover" loading="lazy" />
+          <img src={thumbnail} alt={title} className="absolute inset-0 w-full h-full object-cover" loading="lazy" />
         )}
       </div>
     );
@@ -87,7 +88,7 @@ export function VideoPlaceholder({
             poster={thumbnail}
             playsInline
             preload="metadata"
-            className="w-full h-full object-cover"
+            className="absolute inset-0 w-full h-full object-cover"
             onPlay={() => setPlaying(true)}
             onPause={() => setPlaying(false)}
             onEnded={() => setPlaying(false)}
@@ -97,7 +98,7 @@ export function VideoPlaceholder({
             <img
               src={thumbnail}
               alt={title}
-              className="w-full h-full object-cover opacity-60"
+              className="absolute inset-0 w-full h-full object-cover opacity-60"
               loading="lazy"
             />
           )
@@ -130,7 +131,7 @@ export function VideoPlaceholder({
         <img
           src={thumbnail}
           alt={title}
-          className="w-full h-full object-cover opacity-60 group-hover:opacity-40 transition-opacity"
+          className="absolute inset-0 w-full h-full object-cover opacity-60 group-hover:opacity-40 transition-opacity"
           loading="lazy"
         />
       )}

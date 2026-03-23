@@ -1,6 +1,7 @@
+"use client";
 import { useState } from "react";
 import { usePageSEO } from "../hooks/usePageSEO";
-import { Link } from "react-router";
+import { Link } from "@/compat/Link";
 import { Phone, Camera } from "lucide-react";
 import kameronTruck from "@/assets/kameron-truck.webp";
 import kameronCollage2 from "@/assets/kameron-collage.webp";

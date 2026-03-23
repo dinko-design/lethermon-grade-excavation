@@ -1,4 +1,5 @@
-import { Link } from "react-router";
+"use client";
+import { Link } from "@/compat/Link";
 import { usePageSEO } from "../hooks/usePageSEO";
 import { Phone, MapPin, Mail, Clock, Navigation, Car, ArrowRight } from "lucide-react";
 import { StarRating } from "./StarRating";
@@ -14,7 +15,7 @@ export function LocationPage() {
   const companyName = settings?.name || "Lethermon Grade Excavations";
   usePageSEO({
     title: "Our Location | Bradenton FL | Lethermon Grade Excavations",
-    description: "Lethermon Grade Excavations is headquartered in Bradenton, FL 34201. Serving Sarasota County, Manatee County, and all of Southwest Florida.",
+    description: "Lethermon Grade Excavations is headquartered in Palmetto, FL 34221. Serving Sarasota County, Manatee County, and all of Southwest Florida.",
     path: "/location",
   });
   return (
@@ -39,7 +40,7 @@ export function LocationPage() {
             {/* Map */}
             <div className="rounded-xl overflow-hidden shadow-lg border border-border">
               <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3538.5!2d-82.577!3d27.395!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2s5429+University+Parkway+Bradenton+FL!5e0!3m2!1sen!2sus"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d905498.4518978231!2d-82.5374445!3d27.5593035!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3544cbdb47b1563%3A0x39e434b41886bf23!2sLethermon%20Grade%20Excavations!5e0!3m2!1sen!2sus!4v1774217173955!5m2!1sen!2sus"
                 width="100%"
                 height="100%"
                 style={{ border: 0, minHeight: 450 }}
@@ -59,7 +60,7 @@ export function LocationPage() {
                   </div>
                   <div>
                     <p className="text-[#3D2B1F]">Address</p>
-                    <p className="text-muted-foreground">5429 University Pkwy #1067<br />Bradenton, FL 34201</p>
+                    <p className="text-muted-foreground">1404 21st ST W.<br />Palmetto, FL 34221</p>
                   </div>
                 </div>
                 <a href={`tel:${phoneTel}`} className="flex items-start gap-4 group">
@@ -99,9 +100,9 @@ export function LocationPage() {
               <div className="mt-8 bg-[#5C4A1E]/5 border border-[#5C4A1E]/15 rounded-xl p-6">
                 <h3 className="text-[#3D2B1F] mb-2">Directions</h3>
                 <p className="text-muted-foreground text-sm mb-3">
-                  Located on University Parkway near I-75, easily accessible from Sarasota, Bradenton, and Lakewood Ranch. Take I-75 Exit 213 (University Pkwy) and head west.
+                  Located in Palmetto, easily accessible from Sarasota, Bradenton, and Lakewood Ranch.
                 </p>
-                <a href="https://maps.google.com/?q=5429+University+Pkwy+Bradenton+FL+34201" target="_blank" rel="noopener noreferrer" className="text-[#C4956A] text-sm flex items-center gap-1 hover:gap-2 transition-all">
+                <a href="https://maps.google.com/?q=1404+21st+ST+W+Palmetto+FL+34221" target="_blank" rel="noopener noreferrer" className="text-[#C4956A] text-sm flex items-center gap-1 hover:gap-2 transition-all">
                   <Navigation className="w-4 h-4" /> Get Directions
                 </a>
               </div>

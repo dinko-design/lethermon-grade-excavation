@@ -1,4 +1,5 @@
-import { Link } from "react-router";
+"use client";
+import { Link } from "@/compat/Link";
 import { usePageSEO } from "../hooks/usePageSEO";
 import {
   Shield, HardHat, Target, Users, Wrench, Truck, ChevronRight,
@@ -12,7 +13,7 @@ import imgSkidSteer from "@/assets/images/excavation-skidsteer-aerial.webp";
 import imgGradedLot from "@/assets/images/grading-bradenton-lot.webp";
 import imgDumpTruck from "@/assets/images/equipment-commercial-grading.webp";
 import imgTrenching from "@/assets/images/trenching-crew-deep-trench.webp";
-import imgEquipment from "@/assets/images/equipment-deere-fleet.webp";
+import imgEquipment from "@/assets/images/site-development-aerial.webp";
 
 interface PlaceholderMember {
   role: string;
@@ -186,19 +187,19 @@ export function TeamPage() {
             {departments.map((dept) => {
               const Icon = dept.icon;
               return (
-                <div key={dept.name} className="bg-card rounded-xl overflow-hidden shadow-sm border border-border">
-                  <div className="grid grid-cols-1 lg:grid-cols-3">
+                <div key={dept.name} className="bg-card rounded-xl overflow-hidden shadow-sm border border-border relative">
+                  <div className="grid grid-cols-1 lg:grid-cols-5">
                     {/* Department photo */}
-                    <div className="lg:col-span-1 h-56 lg:h-auto overflow-hidden">
+                    <div className="lg:col-span-2 h-56 lg:h-auto lg:relative overflow-hidden">
                       <ImageWithFallback
                         src={dept.img}
                         alt={dept.name}
-                        className="w-full h-full object-cover"
+                        className="w-full h-full lg:absolute lg:inset-0 object-cover"
                       />
                     </div>
 
                     {/* Department info + members */}
-                    <div className="lg:col-span-2 p-6 md:p-8">
+                    <div className="lg:col-span-3 p-6 md:p-8">
                       <div className="flex items-center gap-3 mb-4">
                         <div className="w-10 h-10 rounded-lg bg-[#5C4A1E]/10 flex items-center justify-center">
                           <Icon className="w-5 h-5 text-[#5C4A1E]" />
@@ -241,7 +242,7 @@ export function TeamPage() {
             alt="Lethermon Grade Excavations equipment fleet — John Deere excavators and bulldozers"
             className="w-full h-full object-cover"
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-[#3D2B1F]/80 via-[#3D2B1F]/40 to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-r from-[#3D2B1F]/95 via-[#3D2B1F]/75 to-[#3D2B1F]/40" />
           <div className="absolute inset-0 flex items-center">
             <div className="max-w-7xl mx-auto px-4 w-full">
               <div className="max-w-md">

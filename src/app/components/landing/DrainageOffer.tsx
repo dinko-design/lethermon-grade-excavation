@@ -1,3 +1,5 @@
+"use client";
+
 import { Shield, Award, Star, Clock, CheckCircle } from "lucide-react";
 import { LandingPageTemplate } from "../LandingPageTemplate";
 import type { LandingPageData } from "../LandingPageTemplate";

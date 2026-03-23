@@ -1,4 +1,6 @@
-import { Link, useParams } from "react-router";
+"use client";
+import { Link } from "@/compat/Link";
+import { useParams } from "next/navigation";
 import { usePageSEO } from "../hooks/usePageSEO";
 import { ChevronRight, Phone, FileText, MapPin, Shovel } from "lucide-react";
 import { videos } from "./data";

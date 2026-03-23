@@ -1,7 +1,9 @@
+"use client";
 import { useState, useEffect, useRef } from "react";
-import { Link, useLocation } from "react-router";
+import { Link } from "@/compat/Link";
+import { usePathname } from "next/navigation";
 import { Menu, X, Phone, MapPin, Trees, Shovel, Ruler, Droplets, Building2, Cable } from "lucide-react";
-import logo from "@/assets/206a28336ec240b04f829ff9f6ee440a4dd2c962.webp";
+import logo from "@/assets/lethermon-grade-excavations-logo.png";
 import { useCompanySettings } from "../providers/SanityProvider";
 
 const utilityLinks = [
@@ -24,9 +26,25 @@ const serviceLinks = [
   { to: "/services/trenching", label: "Trenching", icon: Cable },
 ];
 
+function FacebookIcon({ className }: { className?: string }) {
+  return (
+    <svg viewBox="0 0 24 24" fill="currentColor" className={className}>
+      <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
+    </svg>
+  );
+}
+
+function InstagramIcon({ className }: { className?: string }) {
+  return (
+    <svg viewBox="0 0 24 24" fill="currentColor" className={className}>
+      <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z" />
+    </svg>
+  );
+}
+
 export function Header() {
   const [mobileOpen, setMobileOpen] = useState(false);
-  const location = useLocation();
+  const pathname = usePathname();
   const settings = useCompanySettings();
   const phone = settings?.phone || "(941) 290-7208";
   const phoneTel = settings?.phoneTel || "9412907208";
@@ -44,9 +62,9 @@ export function Header() {
           if (currentY < 10) {
             setVisible(true);
           } else if (currentY > lastScrollY.current && currentY > 100) {
-            setVisible(false); // scrolling down
+            setVisible(false);
           } else if (currentY < lastScrollY.current) {
-            setVisible(true); // scrolling up
+            setVisible(true);
           }
           lastScrollY.current = currentY;
           ticking.current = false;
@@ -58,43 +76,52 @@ export function Header() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
-  // Close mobile nav on route change
   useEffect(() => {
     setMobileOpen(false);
-  }, [location.pathname]);
+  }, [pathname]);
 
   return (
     <header
       className="sticky top-0 z-50 transition-transform duration-300 will-change-transform"
       style={{ transform: visible ? "translateY(0)" : "translateY(-100%)" }}
     >
-      {/* Skinny utility bar */}
-      <div className="bg-[#2A1D12] text-white/80 text-xs hidden md:block">
-        <div className="max-w-7xl mx-auto px-4 flex items-center justify-between h-8">
-          <div className="hidden md:flex items-center gap-4">
-            <span className="flex items-center gap-1">
+      {/* Utility bar — taller, less cramped */}
+      <div className="bg-[#2A1D12] text-white/80 text-xs hidden lg:block">
+        <div className="max-w-7xl mx-auto px-4 flex items-center justify-between h-10">
+          <div className="flex items-center gap-4">
+            <span className="flex items-center gap-1.5">
               <MapPin className="w-3 h-3" />
-              <Link to="/location" className="hover:text-[#C4956A] transition-colors">Bradenton, FL</Link>
+              <Link to="/location" className="hover:text-[#C4956A] transition-colors">Palmetto, FL</Link>
             </span>
-            <span className="text-white/30">|</span>
+            <span className="text-white/20">|</span>
             <Link to="/service-areas" className="hover:text-[#C4956A] transition-colors">Serving Sarasota, Bradenton, Venice & Surrounding Areas</Link>
           </div>
-          <div className="flex items-center gap-4 w-full md:w-auto justify-between md:justify-end">
+          <div className="flex items-center gap-3">
             <nav className="flex items-center gap-3">
               {utilityLinks.map((link) => (
                 <Link
                   key={link.to}
                   to={link.to}
                   className={`hover:text-[#C4956A] transition-colors ${
-                    location.pathname === link.to ? "text-[#C4956A]" : ""
+                    pathname === link.to ? "text-[#C4956A]" : ""
                   }`}
                 >
                   {link.label}
                 </Link>
               ))}
             </nav>
-            <span className="text-white/30 hidden md:inline">|</span>
-            <a href={`tel:${phoneTel}`} className="hidden sm:flex items-center gap-1 text-[#C4956A] hover:text-white transition-colors">
+            <span className="text-white/20">|</span>
+            {/* Social icons */}
+            <div className="flex items-center gap-2">
+              <a href="https://www.facebook.com/profile.php?id=100085637750673" target="_blank" rel="noopener noreferrer" className="hover:text-[#C4956A] transition-colors" aria-label="Facebook">
+                <FacebookIcon className="w-3.5 h-3.5" />
+              </a>
+              <a href="https://www.instagram.com/lethermongradeexcavations/" target="_blank" rel="noopener noreferrer" className="hover:text-[#C4956A] transition-colors" aria-label="Instagram">
+                <InstagramIcon className="w-3.5 h-3.5" />
+              </a>
+            </div>
+            <span className="text-white/20">|</span>
+            <a href={`tel:${phoneTel}`} className="flex items-center gap-1.5 text-[#C4956A] hover:text-white transition-colors">
               <Phone className="w-3 h-3" />
               {phone}
             </a>
@@ -102,24 +129,24 @@ export function Header() {
         </div>
       </div>
 
-      {/* Main service nav */}
+      {/* Main service nav — taller with bigger logo */}
       <div className="bg-white shadow-md border-b border-border">
         <div className="max-w-7xl mx-auto px-4">
-          <div className="flex items-center justify-between h-20 lg:h-24">
+          <div className="flex items-center justify-between h-20 lg:h-28">
             <Link to="/" className="flex-shrink-0">
-              <img src={logo} alt="Lethermon Grade Excavations" className="h-14 lg:h-20 w-auto" width={200} height={114} />
+              <img src={logo} alt="Lethermon Grade Excavations" className="h-16 lg:h-24 w-auto" width={200} height={114} />
             </Link>
 
-            {/* Desktop service links - stacked icon/text */}
-            <nav className="hidden lg:flex items-center gap-0.5">
+            {/* Desktop service links */}
+            <nav className="hidden lg:flex items-center gap-1">
               {serviceLinks.map((link) => {
                 const Icon = link.icon;
-                const active = location.pathname === link.to;
+                const active = pathname === link.to;
                 return (
                   <Link
                     key={link.to}
                     to={link.to}
-                    className={`flex flex-col items-center gap-1 px-4 py-2 rounded-lg transition-all text-xs ${
+                    className={`flex flex-col items-center gap-1.5 px-4 py-2.5 rounded-lg transition-all text-xs ${
                       active
                         ? "bg-[#5C4A1E] text-white"
                         : "text-[#3D2B1F] hover:bg-[#5C4A1E]/5 hover:text-[#5C4A1E]"
@@ -136,14 +163,14 @@ export function Header() {
             <div className="hidden lg:flex items-center">
               <Link
                 to="/contact"
-                className="bg-[#C4956A] text-white px-6 py-3 rounded-lg hover:bg-[#b07f55] transition-colors text-sm whitespace-nowrap"
+                className="bg-[#C4956A] text-white px-7 py-3.5 rounded-lg hover:bg-[#b07f55] transition-colors text-sm whitespace-nowrap"
               >
                 Free Estimate
               </Link>
             </div>
 
             {/* Mobile phone + hamburger */}
-            <div className="flex items-center gap-1 lg:hidden">
+            <div className="flex items-center gap-2 lg:hidden">
               <a
                 href={`tel:${phoneTel}`}
                 className="text-[#C4956A] p-2"
@@ -156,7 +183,7 @@ export function Header() {
                 onClick={() => setMobileOpen(!mobileOpen)}
                 aria-label={mobileOpen ? "Close navigation menu" : "Open navigation menu"}
               >
-                {mobileOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+                {mobileOpen ? <X className="w-7 h-7" /> : <Menu className="w-7 h-7" />}
               </button>
             </div>
           </div>
@@ -166,7 +193,6 @@ export function Header() {
         {mobileOpen && (
           <div className="lg:hidden border-t border-border bg-white max-h-[80vh] overflow-y-auto">
             <div className="max-w-7xl mx-auto px-4 py-4 space-y-1">
-              {/* Services first */}
               <p className="text-xs text-muted-foreground uppercase tracking-wider px-3 mb-2">Services</p>
               {serviceLinks.map((link) => {
                 const Icon = link.icon;
@@ -175,7 +201,7 @@ export function Header() {
                     key={link.to}
                     to={link.to}
                     className={`flex items-center gap-3 px-3 py-3 rounded-lg transition-colors ${
-                      location.pathname === link.to
+                      pathname === link.to
                         ? "bg-[#5C4A1E] text-white"
                         : "text-[#3D2B1F] hover:bg-secondary"
                     }`}
@@ -186,7 +212,6 @@ export function Header() {
                 );
               })}
 
-              {/* Utility quick-nav links below services */}
               <div className="border-t border-border my-3" />
               <div className="flex flex-col gap-0.5 px-3 pb-2">
                 {[
@@ -205,7 +230,7 @@ export function Header() {
                     key={link.to}
                     to={link.to}
                     className={`text-sm py-2 transition-colors ${
-                      location.pathname === link.to
+                      pathname === link.to
                         ? "text-[#C4956A]"
                         : "text-[#5C4A1E]/70 hover:text-[#C4956A]"
                     }`}
@@ -229,8 +254,18 @@ export function Header() {
                 <Phone className="w-4 h-4" />
                 {phone}
               </a>
-              {/* Location strip at very bottom */}
-              <div className="flex items-center justify-center gap-2 px-3 pt-2 pb-1 text-xs text-muted-foreground">
+
+              {/* Social + location */}
+              <div className="border-t border-border my-3" />
+              <div className="flex items-center justify-center gap-4 py-2">
+                <a href="https://www.facebook.com/profile.php?id=100085637750673" target="_blank" rel="noopener noreferrer" className="text-[#5C4A1E]/60 hover:text-[#C4956A] transition-colors" aria-label="Facebook">
+                  <FacebookIcon className="w-5 h-5" />
+                </a>
+                <a href="https://www.instagram.com/lethermongradeexcavations/" target="_blank" rel="noopener noreferrer" className="text-[#5C4A1E]/60 hover:text-[#C4956A] transition-colors" aria-label="Instagram">
+                  <InstagramIcon className="w-5 h-5" />
+                </a>
+              </div>
+              <div className="flex items-center justify-center gap-2 px-3 pb-1 text-xs text-muted-foreground">
                 <MapPin className="w-3 h-3 text-[#C4956A]" />
                 <span>Serving Sarasota, Bradenton, Venice & Surrounding Areas</span>
               </div>

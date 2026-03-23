@@ -1,4 +1,6 @@
-import { Link, useParams } from "react-router";
+"use client";
+import { Link } from "@/compat/Link";
+import { useParams } from "next/navigation";
 import { Clock, ArrowLeft, ArrowRight, Phone, Share2, Play } from "lucide-react";
 import { ImageWithFallback } from "./figma/ImageWithFallback";
 import { useBlogPosts } from "../providers/SanityProvider";

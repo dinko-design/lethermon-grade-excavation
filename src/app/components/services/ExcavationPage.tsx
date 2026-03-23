@@ -1,3 +1,5 @@
+"use client";
+
 import { Trees, Shovel, Ruler, Droplets, Building2, Cable } from "lucide-react";
 import { ServicePageTemplate } from "../ServicePageTemplate";
 import { IMG } from "../data";

@@ -1,4 +1,5 @@
-import { Link } from "react-router";
+"use client";
+import { Link } from "@/compat/Link";
 import { usePageSEO } from "../hooks/usePageSEO";
 import { useCompanySettings } from "../providers/SanityProvider";
 
@@ -32,7 +33,7 @@ export function PrivacyPage() {
             { title: "7. Third-Party Services", body: "Our website may use third-party services including Google Maps, Google Analytics, and social media platforms. These services have their own privacy policies governing how they collect and use information." },
             { title: "8. Children's Privacy", body: "Our website and services are not directed at children under 13. We do not knowingly collect personal information from children." },
             { title: "9. Changes to This Policy", body: "We may update this Privacy Policy from time to time. Changes will be posted on this page with an updated revision date." },
-            { title: "10. Contact Us", body: `If you have questions about this Privacy Policy or our data practices, contact us at:\n\n${companyName}\n${settings?.address ? `${settings.address.street}, ${settings.address.city}, ${settings.address.state} ${settings.address.zip}` : "5429 University Pkwy #1067\nBradenton, FL 34201"}\n${phone}\n${settings?.email || "info@lethermongradeexcavations.com"}` },
+            { title: "10. Contact Us", body: `If you have questions about this Privacy Policy or our data practices, contact us at:\n\n${companyName}\n${settings?.address ? `${settings.address.street}, ${settings.address.city}, ${settings.address.state} ${settings.address.zip}` : "1404 21st ST W.\nPalmetto, FL 34221"}\n${phone}\n${settings?.email || "info@lethermongradeexcavations.com"}` },
           ].map((s) => (
             <div key={s.title}>
               <h2 className="text-[#3D2B1F] mb-3">{s.title}</h2>

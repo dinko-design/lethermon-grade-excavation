@@ -1,4 +1,6 @@
-import { Link, useParams } from "react-router";
+"use client";
+import { Link } from "@/compat/Link";
+import { useParams } from "next/navigation";
 import { usePageSEO } from "../hooks/usePageSEO";
 import { MapPin, ArrowRight, Phone, CheckCircle, ArrowLeft, Trees, Shovel, Ruler, Droplets, Building2, Cable, Play } from "lucide-react";
 import { StarRating } from "./StarRating";
@@ -65,7 +67,7 @@ const citySeoContent: Record<string, { sections: { heading: string; paragraphs: 
         ],
         bullets: [
           "62+ completed Bradenton projects",
-          "Headquartered in Bradenton, FL 34201",
+          "Headquartered in Palmetto, FL 34221",
           "Same-day site visit availability",
           "Established inspector relationships",
           "Manatee County permit process mastery",
@@ -203,8 +205,8 @@ function ServiceAreaSchema({ area, companyName, phoneTel }: { area: { city: stri
         image: "https://lethermongrade.com/logo.png",
         address: {
           "@type": "PostalAddress",
-          streetAddress: "Bradenton",
-          addressLocality: "Bradenton",
+          streetAddress: "1404 21st ST W.",
+          addressLocality: "Palmetto",
           addressRegion: "FL",
           postalCode: "34201",
           addressCountry: "US",
@@ -383,7 +385,7 @@ export function ServiceAreaDetailPage() {
             </div>
             <div className="rounded-xl overflow-hidden shadow-md border border-border">
               <iframe
-                src={`https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d100000!2d-82.5!3d27.35!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2s${area.mapQuery}!5e0!3m2!1sen!2sus`}
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d905498.4518978231!2d-82.5374445!3d27.5593035!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3544cbdb47b1563%3A0x39e434b41886bf23!2sLethermon%20Grade%20Excavations!5e0!3m2!1sen!2sus!4v1774217173955!5m2!1sen!2sus"
                 width="100%"
                 height="100%"
                 style={{ border: 0, minHeight: 400 }}

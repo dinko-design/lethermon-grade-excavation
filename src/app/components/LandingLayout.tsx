@@ -2,7 +2,7 @@ import { Suspense, useEffect } from "react";
 import { Outlet, useLocation } from "react-router";
 import { Phone } from "lucide-react";
 import { useCompanySettings } from "../providers/SanityProvider";
-import logo from "@/assets/206a28336ec240b04f829ff9f6ee440a4dd2c962.webp";
+import logo from "@/assets/lethermon-grade-excavations-logo.png";
 
 function ScrollToTop() {
   const { pathname } = useLocation();
