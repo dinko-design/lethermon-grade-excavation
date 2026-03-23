@@ -33,8 +33,8 @@ const militaryValues = [
 
 const givingBack = [
   {
-    title: "10% Veteran Discount",
-    desc: "Active military, veterans, and military families receive 10% off all excavation services. No minimum project size, no hoops to jump through — just show your ID or DD-214.",
+    title: "Veteran Discount",
+    desc: "Active military, veterans, and military families are eligible for a discount on excavation services. No hoops to jump through — just mention your service and we'll work with you on pricing.",
     highlight: true,
   },
   {
@@ -62,7 +62,7 @@ export function MilitaryPage() {
   usePageSEO({
     title: "Military-Owned Excavation | Veteran Discount",
     description:
-      "Lethermon Grade Excavations is a military-owned excavation contractor in Bradenton and Sarasota FL. 10% veteran discount on all services. Military discipline, community commitment.",
+      "Lethermon Grade Excavations is a military-owned excavation contractor in Bradenton and Sarasota FL. Veteran discount available. Military discipline, community commitment.",
     path: "/military",
   });
 
@@ -165,14 +165,14 @@ export function MilitaryPage() {
             <DollarSign className="w-10 h-10 text-[#C4956A]" />
           </div>
           <h2 className="text-white text-3xl md:text-4xl mb-4" style={{ fontFamily: "var(--font-outfit), 'Outfit', sans-serif" }}>
-            10% Veteran Discount
+            Veteran Discount Available
           </h2>
           <p className="text-gray-300 text-lg max-w-2xl mx-auto mb-6">
-            Active duty, veterans, and military families receive 10% off all excavation services.
-            No minimum project size. Just mention your service when you call or fill out the form.
+            Active duty, veterans, and military families are eligible for a discount on all excavation services.
+            Just mention your service when you call or fill out the form and we'll take care of the rest.
           </p>
           <p className="text-white/50 text-sm mb-8">
-            Valid military ID, DD-214, or VA card accepted for verification.
+            Contact us for details — we're happy to discuss pricing for fellow service members.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link
