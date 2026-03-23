@@ -2,12 +2,21 @@
 import { useState, useEffect, useRef } from "react";
 import { Link } from "@/compat/Link";
 import { usePathname } from "next/navigation";
-import { Menu, X, Phone, MapPin, Trees, Shovel, Ruler, Droplets, Building2, Cable } from "lucide-react";
+import { Menu, X, Phone, MapPin, Trees, Shovel, Ruler, Droplets, Building2, Cable, ChevronDown } from "lucide-react";
 import logo from "@/assets/lethermon-grade-excavations-logo.png";
 import { useCompanySettings } from "../providers/SanityProvider";
 
+const companyDropdownLinks = [
+  { to: "/about", label: "About Us" },
+  { to: "/faith", label: "Faith" },
+  { to: "/military", label: "Military" },
+  { to: "/team", label: "Our Team" },
+  { to: "/trust", label: "Trust & Recognition" },
+];
+
+const companyPaths = companyDropdownLinks.map((l) => l.to);
+
 const utilityLinks = [
-  { to: "/about", label: "About" },
   { to: "/reviews", label: "Reviews" },
   { to: "/blog", label: "Blog" },
   { to: "/services", label: "Services" },
@@ -98,6 +107,32 @@ export function Header() {
           </div>
           <div className="flex items-center gap-3">
             <nav className="flex items-center gap-3">
+              {/* Company dropdown */}
+              <div className="relative group">
+                <button
+                  className={`flex items-center gap-0.5 hover:text-[#C4956A] transition-colors ${
+                    companyPaths.includes(pathname) ? "text-[#C4956A]" : ""
+                  }`}
+                >
+                  Company
+                  <ChevronDown className="w-3 h-3 opacity-60 group-hover:opacity-100 transition-opacity" />
+                </button>
+                <div className="absolute right-0 top-full pt-1 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-150 z-50">
+                  <div className="bg-[#2A1D12] border border-white/10 rounded-lg shadow-xl py-1 min-w-[160px]">
+                    {companyDropdownLinks.map((link) => (
+                      <Link
+                        key={link.to}
+                        to={link.to}
+                        className={`block px-4 py-2 hover:bg-white/10 hover:text-[#C4956A] transition-colors whitespace-nowrap ${
+                          pathname === link.to ? "text-[#C4956A]" : ""
+                        }`}
+                      >
+                        {link.label}
+                      </Link>
+                    ))}
+                  </div>
+                </div>
+              </div>
               {utilityLinks.map((link) => (
                 <Link
                   key={link.to}
@@ -213,17 +248,38 @@ export function Header() {
               })}
 
               <div className="border-t border-border my-3" />
+              <p className="text-xs text-muted-foreground uppercase tracking-wider px-3 mb-2">Company</p>
               <div className="flex flex-col gap-0.5 px-3 pb-2">
                 {[
-                  { to: "/about", label: "About" },
-                  { to: "/team", label: "Team" },
+                  { to: "/about", label: "About Us" },
+                  { to: "/faith", label: "Faith" },
+                  { to: "/military", label: "Military" },
+                  { to: "/team", label: "Our Team" },
+                  { to: "/trust", label: "Trust & Recognition" },
+                ].map((link) => (
+                  <Link
+                    key={link.to}
+                    to={link.to}
+                    className={`text-sm py-2 transition-colors ${
+                      pathname === link.to
+                        ? "text-[#C4956A]"
+                        : "text-[#5C4A1E]/70 hover:text-[#C4956A]"
+                    }`}
+                  >
+                    {link.label}
+                  </Link>
+                ))}
+              </div>
+
+              <div className="border-t border-border my-3" />
+              <div className="flex flex-col gap-0.5 px-3 pb-2">
+                {[
                   { to: "/reviews", label: "Reviews" },
                   { to: "/blog", label: "Blog" },
                   { to: "/services", label: "All Services" },
                   { to: "/service-areas", label: "Service Areas" },
                   { to: "/gallery", label: "Gallery" },
                   { to: "/videos", label: "Videos" },
-                  { to: "/trust", label: "Trust & Recognition" },
                   { to: "/careers", label: "Careers" },
                 ].map((link) => (
                   <Link
