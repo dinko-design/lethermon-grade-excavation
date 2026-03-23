@@ -1,3 +1,226 @@
 [build]
   command = "npm run build"
   publish = "out"
+
+# ============================================================
+# 301 Redirects: Old site URL → New site URL
+# ============================================================
+
+# --- Excavation sub-services (specific before wildcard) ---
+[[redirects]]
+  from = "/excavating-contractor/commercial-site-preparation"
+  to = "/services/site-development"
+  status = 301
+
+[[redirects]]
+  from = "/excavating-contractor/site-grading"
+  to = "/services/site-grading"
+  status = 301
+
+[[redirects]]
+  from = "/excavating-contractor/leveling-land-terrain"
+  to = "/services/site-grading"
+  status = 301
+
+[[redirects]]
+  from = "/excavating-contractor/excavation-grading"
+  to = "/services/excavation"
+  status = 301
+
+# --- Foundation sub-services ---
+[[redirects]]
+  from = "/foundation-contractor/foundation-excavation-footing-prep"
+  to = "/services/foundation-prep"
+  status = 301
+
+[[redirects]]
+  from = "/foundation-contractor/site-development"
+  to = "/services/site-development"
+  status = 301
+
+[[redirects]]
+  from = "/foundation-contractor/final-grading"
+  to = "/services/foundation-prep"
+  status = 301
+
+[[redirects]]
+  from = "/foundation-contractor/fine-grading"
+  to = "/services/foundation-prep"
+  status = 301
+
+[[redirects]]
+  from = "/foundation-contractor/trench-grading"
+  to = "/services/trenching"
+  status = 301
+
+[[redirects]]
+  from = "/foundation-contractor/yard-draining"
+  to = "/services/drainage"
+  status = 301
+
+# --- Demolition sub-services ---
+[[redirects]]
+  from = "/demolition-contractor/demolition"
+  to = "/services/demolition"
+  status = 301
+
+[[redirects]]
+  from = "/demolition-contractor/debris-removal"
+  to = "/services/demolition"
+  status = 301
+
+[[redirects]]
+  from = "/demolition-contractor/dirt-removal"
+  to = "/services/excavation"
+  status = 301
+
+[[redirects]]
+  from = "/demolition-contractor/driveway-removal"
+  to = "/services/concrete-removal"
+  status = 301
+
+[[redirects]]
+  from = "/demolition-contractor/concrete-breaking-hauling"
+  to = "/services/concrete-removal"
+  status = 301
+
+[[redirects]]
+  from = "/demolition-contractor/lot-clearing"
+  to = "/services/land-clearing"
+  status = 301
+
+# --- Drainage sub-services ---
+[[redirects]]
+  from = "/drainage-solution/french-drains-yard-draining"
+  to = "/services/drainage"
+  status = 301
+
+[[redirects]]
+  from = "/drainage-solution/swales-grading-water-diversion"
+  to = "/services/drainage"
+  status = 301
+
+[[redirects]]
+  from = "/drainage-solution/culvert-pipe-installation"
+  to = "/services/stormwater-drainage"
+  status = 301
+
+[[redirects]]
+  from = "/drainage-solution/catch-basin-trench-drain-system"
+  to = "/services/stormwater-drainage"
+  status = 301
+
+[[redirects]]
+  from = "/drainage-solution/storm-water-system-installation"
+  to = "/services/stormwater-drainage"
+  status = 301
+
+# --- Service category hubs ---
+[[redirects]]
+  from = "/excavating-contractor"
+  to = "/services/excavation"
+  status = 301
+
+[[redirects]]
+  from = "/foundation-contractor"
+  to = "/services/site-grading"
+  status = 301
+
+[[redirects]]
+  from = "/demolition-contractor"
+  to = "/services/demolition"
+  status = 301
+
+[[redirects]]
+  from = "/drainage-solution"
+  to = "/services/drainage"
+  status = 301
+
+# --- City pages ---
+[[redirects]]
+  from = "/bradenton"
+  to = "/service-areas/bradenton"
+  status = 301
+
+[[redirects]]
+  from = "/sarasota"
+  to = "/service-areas/sarasota"
+  status = 301
+
+[[redirects]]
+  from = "/venice"
+  to = "/service-areas/venice"
+  status = 301
+
+[[redirects]]
+  from = "/st-petersburg"
+  to = "/service-areas/st-petersburg"
+  status = 301
+
+# --- Sarasota city + service combos (wildcard) ---
+[[redirects]]
+  from = "/sarasota/*"
+  to = "/service-areas/sarasota"
+  status = 301
+
+# --- Blog post redirects ---
+[[redirects]]
+  from = "/blog/trust-floridas-top-rated-excavating-contractors-*"
+  to = "/blog/choosing-excavation-contractor-florida"
+  status = 301
+
+[[redirects]]
+  from = "/blog/precision-grading-services-*"
+  to = "/blog/site-grading-importance-florida-construction"
+  status = 301
+
+[[redirects]]
+  from = "/blog/essential-soil-grading-methods-*"
+  to = "/blog/florida-drainage-problems-solutions"
+  status = 301
+
+[[redirects]]
+  from = "/blog/excavation-grading-in-florida-*"
+  to = "/blog/how-to-prepare-your-lot-for-construction"
+  status = 301
+
+[[redirects]]
+  from = "/blog/what-to-expect-from-professional-land-clearing-*"
+  to = "/blog/land-clearing-cost-florida"
+  status = 301
+
+[[redirects]]
+  from = "/blog/professional-excavation-services-in-florida-*"
+  to = "/blog/choosing-excavation-contractor-florida"
+  status = 301
+
+[[redirects]]
+  from = "/blog/trusted-demolition-excavation-near-you-*"
+  to = "/services/demolition"
+  status = 301
+
+[[redirects]]
+  from = "/blog/trenchless-excavation-services-*"
+  to = "/services/trenching"
+  status = 301
+
+# --- Catch-all wildcards for remaining old paths ---
+[[redirects]]
+  from = "/excavating-contractor/*"
+  to = "/services/excavation"
+  status = 301
+
+[[redirects]]
+  from = "/foundation-contractor/*"
+  to = "/services/site-grading"
+  status = 301
+
+[[redirects]]
+  from = "/demolition-contractor/*"
+  to = "/services/demolition"
+  status = 301
+
+[[redirects]]
+  from = "/drainage-solution/*"
+  to = "/services/drainage"
+  status = 301

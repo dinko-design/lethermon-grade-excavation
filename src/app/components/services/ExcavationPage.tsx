@@ -1,6 +1,6 @@
 "use client";
 
-import { Trees, Shovel, Ruler, Droplets, Building2, Cable } from "lucide-react";
+import { Trees, Shovel, Ruler, Droplets, Building2, Cable, Landmark } from "lucide-react";
 import { ServicePageTemplate } from "../ServicePageTemplate";
 import { IMG } from "../data";
 import type { ServicePageData } from "../ServicePageTemplate";
@@ -58,7 +58,7 @@ const data: ServicePageData = {
   relatedServices: [
     { to: "/services/site-grading", title: "Site Grading", icon: Ruler },
     { to: "/services/trenching", title: "Utility Trenching", icon: Cable },
-    { to: "/services/land-clearing", title: "Land Clearing", icon: Trees },
+    { to: "/services/site-development", title: "Site Development", icon: Landmark },
   ],
   seoContent: [
     {

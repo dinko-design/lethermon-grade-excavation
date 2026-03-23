@@ -1,6 +1,6 @@
 "use client";
 
-import { Trees, Shovel, Ruler, Droplets, Building2, Cable } from "lucide-react";
+import { Trees, Shovel, Ruler, Droplets, Building2, Cable, Hammer } from "lucide-react";
 import { ServicePageTemplate } from "../ServicePageTemplate";
 import { IMG } from "../data";
 import type { ServicePageData } from "../ServicePageTemplate";
@@ -62,7 +62,7 @@ const data: ServicePageData = {
   relatedServices: [
     { to: "/services/land-clearing", title: "Land Clearing", icon: Trees },
     { to: "/services/excavation", title: "Excavation", icon: Shovel },
-    { to: "/services/site-grading", title: "Site Grading", icon: Ruler },
+    { to: "/services/concrete-removal", title: "Concrete Removal", icon: Hammer },
   ],
   seoContent: [
     {

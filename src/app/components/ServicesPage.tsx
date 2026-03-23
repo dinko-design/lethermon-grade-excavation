@@ -1,7 +1,7 @@
 "use client";
 import { Link } from "@/compat/Link";
 import { usePageSEO } from "../hooks/usePageSEO";
-import { Trees, Shovel, Ruler, Droplets, Building2, Cable, ChevronRight } from "lucide-react";
+import { Trees, Shovel, Ruler, Droplets, Building2, Cable, ChevronRight, Landmark, Hammer, Layers, CloudRain } from "lucide-react";
 import { ImageWithFallback } from "./figma/ImageWithFallback";
 import imgLandClearing from "@/assets/images/land-clearing-stump-removal.webp";
 import imgExcavation from "@/assets/images/excavation-pool-overhead.webp";
@@ -9,13 +9,21 @@ import imgGrading from "@/assets/images/grading-service-hero.webp";
 import imgDrainage from "@/assets/images/drainage-pvc-sunset.webp";
 import imgDemolition from "@/assets/images/demolition-mobile-home-hero.webp";
 import imgTrenching from "@/assets/images/trenching-crew-deep-trench.webp";
+import imgSiteDev from "@/assets/images/site-development-aerial.webp";
+import imgConcreteRemoval from "@/assets/images/demolition-excavator-rubble.webp";
+import imgFoundationPrep from "@/assets/images/grading-house-pad.webp";
+import imgStormwater from "@/assets/images/drainage-culvert-pipe.webp";
 
 const services = [
   { icon: Trees, to: "/services/land-clearing", title: "Land Clearing", desc: "Complete lot clearing, tree removal, and debris hauling. First step to a build-ready site.", img: imgLandClearing },
   { icon: Shovel, to: "/services/excavation", title: "Excavation", desc: "Foundation digging, structural excavation, pool excavation, and site prep.", img: imgExcavation },
   { icon: Ruler, to: "/services/site-grading", title: "Site Grading", desc: "Laser-guided precision grading for foundation pads, driveways, and commercial sites.", img: imgGrading },
+  { icon: Landmark, to: "/services/site-development", title: "Site Development", desc: "Full-scope commercial and residential site preparation from raw land to construction-ready.", img: imgSiteDev },
+  { icon: Layers, to: "/services/foundation-prep", title: "Foundation Preparation", desc: "Precision foundation excavation, footing trenches, and building pad grading.", img: imgFoundationPrep },
   { icon: Droplets, to: "/services/drainage", title: "Drainage Solutions", desc: "French drains, water redirection, retention ponds, and erosion control.", img: imgDrainage },
+  { icon: CloudRain, to: "/services/stormwater-drainage", title: "Stormwater Systems", desc: "Catch basins, culvert pipes, trench drains, and stormwater infrastructure.", img: imgStormwater },
   { icon: Building2, to: "/services/demolition", title: "Demolition", desc: "Safe structure removal, mobile home demolition, and complete site cleanup.", img: imgDemolition },
+  { icon: Hammer, to: "/services/concrete-removal", title: "Concrete Removal", desc: "Driveway removal, slab demolition, concrete breaking, and hauling.", img: imgConcreteRemoval },
   { icon: Cable, to: "/services/trenching", title: "Utility Trenching", desc: "Code-compliant trenching for water, sewer, electric, and underground utilities.", img: imgTrenching },
 ];
 
